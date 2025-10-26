@@ -1,9 +1,5 @@
 ---
 import { siteConfig } from "../config";
-
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
-const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
-const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 ---
 
 <header
@@ -11,7 +7,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
   class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
 >
   <nav class="max-w-7xl mx-auto px-8 py-4">
-    <ul class="flex items-center gap-8 justify-center">
+    <ul class="flex items-center gap-8 justify-center flex-wrap">
       <li>
         <a
           href="#about"
@@ -20,42 +16,38 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
           About
         </a>
       </li>
-      {
-        hasProjects && (
-          <li>
-            <a
-              href="#projects"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Projects
-            </a>
-          </li>
-        )
-      }
-      {
-        hasExperience && (
-          <li>
-            <a
-              href="#experience"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Experience
-            </a>
-          </li>
-        )
-      }
-      {
-        hasEducation && (
-          <li>
-            <a
-              href="#education"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Education
-            </a>
-          </li>
-        )
-      }
+      <li>
+        <a
+          href="#next-speaker"
+          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+        >
+          Next Session
+        </a>
+      </li>
+      <li>
+        <a
+          href="#previous-sessions"
+          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+        >
+          Previous Sessions
+        </a>
+      </li>
+      <li>
+        <a
+          href="#speak-with-us"
+          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+        >
+          Speak with Us
+        </a>
+      </li>
+      <li>
+        <a
+          href="#organizers"
+          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+        >
+          Organisers
+        </a>
+      </li>
     </ul>
   </nav>
 </header>
@@ -74,5 +66,14 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 <style>
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Ensure sections have proper scroll margin to account for fixed header */
+  #about,
+  #next-speaker,
+  #previous-sessions,
+  #speak-with-us,
+  #organizers {
+    scroll-margin-top: 120px;
   }
 </style>

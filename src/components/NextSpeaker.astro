@@ -1,0 +1,143 @@
+---
+import { siteConfig } from "../config";
+
+const speaker = siteConfig.nextSpeaker;
+---
+
+<section id="next-speaker" class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gradient-to-br from-gray-50 to-white">
+  <div>
+    <div class="mb-12">
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900"
+      >
+        Next Speaker
+      </h2>
+      <div
+        class="w-[75px] h-[5px] mt-2 rounded-full"
+        style={`background-color: ${siteConfig.accentColor}`}
+      >
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      <!-- Speaker Card -->
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+        <!-- Speaker Header -->
+        <div class="p-6 sm:p-8 md:p-10" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}15 0%, ${siteConfig.accentColor}05 100%)`}>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            {speaker.name}
+          </h3>
+          <p class="text-lg sm:text-xl text-gray-700 font-medium mb-1">
+            {speaker.institution}
+          </p>
+          <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mt-4 italic">
+            "{speaker.title}"
+          </h4>
+        </div>
+
+        <!-- Session Details -->
+        <div class="p-6 sm:p-8 md:p-10 border-b border-gray-200 bg-gray-50">
+          <h5 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+              <path d="M16 3v4" />
+              <path d="M8 3v4" />
+              <path d="M4 11h16" />
+              <path d="M11 15h1" />
+              <path d="M12 15v3" />
+            </svg>
+            TLDR
+          </h5>
+          <div class="space-y-3 text-base sm:text-lg text-gray-700">
+            <div class="flex items-start gap-3">
+              <span class="font-bold min-w-[80px]">🗣 What?</span>
+              <span>¡Tech talks en español!</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="font-bold min-w-[80px]">🕓 When?</span>
+              <span>{speaker.date}, {speaker.time}</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="font-bold min-w-[80px]">📍 Where?</span>
+              <span>{speaker.location}</span>
+            </div>
+          </div>
+
+          <!-- Call-to-Action Buttons -->
+          <div class="mt-6 flex flex-col sm:flex-row gap-4">
+            <a
+              href={speaker.calendarLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
+              style={`background-color: ${siteConfig.accentColor}`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+                <path d="M16 3v4" />
+                <path d="M8 3v4" />
+                <path d="M4 11h16" />
+              </svg>
+              Download Calendar
+            </a>
+            <a
+              href={`mailto:${siteConfig.social.email}`}
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-200 text-gray-800 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-300 hover:shadow-lg"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                <path d="M3 7l9 6l9 -6" />
+              </svg>
+              RSVP In-Person (limited spots)
+            </a>
+          </div>
+        </div>
+
+        <!-- Abstract Section -->
+        <details class="group p-6 sm:p-8 md:p-10 border-b border-gray-200">
+          <summary class="cursor-pointer text-lg sm:text-xl font-bold text-gray-900 flex items-center justify-between hover:text-[var(--accent-color)] transition-colors">
+            <span>Abstract (en español)</span>
+            <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+            <p>{speaker.abstract}</p>
+          </div>
+        </details>
+
+        <!-- Bio Section -->
+        <details class="group p-6 sm:p-8 md:p-10">
+          <summary class="cursor-pointer text-lg sm:text-xl font-bold text-gray-900 flex items-center justify-between hover:text-[var(--accent-color)] transition-colors">
+            <span>Bio</span>
+            <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+            <p>{speaker.bio}</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="mt-8 text-center text-gray-600">
+        <p class="text-base sm:text-lg">
+          Can't join this time? Subscribe to our 
+          <a href={siteConfig.social.email ? `mailto:${siteConfig.social.email}` : '#'} class="font-bold hover:text-[var(--accent-color)] transition-colors">mailing list</a>
+          to stay informed! 📬
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
+
