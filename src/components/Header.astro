@@ -6,12 +6,12 @@ import { siteConfig } from "../config";
   id="header"
   class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
 >
-  <nav class="max-w-7xl mx-auto px-8 py-4">
-    <ul class="flex items-center gap-8 justify-center flex-wrap">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-8 py-4">
+    <ul class="flex items-center gap-4 sm:gap-6 md:gap-8 justify-center flex-wrap">
       <li>
         <a
           href="#about"
-          class="text-gray-700 hover:text-black transition-colors font-medium"
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
           About
         </a>
@@ -19,31 +19,31 @@ import { siteConfig } from "../config";
       <li>
         <a
           href="#next-speaker"
-          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
           Next Session
         </a>
       </li>
-      <li>
+      <li class="hidden sm:block">
         <a
           href="#previous-sessions"
-          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
           Previous Sessions
         </a>
       </li>
-      <li>
+      <li class="hidden md:block">
         <a
           href="#speak-with-us"
-          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
           Speak with Us
         </a>
       </li>
-      <li>
+      <li class="hidden lg:block">
         <a
           href="#organizers"
-          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
           Organisers
         </a>

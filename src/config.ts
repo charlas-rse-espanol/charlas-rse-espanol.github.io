@@ -6,10 +6,8 @@ const LINKS = {
   github: "https://github.com/charlas-rse-espanol",
   email: "charlas.rse.espanol@gmail.com",
   mailingList: "https://groups.google.com/g/rse-en-espaniol/",
-  speakerGuidelines: "https://github.com/charlas-rse-espanol/.github/blob/main/profile/format.md",
-  schedule: "https://github.com/charlas-rse-espanol/.github/blob/main/profile/schedule.md",
-  location: "https://maps.app.goo.gl/p1JfDY9huBCsCx4t8",
-  calendarDownload: "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
+  nextLocationLink: "https://maps.app.goo.gl/p1JfDY9huBCsCx4t8",
+  nextCalendarLink: "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
 } as const;
 
 // Create links with correct formatting (new tab, no rel)
@@ -25,6 +23,15 @@ export const siteConfig = {
   title: "Tech talks en español",
   description: "Monthly seminar series showcasing Research Software Engineers across the Spanish-speaking world",
   accentColor: ACCENT_COLOR,
+  logo: "/images/charlas-logo.png",
+  logoAlt: "Charlas RSE en español logo",
+
+  // Hero layout options: "centered" | "inline" | "split"
+  // "centered" = large logo above title (Option A)
+  // "inline" = logo next to title (Option B)  
+  // "split" = logo on left, text on right (Option C)
+  heroLayout: "centered" as "centered" | "inline" | "split",
+
   social: {
     github: LINKS.github,
     email: LINKS.email,
@@ -70,8 +77,8 @@ export const siteConfig = {
       "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas (cientos de millones) de galaxias. A mitad de los años dos mil la Cosmología empezó a experimentar un rápido proceso de cuantificación. En los últimos años este proceso se ha convertido en exponencial gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
     bio:
       "Jaime Ruiz Zapatero, vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
-    calendarLink: LINKS.calendarDownload,
-    locationLink: LINKS.location,
+    calendarLink: LINKS.nextCalendarLink,
+    locationLink: LINKS.nextLocationLink,
   },
 
   //////////////////////////////////////////////////////////////
@@ -238,7 +245,7 @@ export const siteConfig = {
   callForSpeakers: {
     message: "¡Nos encantaría tenerte de ponente!",
     description: "Check out our speaker guidelines - feel free to contact us if you have any questions.",
-    guidelinesLink: LINKS.speakerGuidelines,
+    // guidelinesLink: LINKS.speakerGuidelines,
     email: LINKS.email,
   },
 };
