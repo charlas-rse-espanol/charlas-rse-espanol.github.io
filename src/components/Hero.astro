@@ -9,40 +9,14 @@ const layout = siteConfig.heroLayout;
   class="relative isolate overflow-hidden bg-white py-24 md:min-h-screen"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
-  <!-- Animated Background with Moving Elements -->
+  <!-- Animated Background -->
   <div class="absolute inset-0 -z-10 overflow-hidden">
     <!-- Animated gradient background -->
     <div
       class="absolute inset-0 animate-gradient"
       style={`background: linear-gradient(45deg, ${siteConfig.accentColor}15, ${siteConfig.accentColor}08, ${siteConfig.accentColor}12, ${siteConfig.accentColor}05)`}
     ></div>
-    
-    <!-- Programming keywords floating -->
-    <div class="absolute top-1/4 right-1/4 animate-float-medium">
-      <span class="text-sm font-semibold text-[var(--accent-color)] opacity-30">Python</span>
-    </div>
-    
-    <div class="absolute top-1/6 left-1/8 animate-float-medium">
-      <span class="text-sm font-semibold text-[var(--accent-color)] opacity-30">JavaScript</span>
-    </div>
-    
-    <div class="absolute top-1/6 right-1/2 animate-float-slow">
-      <span class="text-sm font-semibold text-[var(--accent-color)] opacity-30">R</span>
-    </div>
-
-    <div class="absolute bottom-40 left-1/4 animate-float-fast">
-      <span class="text-lg font-semibold text-[var(--accent-color)] opacity-35">&lt;RSE/&gt;</span>
-    </div>
-
-    <!-- Floating code symbols -->
-    <div class="absolute top-60 left-1/4 animate-float-fast">
-      <span class="text-2xl font-semibold text-[var(--accent-color)] opacity-40">&lt;/&gt;</span>
-    </div>
-    
-    <div class="absolute top-80 right-1/3 animate-float-slow">
-      <span class="text-xl font-semibold text-[var(--accent-color)] opacity-35">{}</span>
-    </div>
-    </div>
+  </div>
     
   <!-- LAYOUT A: CENTERED (Large logo above title) -->
   {layout === "centered" && (

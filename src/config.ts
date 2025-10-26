@@ -1,5 +1,5 @@
 // Colors
-const ACCENT_COLOR = "#bdd96c";
+const ACCENT_COLOR = "#E86C5E"; 
 
 // Link constants
 const LINKS = {
