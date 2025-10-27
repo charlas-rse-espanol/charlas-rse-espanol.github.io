@@ -9,6 +9,8 @@ const LINKS = {
   mailingList: "https://groups.google.com/g/rse-en-espaniol/",
   nextLocationLink: "https://maps.app.goo.gl/p1JfDY9huBCsCx4t8",
   nextCalendarLink: "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
+  AlanTuringInstitute: "https://www.turing.ac.uk/",
+  SainsburyWellcomeCentre: "https://www.wellcome.ac.uk/research/institutes/sainsbury-wellcome-centre",
 } as const;
 
 // Section titles
@@ -40,7 +42,7 @@ const SECTIONS = {
   },
 } as const;
 
-// Create links with correct formatting (new tab, no rel)
+// Create links function
 const createLink = (url: string, text: string, color: string = ACCENT_COLOR) =>
   `<a href='${url}' target='_blank' rel='noopener noreferrer' style='color: ${color}; font-weight: bold;'>${text}</a>`;
 
@@ -72,27 +74,27 @@ export const siteConfig = {
   // ABOUT SECTION
   //////////////////////////////////////////////////////////////
   aboutMe:
-    "🤓 Would you like to connect with Spanish-speaking engineers and researchers, in Europe and across the pond? " +
-    "<br/><br/>" +
+    "🤓 Keen to connect with Spanish-speaking engineers & researchers, in Europe and across the pond? " +
+    "<br/>" +
     "🦉 Are you curious to see how far your Duolingo skills can take you in a tech talk? " +
-    "<br/><br/>" +
+    "<br/>" +
     "❓ Are you tired of announcements full of questions? " +
     "<br/><br/>" +
-    "<strong>Then come join us at the monthly <i>'Charlas RSE en español'!</i> 👏</strong>" +
-    "<br/><br/>" +
-    "An initiative started by Carlos (" + createGitHubHandleLink('cptanalatriste') + ", from the Alan Turing Institute), " +
-    "and Sofía (" + createGitHubHandleLink('sfmig') + ", from the Sainsbury Wellcome Centre at UCL), " +
+    "<div style='margin-left: 9rem;'><strong>Then come join us at the monthly <i>Charlas RSE en español!</i> 👏</strong></div>" +
+    "<br/>" +
+    "An initiative started by Carlos (" + createGitHubHandleLink('cptanalatriste') + ", from the " +
+    createLink(LINKS.AlanTuringInstitute, "Alan Turing Institute") + ") " +
+    "and Sofía (" + createGitHubHandleLink('sfmig') + ", from the " +
+    createLink(LINKS.SainsburyWellcomeCentre, 'Sainsbury Wellcome Centre') + ") " +
     "from a conversation at the DEI workshop during " + createLink(LINKS.rsecon24, 'RSECon24') + ". " +
     "Our aims are: " +
-    "<ul style='margin-top: 0.5rem; margin-left: 1.5rem;'>" +
-    "<li>to showcase the RSE role across the Spanish-speaking world,</li>" +
-    "<li>to get in touch with the cool research and tech carried out by hispanophones all over the world, and</li>" +
-    "<li>to selfishly speak our mother tongue before we forget it.</li>" +
-    "</ul>" +
-    "<br/>" +
-    "We have an exciting list of speakers lined up for what we plan to be a monthly series. Stay tuned! 📻",
+    "<ul style='margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;'>" +
+    "<li>to showcase the RSE role across the Spanish-speaking world</li>" +
+    "<li>to connect with the cool research and tech carried out by hispanophones all over the world</li>" +
+    "<li>to selfishly speak our mother tongue before we forget it!</li>" +
+    "</ul>",
 
-  skills: ["monthly series", "online + in-person", "se habla español", "research software", "open to all"],
+  skills: [],
 
   //////////////////////////////////////////////////////////////
   // NEXT SPEAKER
