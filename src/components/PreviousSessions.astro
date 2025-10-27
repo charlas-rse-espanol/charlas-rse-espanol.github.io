@@ -4,17 +4,17 @@ import { siteConfig } from "../config";
 const sessions = siteConfig.previousSessions;
 ---
 
-<section id="previous-sessions" class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gray-50">
+<section id={siteConfig.sections.previousSessions.id} class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gray-50">
   <div class="space-y-8">
     <div>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-        Previous Sessions
+      <h2 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
+        {siteConfig.sections.previousSessions.title}
       </h2>
       <div
         class="w-[75px] h-[5px] mt-2 rounded-full"
         style={`background-color: ${siteConfig.accentColor}`}
       />
-      <p class="mt-4 text-lg text-gray-600">
+      <p class="mt-4 text-base text-gray-600">
         Browse our collection of past talks from amazing speakers across the Spanish-speaking world 🗓️
       </p>
     </div>

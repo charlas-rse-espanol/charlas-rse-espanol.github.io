@@ -4,7 +4,7 @@ import { siteConfig } from "../config";
 const callForSpeakers = siteConfig.callForSpeakers;
 ---
 
-<section id="speak-with-us" class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gradient-to-br from-gray-50 to-white">
+<section id={siteConfig.sections.callForSpeakers.id} class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gradient-to-br from-gray-50 to-white">
   <div class="max-w-4xl mx-auto">
     <div class="bg-white rounded-2xl shadow-xl border-2 border-gray-200 overflow-hidden">
       <!-- Header with Accent -->
@@ -35,15 +35,15 @@ const callForSpeakers = siteConfig.callForSpeakers;
           </svg>
         </div>
         
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Interested in Presenting?
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {siteConfig.sections.callForSpeakers.title}
         </h2>
         
-        <p class="text-2xl sm:text-3xl font-bold mb-6" style={`color: ${siteConfig.accentColor}`}>
+        <p class="text-xl sm:text-2xl font-bold mb-6" style={`color: ${siteConfig.accentColor}`}>
           {callForSpeakers.message}
         </p>
         
-        <p class="text-lg text-gray-700 leading-relaxed">
+        <p class="text-base text-gray-700 leading-relaxed">
           {callForSpeakers.description}
         </p>
       </div>
@@ -117,7 +117,7 @@ const callForSpeakers = siteConfig.callForSpeakers;
           <div class="text-center pt-4">
             <p class="text-sm text-gray-600">
               Check out talks from our 
-              <a href="#previous-sessions" class="font-bold hover:text-[var(--accent-color)] transition-colors">
+              <a href={`#${siteConfig.sections.previousSessions.id}`} class="font-bold hover:text-[var(--accent-color)] transition-colors">
                 previous speakers
               </a>
               to get a sense of what we're about! 🎤

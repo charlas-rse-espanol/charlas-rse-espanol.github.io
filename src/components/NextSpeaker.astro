@@ -4,13 +4,13 @@ import { siteConfig } from "../config";
 const speaker = siteConfig.nextSpeaker;
 ---
 
-<section id="next-speaker" class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gradient-to-br from-gray-50 to-white">
+<section id={siteConfig.sections.nextSpeaker.id} class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gradient-to-br from-gray-50 to-white">
   <div>
     <div class="mb-12">
       <h2
-        class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900"
+        class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900"
       >
-        Next Speaker
+        {siteConfig.sections.nextSpeaker.title}
       </h2>
       <div
         class="w-[75px] h-[5px] mt-2 rounded-full"
@@ -24,13 +24,13 @@ const speaker = siteConfig.nextSpeaker;
       <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
         <!-- Speaker Header -->
         <div class="p-6 sm:p-8 md:p-10" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}15 0%, ${siteConfig.accentColor}05 100%)`}>
-          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+          <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             {speaker.name}
           </h3>
-          <p class="text-lg sm:text-xl text-gray-700 font-medium mb-1">
+          <p class="text-base sm:text-lg text-gray-700 font-medium mb-1">
             {speaker.institution}
           </p>
-          <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mt-4 italic">
+          <h4 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mt-4 italic">
             "{speaker.title}"
           </h4>
         </div>
@@ -104,20 +104,20 @@ const speaker = siteConfig.nextSpeaker;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
-          <div class="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+          <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
             <p>{speaker.abstract}</p>
           </div>
         </details>
 
         <!-- Bio Section -->
         <details class="group p-6 sm:p-8 md:p-10">
-          <summary class="cursor-pointer text-lg sm:text-xl font-bold text-gray-900 flex items-center justify-between hover:text-[var(--accent-color)] transition-colors">
+          <summary class="cursor-pointer text-base sm:text-lg font-bold text-gray-900 flex items-center justify-between hover:text-[var(--accent-color)] transition-colors">
             <span>Bio</span>
             <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
-          <div class="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+          <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
             <p>{speaker.bio}</p>
           </div>
         </details>
@@ -125,7 +125,7 @@ const speaker = siteConfig.nextSpeaker;
 
       <!-- Additional Info -->
       <div class="mt-8 text-center text-gray-600">
-        <p class="text-base sm:text-lg">
+        <p class="text-sm sm:text-base">
           Can't join this time? Subscribe to our 
           <a href={siteConfig.social.email ? `mailto:${siteConfig.social.email}` : '#'} class="font-bold hover:text-[var(--accent-color)] transition-colors">mailing list</a>
           to stay informed! 📬

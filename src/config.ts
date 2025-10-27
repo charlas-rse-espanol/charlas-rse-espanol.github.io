@@ -1,13 +1,43 @@
 // Colors
-const ACCENT_COLOR = "#E86C5E"; 
+const ACCENT_COLOR = "#E86C5E";
 
 // Link constants
 const LINKS = {
   github: "https://github.com/charlas-rse-espanol",
   email: "charlas.rse.espanol@gmail.com",
+  rsecon24: "https://rsecon24.society-rse.org/",
   mailingList: "https://groups.google.com/g/rse-en-espaniol/",
   nextLocationLink: "https://maps.app.goo.gl/p1JfDY9huBCsCx4t8",
   nextCalendarLink: "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
+} as const;
+
+// Section titles
+const SECTIONS = {
+  about: {
+    id: "about",
+    title: "About",
+    navTitle: "About",
+  },
+  nextSpeaker: {
+    id: "next-speaker",
+    title: "Next session",
+    navTitle: "Next session",
+  },
+  previousSessions: {
+    id: "previous-sessions",
+    title: "Previous sessions",
+    navTitle: "Previous sessions",
+  },
+  callForSpeakers: {
+    id: "speak-with-us",
+    title: "Interested in Presenting?",
+    navTitle: "¡Participa!",
+  },
+  organizers: {
+    id: "organizers",
+    title: "Organisers",
+    navTitle: "Organisers",
+  },
 } as const;
 
 // Create links with correct formatting (new tab, no rel)
@@ -23,6 +53,7 @@ export const siteConfig = {
   title: "Tech talks en español",
   description: "Monthly seminar series showcasing Research Software Engineers across the Spanish-speaking world",
   accentColor: ACCENT_COLOR,
+  sections: SECTIONS,
   logo: "/images/charlas-logo.png",
   logoAlt: "Charlas RSE en español logo",
 
@@ -51,7 +82,7 @@ export const siteConfig = {
     "<br/><br/>" +
     "An initiative started by Carlos (" + createGitHubHandleLink('cptanalatriste') + ", from the Alan Turing Institute), " +
     "and Sofía (" + createGitHubHandleLink('sfmig') + ", from the Sainsbury Wellcome Centre at UCL), " +
-    "from a conversation at the DEI workshop during " + createLink('https://rsecon24.society-rse.org/', 'RSECon24') + ". " +
+    "from a conversation at the DEI workshop during " + createLink(LINKS.rsecon24, 'RSECon24') + ". " +
     "Our aims are: " +
     "<ul style='margin-top: 0.5rem; margin-left: 1.5rem;'>" +
     "<li>to showcase the RSE role across the Spanish-speaking world,</li>" +
@@ -74,7 +105,11 @@ export const siteConfig = {
     time: "4pm UK time",
     location: "Online and in-person at Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201",
     abstract:
-      "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas (cientos de millones) de galaxias. A mitad de los años dos mil la Cosmología empezó a experimentar un rápido proceso de cuantificación. En los últimos años este proceso se ha convertido en exponencial gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
+      "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. " +
+      "En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas" +
+      " (cientos de millones) de galaxias. A mitad de los años dos mil la Cosmología empezó a experimentar " +
+      "un rápido proceso de cuantificación. En los últimos años este proceso se ha convertido en exponencial " +
+      "gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
     bio:
       "Jaime Ruiz Zapatero, vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
     calendarLink: LINKS.nextCalendarLink,
