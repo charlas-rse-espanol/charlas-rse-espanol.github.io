@@ -68,6 +68,7 @@ export const siteConfig = {
   social: {
     github: LINKS.github,
     email: LINKS.email,
+    mailingList: LINKS.mailingList,
   },
 
   //////////////////////////////////////////////////////////////
@@ -101,11 +102,13 @@ export const siteConfig = {
   //////////////////////////////////////////////////////////////
   nextSpeaker: {
     name: "Jaime Ruiz Zapatero",
-    title: "Cosmología con Datos a lo Bestia (Cosmology with Big Data)",
-    institution: "Vera Rubin and Euclides Telescopes",
+    title: "Cosmología con datos a lo bestia",
+    institution: "University College London",
     date: "Monday 10th November 2025",
     time: "4pm UK time",
-    location: "Online and in-person at Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201",
+    location: 
+      "Online and in-person at " + 
+      createLink(LINKS.nextLocationLink, "Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201"),
     abstract:
       "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. " +
       "En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas" +
