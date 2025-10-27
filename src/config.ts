@@ -74,13 +74,13 @@ export const siteConfig = {
   // ABOUT SECTION
   //////////////////////////////////////////////////////////////
   aboutMe:
-    "🤓 Keen to connect with Spanish-speaking engineers & researchers, in Europe and across the pond? " +
+    "<span style='font-size: 1.25em;'>🤓</span> Keen to connect <i>en español</i> with engineers & researchers in Europe and across the pond? " +
     "<br/>" +
-    "🦉 Are you curious to see how far your Duolingo skills can take you in a tech talk? " +
+    "<span style='font-size: 1.25em;'>🦉</span> Curious to see how far your Duolingo skills can take you in a tech talk? " +
     "<br/>" +
-    "❓ Are you tired of announcements full of questions? " +
+    "<span style='font-size: 1.25em;'>❓</span> Tired of announcements full of questions? " +
     "<br/><br/>" +
-    "<div style='margin-left: 9rem;'><strong>Then come join us at the monthly <i>Charlas RSE en español!</i> 👏</strong></div>" +
+    "<div style='text-align: center;'><strong>Then come join us at the monthly <i>Charlas RSE en español!</i> 👏</strong></div>" +
     "<br/>" +
     "An initiative started by Carlos (" + createGitHubHandleLink('cptanalatriste') + ", from the " +
     createLink(LINKS.AlanTuringInstitute, "Alan Turing Institute") + ") " +
