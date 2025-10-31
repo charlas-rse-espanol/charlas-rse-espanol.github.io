@@ -114,9 +114,13 @@ export const siteConfig = {
       "En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas" +
       " (cientos de millones) de galaxias. A mitad de los años dos mil la Cosmología empezó a experimentar " +
       "un rápido proceso de cuantificación. En los últimos años este proceso se ha convertido en exponencial " +
-      "gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
+      "gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta " + 
+      "en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. " +
+      "Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. " + 
+      "En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego " + 
+      "me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
     bio:
-      "Jaime Ruiz Zapatero, vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
+      createLink("https://jaimeruizzapatero.net/", "Jaime Ruiz Zapatero") + ", vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
     calendarLink: LINKS.nextCalendarLink,
     locationLink: LINKS.nextLocationLink,
   },

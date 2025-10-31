@@ -35,26 +35,26 @@ const speaker = siteConfig.nextSpeaker;
         <!-- Abstract Section -->
         <details class="group p-6 sm:p-8 md:p-10" open>
         <summary class="cursor-pointer text-base sm:text-lg font-bold text-gray-900 flex items-center justify-between hover:text-[var(--accent-color)] transition-colors">
-            <span>Abstract</span>
+            <span>🦉 Abstract</span>
             <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
           <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-            <p>{speaker.abstract}</p>
+            <p set:html={speaker.abstract}></p>
           </div>
         </Details>
 
         <!-- Bio Section -->
-        <details class="group p-6 sm:p-8 md:p-10">
+        <details class="group p-6 sm:p-8 md:p-10" open>
           <summary class="cursor-pointer text-base sm:text-lg font-bold text-gray-900 flex items-center justify-between hover:text-[var(--accent-color)] transition-colors">
-            <span>Bio</span>
+            <span>🦜 Speaker bio</span>
             <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
           <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-            <p>{speaker.bio}</p>
+            <p set:html={speaker.bio}></p>
           </div>
         </details>
      
@@ -65,16 +65,16 @@ const speaker = siteConfig.nextSpeaker;
           </h5>
           <div class="space-y-3 text-base sm:text-lg text-gray-700">
             <div class="flex items-start gap-3">
-              <span class="font-bold min-w-[80px]">🗣 What?</span>
+              <span class="font-bold min-w-[100px]">🗣 What?</span>
               <span>¡Tech talks en español!</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="font-bold min-w-[80px]">🕓 When?</span>
+              <span class="font-bold min-w-[100px]">🕓 When?</span>
               <span>{speaker.date}, {speaker.time}</span>
             </div>
             <div class="flex items-start gap-3">
-              <span class="font-bold min-w-[80px]">📍 Where?</span>
-              <span>{speaker.location}</span>
+              <span class="font-bold min-w-[100px]">📍 Where?</span>
+              <span set:html={speaker.location}></span>
             </div>
           </div>
 
@@ -105,7 +105,7 @@ const speaker = siteConfig.nextSpeaker;
                 <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
                 <path d="M3 7l9 6l9 -6" />
               </svg>
-              RSVP in-person (limited spots!)
+              RSVP for in-person (limited spots!)
             </a>
           </div>
         </div>
