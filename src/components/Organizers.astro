@@ -4,20 +4,20 @@ import { siteConfig } from "../config";
 const organizers = siteConfig.organizers;
 ---
 
-<section id={siteConfig.sections.organizers.id} class="p-8 sm:p-12 md:p-16 lg:p-24">
+<section id={siteConfig.sections.organizers.id} class="p-8 sm:p-12 md:p-16 lg:p-24" style={`--accent-color: ${siteConfig.accentColor}`}>
   <div>
-    <div class="mb-12 text-center">
+    <div class="mb-12">
       <h2
         class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900"
       >
         {siteConfig.sections.organizers.title}
       </h2>
       <div
-        class="w-[75px] h-[5px] mt-2 rounded-full mx-auto"
+        class="w-[75px] h-[5px] mt-2 rounded-full"
         style={`background-color: ${siteConfig.accentColor}`}
       >
       </div>
-      <p class="mt-4 text-base text-gray-600 max-w-2xl mx-auto">
+      <p class="mt-10 text-base sm:text-lg md:text-xl text-gray-600 max-w-6xl">
         The charlas are currently organised by these fantastic folks. Do get in touch if you'd like to get involved! 🤝
       </p>
     </div>
@@ -48,13 +48,13 @@ const organizers = siteConfig.organizers;
                 </h3>
 
                 <!-- Role -->
-                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-white mb-3"
-                     style={`background-color: ${siteConfig.accentColor}`}>
+                <div class="inline-flex items-center px-3 py-1.5 rounded-full text-base sm:text-lg font-medium border-2 mb-3"
+                     style={`background-color: ${siteConfig.accentColor}15; color: ${siteConfig.accentColor}; border-color: ${siteConfig.accentColor}30;`}>
                   {organizer.role}
                 </div>
 
                 <!-- Institution -->
-                <p class="text-base text-gray-600 mb-4">
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-4">
                   {organizer.institution}
                 </p>
 
@@ -91,9 +91,9 @@ const organizers = siteConfig.organizers;
       <div class="mt-12 text-center">
         <div class="bg-gray-50 rounded-xl border-2 border-gray-200 p-8">
           <h3 class="text-xl font-bold text-gray-900 mb-3">
-            Get in Touch
+            Get in touch
           </h3>
-          <p class="text-gray-600 mb-4">
+          <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-4">
             Have questions or want to get involved? We'd love to hear from you!
           </p>
           <a
