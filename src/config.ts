@@ -126,7 +126,7 @@ export const siteConfig = {
   },
 
   //////////////////////////////////////////////////////////////
-  // PREVIOUS SESSIONS (from schedule.md)
+  // PREVIOUS SESSIONS 
   //////////////////////////////////////////////////////////////
   previousSessions: [
     {
@@ -263,6 +263,17 @@ export const siteConfig = {
     },
   ],
 
+
+  //////////////////////////////////////////////////////////////
+  // CALL FOR SPEAKERS
+  //////////////////////////////////////////////////////////////
+  callForSpeakers: {
+    message: "¡Nos encantaría tenerte de ponente!",
+    description: "Check out our speaker guidelines - feel free to contact us if you have any questions.",
+    // guidelinesLink: LINKS.speakerGuidelines,
+    email: LINKS.email,
+  },
+
   //////////////////////////////////////////////////////////////
   // ORGANIZERS
   //////////////////////////////////////////////////////////////
@@ -282,14 +293,4 @@ export const siteConfig = {
       role: "Co-organizer",
     },
   ],
-
-  //////////////////////////////////////////////////////////////
-  // CALL FOR SPEAKERS
-  //////////////////////////////////////////////////////////////
-  callForSpeakers: {
-    message: "¡Nos encantaría tenerte de ponente!",
-    description: "Check out our speaker guidelines - feel free to contact us if you have any questions.",
-    // guidelinesLink: LINKS.speakerGuidelines,
-    email: LINKS.email,
-  },
 };
