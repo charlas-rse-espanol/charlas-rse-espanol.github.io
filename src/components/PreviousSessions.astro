@@ -21,8 +21,8 @@ const sessions = sortedSessions.slice(0, 6);
         class="w-[75px] h-[5px] mt-2 rounded-full"
         style={`background-color: ${siteConfig.accentColor}`}
       />
-      <p class="mt-4 text-base text-gray-600">
-        Browse our collection of past talks from amazing speakers across the Spanish-speaking world 🗓️
+      <p class="mt-10 text-base sm:text-lg md:text-xl text-gray-600 max-w-6xl">
+        Browse our collection of past talks from amazing speakers across the Spanish-speaking world
       </p>
     </div>
     <div>
@@ -131,16 +131,16 @@ const sessions = sortedSessions.slice(0, 6);
         </div>
       </div>
 
-      <!-- View All Sessions Button -->
+      <!-- View All Sessions Link -->
       <div class="mt-12 text-center">
         <a
           href="/sessions"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-bold text-white text-lg transition-all duration-300 hover:shadow-lg hover:scale-105"
-          style={`background-color: ${siteConfig.accentColor}`}
+          class="inline-flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-bold hover:opacity-80 transition-opacity group"
+          style={`color: ${siteConfig.accentColor}`}
         >
           <span>View all sessions</span>
           <svg
-            class="w-5 h-5 transition-transform duration-300"
+            class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-transform group-hover:translate-x-1"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

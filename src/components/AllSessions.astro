@@ -11,6 +11,30 @@ const sessions = [...siteConfig.previousSessions].sort((a, b) => {
 
 <section class="p-8 sm:p-12 md:p-16 lg:p-24">
   <div class="max-w-5xl mx-auto">
+    <!-- Back Link -->
+    <div class="mb-8">
+      <a
+        href="/#previous-sessions"
+        class="inline-flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-bold hover:opacity-80 transition-opacity group"
+        style={`color: ${siteConfig.accentColor}`}
+      >
+        <svg
+          class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-transform group-hover:-translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        <span>Back to recent sessions</span>
+      </a>
+    </div>
+
     <div class="mb-12">
       <h2 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
         All sessions
@@ -19,8 +43,8 @@ const sessions = [...siteConfig.previousSessions].sort((a, b) => {
         class="w-[75px] h-[5px] mt-2 rounded-full"
         style={`background-color: ${siteConfig.accentColor}`}
       />
-      <p class="mt-4 text-base text-gray-600">
-        Complete archive of our tech talks en español 🗓️
+      <p class="mt-10 text-base sm:text-lg md:text-xl text-gray-600 max-w-6xl">
+        Complete archive of our tech talks en español
       </p>
     </div>
 
