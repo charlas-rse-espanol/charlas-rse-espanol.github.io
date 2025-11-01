@@ -1,7 +1,14 @@
 ---
 import { siteConfig } from "../config";
 
-const sessions = siteConfig.previousSessions;
+// Sort sessions by date (most recent first) and take only the last 6
+const allSessions = siteConfig.previousSessions;
+const sortedSessions = [...allSessions].sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  return dateB.getTime() - dateA.getTime();
+});
+const sessions = sortedSessions.slice(0, 6);
 ---
 
 <section id={siteConfig.sections.previousSessions.id} class="p-8 sm:p-12 md:p-16 lg:p-24 bg-gray-50">
@@ -21,7 +28,9 @@ const sessions = siteConfig.previousSessions;
     <div>
       <div class="mx-auto max-w-7xl px-2">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sessions.map((session) => {
+          {sessions.map((session, index) => {
+            // Find the original index for linking to the full session
+            const originalIndex = allSessions.findIndex(s => s.name === session.name && s.date === session.date);
             return (
               <div class="group relative h-full max-w-lg mx-auto">
                 <div
@@ -52,32 +61,6 @@ const sessions = siteConfig.previousSessions;
                       </h4>
                     </div>
 
-                    <!-- Expandable Abstract -->
-                    <details class="group/abstract mb-3">
-                      <summary class="cursor-pointer text-sm font-bold text-gray-600 hover:text-[var(--accent-color)] transition-colors flex items-center gap-1">
-                        <span>Abstract</span>
-                        <svg class="w-4 h-4 transition-transform group-open/abstract:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                      </summary>
-                      <div class="mt-2 text-sm text-gray-600 leading-relaxed max-h-48 overflow-y-auto">
-                        <p>{session.abstract}</p>
-                      </div>
-                    </details>
-
-                    <!-- Expandable Bio -->
-                    <details class="group/bio mb-3">
-                      <summary class="cursor-pointer text-sm font-bold text-gray-600 hover:text-[var(--accent-color)] transition-colors flex items-center gap-1">
-                        <span>Bio</span>
-                        <svg class="w-4 h-4 transition-transform group-open/bio:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                      </summary>
-                      <div class="mt-2 text-sm text-gray-600 leading-relaxed max-h-48 overflow-y-auto">
-                        <p>{session.bio}</p>
-                      </div>
-                    </details>
-
                     <!-- Skills Tags -->
                     {session.skills && session.skills.length > 0 && (
                       <div class="flex flex-wrap gap-1.5 mb-3">
@@ -91,17 +74,17 @@ const sessions = siteConfig.previousSessions;
                       </div>
                     )}
 
-                    <!-- Slides Link -->
-                    {session.slidesLink && session.slidesLink !== "" && (
+                    <!-- Action Links -->
+                    <div class="mt-auto pt-4 space-y-2">
+                      <!-- See More Link -->
                       <a
-                        href={session.slidesLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="flex items-center justify-end text-sm font-medium transition-all duration-300 group-hover:text-blue-600 mt-auto hover:text-blue-600"
+                        href={`/sessions#session-${originalIndex}`}
+                        class="flex items-center justify-start text-sm font-bold transition-all duration-300 hover:translate-x-1"
+                        style={`color: ${siteConfig.accentColor}`}
                       >
-                        <span>View slides</span>
+                        <span>See more</span>
                         <svg
-                          class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1"
+                          class="w-4 h-4 ml-1 transition-transform duration-300"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -110,17 +93,66 @@ const sessions = siteConfig.previousSessions;
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             stroke-width="2"
-                            d="M7 17L17 7M17 7H7M17 7V17"
+                            d="M9 5l7 7-7 7"
                           />
                         </svg>
                       </a>
-                    )}
+
+                      <!-- Slides Link -->
+                      {session.slidesLink && session.slidesLink !== "" && (
+                        <a
+                          href={session.slidesLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="flex items-center justify-start text-sm font-medium text-gray-600 transition-all duration-300 hover:text-blue-600"
+                        >
+                          <span>View slides</span>
+                          <svg
+                            class="w-4 h-4 ml-1 transition-transform duration-300"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M7 17L17 7M17 7H7M17 7V17"
+                            />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
+      </div>
+
+      <!-- View All Sessions Button -->
+      <div class="mt-12 text-center">
+        <a
+          href="/sessions"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-bold text-white text-lg transition-all duration-300 hover:shadow-lg hover:scale-105"
+          style={`background-color: ${siteConfig.accentColor}`}
+        >
+          <span>View all sessions</span>
+          <svg
+            class="w-5 h-5 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
