@@ -33,34 +33,47 @@ const sessions = sortedSessions.slice(0, 6);
             const originalIndex = allSessions.findIndex(s => s.name === session.name && s.date === session.date);
             return (
               <div class="group relative h-full max-w-lg mx-auto">
-                <div
-                  class="block relative bg-white rounded-xl border border-gray-200 transition-all duration-300 overflow-hidden h-full flex flex-col min-h-[400px] hover:bg-gray-50 hover:shadow-xl hover:border-gray-300 hover:-translate-y-1"
+                <a
+                  href={`/sessions#session-${originalIndex}`}
+                  class="block relative bg-white rounded-xl border border-gray-200 transition-all duration-300 overflow-hidden h-full flex flex-col min-h-[350px] hover:bg-gray-50 hover:shadow-xl hover:border-gray-300 hover:-translate-y-1"
                 >
                   <!-- Date Badge -->
-                  <div class="absolute top-4 right-4 z-10">
-                    <div class="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-gray-700 shadow-sm border border-gray-200">
-                      {session.date}
-                    </div>
+                  <div class="absolute top-2 right-2 z-10 flex items-center gap-1.5 text-sm font-bold" style={`color: ${siteConfig.accentColor}`}>
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      class="w-4 h-4 flex-shrink-0" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+                      <path d="M16 3v4" />
+                      <path d="M8 3v4" />
+                      <path d="M4 11h16" />
+                    </svg>
+                    <span>{session.date}</span>
                   </div>
 
                   <!-- Speaker Header -->
-                  <div class="p-6 flex-shrink-0" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}20 0%, ${siteConfig.accentColor}08 100%)`}>
-                    <h3 class="text-xl font-bold text-gray-900 mb-1">
-                      {session.name}
-                    </h3>
+                  <div class="px-5 pb-5 flex-shrink-0" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}20 0%, ${siteConfig.accentColor}08 100%)`}>
+                    <div class="pt-12 mb-3">
+                      <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+                        {session.name}
+                      </h3>
+                      <p class="text-base sm:text-lg font-semibold text-gray-700 italic mt-1">
+                        {session.title}
+                      </p>
+                    </div>
                     <p class="text-sm text-gray-700 font-medium">
                       {session.institution}
                     </p>
                   </div>
                   
-                  <div class="p-6 flex-1 flex flex-col">
-                    <!-- Title -->
-                    <div class="mb-3">
-                      <h4 class="text-base font-semibold text-gray-800 leading-snug italic">
-                        "{session.title}"
-                      </h4>
-                    </div>
-
+                  <div class="p-5 flex-1 flex flex-col">
                     <!-- Skills Tags -->
                     {session.skills && session.skills.length > 0 && (
                       <div class="flex flex-wrap gap-1.5 mb-3">
@@ -74,57 +87,36 @@ const sessions = sortedSessions.slice(0, 6);
                       </div>
                     )}
 
-                    <!-- Action Links -->
-                    <div class="mt-auto pt-4 space-y-2">
-                      <!-- See More Link -->
-                      <a
-                        href={`/sessions#session-${originalIndex}`}
-                        class="flex items-center justify-start text-sm font-bold transition-all duration-300 hover:translate-x-1"
-                        style={`color: ${siteConfig.accentColor}`}
-                      >
-                        <span>See more</span>
-                        <svg
-                          class="w-4 h-4 ml-1 transition-transform duration-300"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </a>
-
-                      <!-- Slides Link -->
-                      {session.slidesLink && session.slidesLink !== "" && (
-                        <a
-                          href={session.slidesLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="flex items-center justify-start text-sm font-medium text-gray-600 transition-all duration-300 hover:text-blue-600"
-                        >
-                          <span>View slides</span>
-                          <svg
-                            class="w-4 h-4 ml-1 transition-transform duration-300"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M7 17L17 7M17 7H7M17 7V17"
-                            />
-                          </svg>
-                        </a>
-                      )}
-                    </div>
+                    <!-- Spacer for slides link -->
+                    <div class="mt-auto pb-8"></div>
                   </div>
-                </div>
+                </a>
+
+                <!-- Slides Link - positioned absolutely at bottom right -->
+                {session.slidesLink && session.slidesLink !== "" && (
+                  <a
+                    href={session.slidesLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 shadow-sm transition-all duration-300 hover:bg-gray-100 hover:border-gray-400 hover:shadow-md"
+                    onclick="event.stopPropagation()"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    <span>View slides</span>
+                  </a>
+                )}
               </div>
             );
           })}

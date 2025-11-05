@@ -145,7 +145,7 @@ export const siteConfig = {
       name: "Lucía Cipolina-Kun",
       institution: "Meta Research",
       date: "15 de septiembre 2025",
-      title: "Game Reasoning Arena: Una Librería Abierta y un Benchmark para Evaluar las Capacidades de Razonamiento de los Modelos de Lenguaje de Gran Escala a través de Juegos Estratégicos",
+      title: "Game Reasoning Arena: una librería abierta y un benchmark para evaluar las capacidades de razonamiento de los modelos de lenguaje de gran escala a través de juegos estratégicos",
       abstract:
         "Los Modelos de Lenguaje de Gran Escala (LLMs) se utilizan cada vez más en tareas que requieren planificación y toma de decisiones, pero aún no está claro cómo razonan realmente. Los juegos de estrategia ofrecen una vía ideal para explorar esta cuestión: son estructurados, interactivos y exigen tanto previsión como adaptabilidad. En esta charla, presentaré Game Reasoning Arena, un marco que evalúa a los LLMs no solo en función de si ganan, sino también de cómo justifican sus elecciones. Al analizar el razonamiento que los modelos articulan durante el juego, obtenemos nuevas perspectivas sobre sus fortalezas y debilidades estratégicas, así como sobre los patrones de razonamiento que emergen en diferentes escalas de modelo.",
       bio:
