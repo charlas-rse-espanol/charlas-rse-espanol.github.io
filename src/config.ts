@@ -166,7 +166,7 @@ export const siteConfig = {
       skills: ["Python", "open source", "simulación"],
     },
     {
-      name: "Maria Guadalupe Barrios Sazo",
+      name: "María Guadalupe Barrios Sazo",
       institution: "Juelich Supercomputing Centre",
       date: "14 de julio 2025",
       title: "Scavenger Hunt para RSE: Aprendizaje interactivo y flexible",
