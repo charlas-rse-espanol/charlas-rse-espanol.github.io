@@ -52,7 +52,7 @@ The project follows a component-based architecture with all content centralized 
 
 ## Important Implementation Details
 
-- **Content Security**: Components use `set:html` directive to render HTML from config.ts. All HTML content is automatically sanitized using DOMPurify with a whitelist approach that allows only safe tags (a, span, div, br, ul, li, strong, em, i, p) and attributes (href, target, rel, style, class). This prevents XSS attacks. See `src/utils/sanitize.ts` for sanitization configuration.
+- **Content Security**: All HTML content from config.ts is rendered using the `<SafeHtml>` component, which enforces DOMPurify sanitization. The whitelist approach allows only safe tags (a, span, div, br, ul, li, strong, em, i, p) and attributes (href, target, rel, style, class). All sanitization logic is contained within `src/components/SafeHtml.astro`.
 - **Session Sorting**: Previous sessions are sorted by date (most recent first) automatically
 - **Responsive Design**: Mobile-first approach with tailwind breakpoints
 - **External Links**: Calendar invites, slides, and location links open in new tabs with `rel="noopener noreferrer"`

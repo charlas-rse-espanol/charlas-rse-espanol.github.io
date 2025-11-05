@@ -2,14 +2,12 @@
  * SECURITY NOTE: All HTML content in this configuration file is automatically
  * sanitized using DOMPurify before being rendered on the website. This prevents
  * Cross-Site Scripting (XSS) attacks and ensures that only safe HTML tags and
- * attributes are allowed.
+ * attributes are allowed. We use a <SafeHtml> component to enforce sanitization.
  * 
  * Allowed tags: a, span, div, br, ul, li, strong, em, i, p
  * Allowed attributes: href, target, rel, style, class
  * 
- * The createLink() helper function generates HTML that is safe and will pass
- * through sanitization. For more details on the sanitization configuration,
- * see src/utils/sanitize.ts
+ * For more details, see src/components/SafeHtml.astro
  */
 
 // Colors

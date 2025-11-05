@@ -109,9 +109,10 @@ Edit these sections in `src/config.ts`:
 
 All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
 
+The site uses a `<SafeHtml>` component that enforces sanitization at the framework level. Direct use of Astro's `set:html` directive should be avoided throughout the codebase.
+
 **Allowed HTML tags**: `a`, `span`, `div`, `br`, `ul`, `li`, `strong`, `em`, `i`, `p`  
 **Allowed attributes**: `href`, `target`, `rel`, `style`, `class`
-
 
 ## Project Structure
 
@@ -127,7 +128,8 @@ charlas-rse-espanol.github.io/
 │   │   ├── Hero.astro
 │   │   ├── NextSpeaker.astro
 │   │   ├── Organizers.astro
-│   │   └── PreviousSessions.astro
+│   │   ├── PreviousSessions.astro
+│   │   └── SafeHtml.astro # Security component (sanitizes HTML)
 │   ├── pages/             # Page routes
 │   │   ├── index.astro    # Homepage
 │   │   └── sessions.astro # All sessions archive

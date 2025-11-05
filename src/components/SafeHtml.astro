@@ -1,0 +1,26 @@
+---
+import DOMPurify from 'isomorphic-dompurify';
+
+interface Props {
+  content: string;
+  class?: string;
+  style?: string;
+}
+
+const { content, class: className, style } = Astro.props;
+
+/**
+ * Sanitizes HTML content to prevent XSS attacks.
+ * 
+ * Allowed tags: a, span, div, br, ul, li, strong, em, i, p
+ * Allowed attributes: href, target, rel, style, class
+ */
+const sanitized = DOMPurify.sanitize(content, {
+  ALLOWED_TAGS: ['a', 'span', 'div', 'br', 'ul', 'li', 'strong', 'em', 'i', 'p'],
+  ALLOWED_ATTR: ['href', 'target', 'rel', 'style', 'class'],
+  ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto):|[^a-z]|[a-z+.-]+(?:[^a-z+.\-:]|$))/i,
+});
+---
+
+<Fragment set:html={sanitized} />
+

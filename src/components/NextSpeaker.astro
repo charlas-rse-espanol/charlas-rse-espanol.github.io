@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from "../config";
-import { sanitizeHtml } from "../utils/sanitize";
+import SafeHtml from "./SafeHtml.astro";
 
 const speaker = siteConfig.nextSpeaker;
 ---
@@ -48,7 +48,7 @@ const speaker = siteConfig.nextSpeaker;
             </svg>
           </summary>
           <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-            <p set:html={sanitizeHtml(speaker.abstract)}></p>
+            <p><SafeHtml content={speaker.abstract} /></p>
           </div>
         </details>
 
@@ -61,7 +61,7 @@ const speaker = siteConfig.nextSpeaker;
             </svg>
           </summary>
           <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-            <p set:html={sanitizeHtml(speaker.bio)}></p>
+            <p><SafeHtml content={speaker.bio} /></p>
           </div>
         </details>
      
@@ -81,7 +81,7 @@ const speaker = siteConfig.nextSpeaker;
             </div>
             <div class="flex items-start gap-3">
               <span class="font-bold min-w-[100px]">📍 Where?</span>
-              <span set:html={sanitizeHtml(speaker.location)}></span>
+              <span><SafeHtml content={speaker.location} /></span>
             </div>
           </div>
 
