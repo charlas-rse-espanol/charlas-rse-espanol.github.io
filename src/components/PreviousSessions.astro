@@ -37,7 +37,7 @@ const sessions = sortedSessions.slice(0, 6);
                   href={`/sessions#session-${originalIndex}`}
                   class="block relative bg-white rounded-xl border border-gray-200 transition-all duration-300 overflow-hidden h-full flex flex-col min-h-[350px] hover:bg-gray-50 hover:shadow-xl hover:border-gray-300 hover:-translate-y-1"
                 >
-                  <!-- Date Badge -->
+                  <!-- Date badge -->
                   <div class="absolute top-2 right-2 z-10 flex items-center gap-1.5 text-sm font-bold" style={`color: ${siteConfig.accentColor}`}>
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
@@ -58,7 +58,7 @@ const sessions = sortedSessions.slice(0, 6);
                     <span>{session.date}</span>
                   </div>
 
-                  <!-- Speaker Header -->
+                  <!-- Speaker header -->
                   <div class="px-5 pb-5 flex-shrink-0" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}20 0%, ${siteConfig.accentColor}08 100%)`}>
                     <div class="pt-12 mb-3">
                       <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
@@ -74,7 +74,7 @@ const sessions = sortedSessions.slice(0, 6);
                   </div>
                   
                   <div class="p-5 flex-1 flex flex-col">
-                    <!-- Skills Tags -->
+                    <!-- Skills tags -->
                     {session.skills && session.skills.length > 0 && (
                       <div class="flex flex-wrap gap-1.5 mb-3">
                         {session.skills.map((skill) => (
@@ -90,7 +90,7 @@ const sessions = sortedSessions.slice(0, 6);
                   </div>
                 </a>
 
-                <!-- Slides Link - positioned absolutely at bottom right -->
+                <!-- Slides link - positioned absolutely at bottom right -->
                 {session.slidesLink && session.slidesLink !== "" && (
                   <a
                     href={session.slidesLink}
@@ -121,7 +121,7 @@ const sessions = sortedSessions.slice(0, 6);
         </div>
       </div>
 
-      <!-- View All Sessions Link -->
+      <!-- View all sessions link -->
       <div class="mt-12 text-center">
         <a
           href="/sessions"

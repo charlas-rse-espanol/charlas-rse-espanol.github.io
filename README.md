@@ -13,7 +13,7 @@ Charlas RSE en español is a monthly seminar series that:
 
 The series was started by Carlos Gavidia-Calderón ([@cptanalatriste](https://github.com/cptanalatriste), Alan Turing Institute) and Sofía Miñano ([@sfmig](https://github.com/sfmig), Sainsbury Wellcome Centre at UCL) following a conversation at the DEI workshop during [RSECon24](https://rsecon24.society-rse.org/).
 
-## Tech Stack
+## Tech stack
 
 - **[Astro](https://astro.build/)** - Static site generator
 - **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
@@ -21,7 +21,7 @@ The series was started by Carlos Gavidia-Calderón ([@cptanalatriste](https://gi
 - **[DOMPurify](https://github.com/cure53/DOMPurify)** - HTML sanitization library
 - **[Tabler Icons](https://tabler.io/icons)** - Icon library
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
@@ -54,11 +54,11 @@ npm run preview
 
 The development server will be available at `http://localhost:4321`
 
-## Updating Content
+## Updating content
 
 All website content is managed through the single configuration file: `src/config.ts`
 
-### Adding a New Speaker
+### Adding a new speaker
 
 1. Open `src/config.ts`
 2. Move the current `nextSpeaker` object to the top of the `previousSessions` array
@@ -85,7 +85,7 @@ nextSpeaker: {
 slidesLink: "https://...",
 ```
 
-### Creating HTML Links in Content
+### Creating HTML links in content
 
 Use the `createLink()` helper function to create links in abstracts, bios, and other content:
 
@@ -95,16 +95,8 @@ bio: createLink("https://example.com", "link text") + " more bio text..."
 
 Links will automatically open in new tabs with proper security attributes.
 
-#### Security
 
-All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
-
-**Allowed HTML tags**: `a`, `span`, `div`, `br`, `ul`, `li`, `strong`, `em`, `i`, `p`  
-**Allowed attributes**: `href`, `target`, `rel`, `style`, `class`
-
-The `createLink()` helper function generates HTML that is safe and will pass through sanitization automatically. Content editors can write HTML with confidence knowing that the system prevents malicious code from being injected.
-
-### Updating Other Content
+### Updating other content
 
 Edit these sections in `src/config.ts`:
 - `aboutMe` - Description of the series
@@ -112,6 +104,14 @@ Edit these sections in `src/config.ts`:
 - `callForSpeakers` - Call for participation text
 - `organizers` - Organizer profiles
 - `accentColor` - Primary theme color (propagates throughout site)
+
+## Security
+
+All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
+
+**Allowed HTML tags**: `a`, `span`, `div`, `br`, `ul`, `li`, `strong`, `em`, `i`, `p`  
+**Allowed attributes**: `href`, `target`, `rel`, `style`, `class`
+
 
 ## Project Structure
 
@@ -145,7 +145,7 @@ charlas-rse-espanol.github.io/
 
 The site is automatically deployed to GitHub Pages when changes are pushed to the `gh-pages` branch.
 
-### Manual Deployment
+### Manual deployment
 
 ```bash
 # Build the site
