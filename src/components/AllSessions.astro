@@ -48,22 +48,73 @@ const sessions = [...siteConfig.previousSessions].sort((a, b) => {
       </p>
     </div>
 
-    <div class="space-y-8">
+    <div class="space-y-16">
       {sessions.map((session, index) => (
         <div id={`session-${index}`} class="scroll-mt-24">
+          <!-- Date Heading -->
+          <h4 class="text-lg sm:text-2xl font-bold mb-4 flex items-center gap-2" style={`color: ${siteConfig.accentColor}`}>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+              <path d="M16 3v4" />
+              <path d="M8 3v4" />
+              <path d="M4 11h16" />
+            </svg>
+            <span>{session.date}</span>
+          </h4>
+          
           <!-- Session Card -->
           <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
             <!-- Session Header -->
-            <div class="p-6 sm:p-8 md:p-10" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}15 0%, ${siteConfig.accentColor}05 100%)`}>
-              <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                {session.name}: <i>"{session.title}"</i>
-              </h3>
-              <p class="text-base sm:text-lg text-gray-700 font-medium mb-1">
-                {session.institution}
-              </p>
-              <p class="text-sm sm:text-base text-gray-600 font-medium">
-                {session.date}
-              </p>
+            <div class="px-6 pt-6 pb-4 sm:px-8 sm:pt-8 sm:pb-5 md:px-10 md:pt-10 md:pb-6" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}15 0%, ${siteConfig.accentColor}05 100%)`}>
+              <div class="mb-4">
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+                  {session.name}
+                </h3>
+                <p class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-700 italic mt-2">
+                  "{session.title}"
+                </p>
+              </div>
+              
+              <!-- Bottom row: Institution and Slides Button -->
+              <div class="flex items-center justify-between gap-4">
+                <p class="text-base sm:text-lg text-gray-700 font-medium">
+                  {session.institution}
+                </p>
+                
+                {session.slidesLink && session.slidesLink !== "" && (
+                  <a
+                    href={session.slidesLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 shadow-sm transition-all duration-300 hover:bg-gray-100 hover:border-gray-400 hover:shadow-md flex-shrink-0"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    <span>View slides</span>
+                  </a>
+                )}
+              </div>
             </div>
 
             <!-- Abstract Section -->
@@ -92,32 +143,6 @@ const sessions = [...siteConfig.previousSessions].sort((a, b) => {
               </div>
             </details>
 
-            <!-- Slides Section -->
-            {session.slidesLink && session.slidesLink !== "" && (
-              <div class="p-6 sm:p-8 md:p-10 bg-gray-50">
-                <a
-                  href={session.slidesLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex items-center justify-start text-sm font-medium text-gray-600 transition-all duration-300 hover:text-blue-600"
-                >
-                  <span>View slides</span>
-                  <svg
-                    class="w-4 h-4 ml-1 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M7 17L17 7M17 7H7M17 7V17"
-                    />
-                  </svg>
-                </a>
-              </div>
-            )}
           </div>
         </div>
       ))}
