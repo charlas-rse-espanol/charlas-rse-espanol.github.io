@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../config";
+import { sanitizeHtml } from "../utils/sanitize";
 
 // Sort sessions by date (most recent first)
 const sessions = [...siteConfig.previousSessions].sort((a, b) => {
@@ -126,7 +127,7 @@ const sessions = [...siteConfig.previousSessions].sort((a, b) => {
                 </svg>
               </summary>
               <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-                <p set:html={session.abstract}></p>
+                <p set:html={sanitizeHtml(session.abstract)}></p>
               </div>
             </details>
 
@@ -139,7 +140,7 @@ const sessions = [...siteConfig.previousSessions].sort((a, b) => {
                 </svg>
               </summary>
               <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-                <p set:html={session.bio}></p>
+                <p set:html={sanitizeHtml(session.bio)}></p>
               </div>
             </details>
 

@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../config";
+import { sanitizeHtml } from "../utils/sanitize";
 
 const speaker = siteConfig.nextSpeaker;
 ---
@@ -47,7 +48,7 @@ const speaker = siteConfig.nextSpeaker;
             </svg>
           </summary>
           <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-            <p set:html={speaker.abstract}></p>
+            <p set:html={sanitizeHtml(speaker.abstract)}></p>
           </div>
         </details>
 
@@ -60,7 +61,7 @@ const speaker = siteConfig.nextSpeaker;
             </svg>
           </summary>
           <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-            <p set:html={speaker.bio}></p>
+            <p set:html={sanitizeHtml(speaker.bio)}></p>
           </div>
         </details>
      
@@ -80,7 +81,7 @@ const speaker = siteConfig.nextSpeaker;
             </div>
             <div class="flex items-start gap-3">
               <span class="font-bold min-w-[100px]">📍 Where?</span>
-              <span set:html={speaker.location}></span>
+              <span set:html={sanitizeHtml(speaker.location)}></span>
             </div>
           </div>
 
@@ -122,7 +123,12 @@ const speaker = siteConfig.nextSpeaker;
       <div class="mt-8 pt-4 pb-2 sm:pt-6 sm:pb-3 md:pt-8 md:pb-4 text-center text-gray-600">
         <p class="text-lg sm:text-xl md:text-2xl">
           Can't join this time? Subscribe to our 
-          <a href={siteConfig.social.email ? `${siteConfig.social.mailingList}` : '#'} class="font-bold text-[var(--accent-color)] hover:opacity-80 transition-opacity">mailing list</a>
+          <a 
+            href={siteConfig.social.email ? `${siteConfig.social.mailingList}` : '#'} 
+            target="_blank"
+            rel="noopener noreferrer" 
+            class="font-bold text-[var(--accent-color)] hover:opacity-80 transition-opacity">mailing list
+          </a>
           to stay informed!  <span style='font-size: 1.25em;'>📬</span>
         </p>
       </div>

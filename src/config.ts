@@ -1,3 +1,17 @@
+/**
+ * SECURITY NOTE: All HTML content in this configuration file is automatically
+ * sanitized using DOMPurify before being rendered on the website. This prevents
+ * Cross-Site Scripting (XSS) attacks and ensures that only safe HTML tags and
+ * attributes are allowed.
+ * 
+ * Allowed tags: a, span, div, br, ul, li, strong, em, i, p
+ * Allowed attributes: href, target, rel, style, class
+ * 
+ * The createLink() helper function generates HTML that is safe and will pass
+ * through sanitization. For more details on the sanitization configuration,
+ * see src/utils/sanitize.ts
+ */
+
 // Colors
 const ACCENT_COLOR = "#E86C5E";
 
@@ -7,10 +21,8 @@ const LINKS = {
   email: "charlas.rse.espanol@gmail.com",
   rsecon24: "https://rsecon24.society-rse.org/",
   mailingList: "https://groups.google.com/g/rse-en-espaniol/",
-  nextLocationLink: "https://maps.app.goo.gl/p1JfDY9huBCsCx4t8",
-  nextCalendarLink: "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
   AlanTuringInstitute: "https://www.turing.ac.uk/",
-  SainsburyWellcomeCentre: "https://www.wellcome.ac.uk/research/institutes/sainsbury-wellcome-centre",
+  SainsburyWellcomeCentre: "https://www.sainsburywellcome.org/",
 } as const;
 
 // Section titles
@@ -118,9 +130,9 @@ export const siteConfig = {
     time: "4pm UK time",
     location:
       "Online and in-person at " +
-      createLink(LINKS.nextLocationLink, "Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201"),
-    calendarLink: LINKS.nextCalendarLink,
-    locationLink: LINKS.nextLocationLink,
+      createLink("https://maps.app.goo.gl/p1JfDY9huBCsCx4t8", "Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE&export=download",
+    // "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
   },
 
   //////////////////////////////////////////////////////////////

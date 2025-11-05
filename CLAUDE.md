@@ -11,6 +11,7 @@ This is the website for **Charlas RSE en español**, a monthly tech talk series 
 - **Astro**: Static site generator
 - **Tailwind CSS v4**: Utility-first CSS framework using the new @tailwindcss/vite plugin
 - **TypeScript**: For type-safe configuration
+- **DOMPurify**: Content sanitization for security
 - **Tabler Icons**: Icon library for SVG icons
 - **DM Sans**: Google Font used throughout the site
 
@@ -51,7 +52,7 @@ The project follows a component-based architecture with all content centralized 
 
 ## Important Implementation Details
 
-- **Content Security**: Components use `set:html` directive to render HTML from config.ts. Content in config.ts is TRUSTED - review carefully when editing.
+- **Content Security**: Components use `set:html` directive to render HTML from config.ts. All HTML content is automatically sanitized using DOMPurify with a whitelist approach that allows only safe tags (a, span, div, br, ul, li, strong, em, i, p) and attributes (href, target, rel, style, class). This prevents XSS attacks. See `src/utils/sanitize.ts` for sanitization configuration.
 - **Session Sorting**: Previous sessions are sorted by date (most recent first) automatically
 - **Responsive Design**: Mobile-first approach with tailwind breakpoints
 - **External Links**: Calendar invites, slides, and location links open in new tabs with `rel="noopener noreferrer"`

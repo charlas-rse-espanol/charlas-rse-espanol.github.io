@@ -18,6 +18,7 @@ The series was started by Carlos Gavidia-Calderón ([@cptanalatriste](https://gi
 - **[Astro](https://astro.build/)** - Static site generator
 - **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe configuration
+- **[DOMPurify](https://github.com/cure53/DOMPurify)** - HTML sanitization library
 - **[Tabler Icons](https://tabler.io/icons)** - Icon library
 
 ## Getting Started
@@ -93,6 +94,15 @@ bio: createLink("https://example.com", "link text") + " more bio text..."
 ```
 
 Links will automatically open in new tabs with proper security attributes.
+
+#### Security
+
+All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
+
+**Allowed HTML tags**: `a`, `span`, `div`, `br`, `ul`, `li`, `strong`, `em`, `i`, `p`  
+**Allowed attributes**: `href`, `target`, `rel`, `style`, `class`
+
+The `createLink()` helper function generates HTML that is safe and will pass through sanitization automatically. Content editors can write HTML with confidence knowing that the system prevents malicious code from being injected.
 
 ### Updating Other Content
 
