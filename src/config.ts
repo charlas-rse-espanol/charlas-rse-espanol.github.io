@@ -138,7 +138,7 @@ export const siteConfig = {
         "En esta charla compartiré cómo mi trabajo con ranas venenosas ha moldeado mi trayectoria, desde el trabajo de campo en la selva, pasando por el laboratorio, hasta llegar a un escritorio con tres pantallas. Contaré en detalle mi experiencia postdoctoral, en la que aprendí neurociencia y descubrí la necesidad de desarrollar y usar herramientas informáticas, de acceso libre para investigar organismos no modelo. A lo largo de la presentación mostraré cómo la ciencia de datos se ha convertido en una herramienta clave en mi carrera científica.",
       bio:
         "Soy biólogo y mi carrera se ha enfocado en la ecología comportamental, las hormonas y la neurociencia en ranas venenosas. Tras finalizar mi postdoctorado en el laboratorio de Lauren O'Connell en agosto de 2024, asumí el rol de analista de datos en el mismo grupo, donde combino la biología con la ciencia de datos para abordar preguntas complejas en organismos no modelo.",
-      slidesLink: "",
+      slidesLink: "https://drive.google.com/file/d/1l4D4F7xyWLkpulSlM-tOnyGTlCJ-um2y/view?usp=sharing",
       skills: ["biología", "neurociencia", "ciencia de datos"],
     },
     {
