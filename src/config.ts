@@ -187,7 +187,7 @@ export const siteConfig = {
       bio:
         "Riva Quiroga es RSE en Tabular, una pequeña empresa que ofrece servicios de desarrollo de software a proyectos de investigación. Es Fellow del Software Sustainability Institute y editora en Programming Historian. Es, además, una voluntaria serial: participa activamente en distintas iniciativas de las comunidades de R y Python, desde la organización de eventos a la traducción de materiales y documentación.",
       slidesLink: "https://tinyurl.com/RSE-charlas-mayo-2025",
-      skills: ["comunidades", "R", "Python"],
+      skills: ["comunidades", "R", "humanidades digitales"],
     },
     {
       name: "Jenny Vega",
