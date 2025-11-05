@@ -33,104 +33,121 @@ const callForSpeakers = siteConfig.callForSpeakers;
             width="32"
             height="32"
             viewBox="0 0 24 24"
-            fill="none"
+            fill="white"
             stroke="white"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95" />
-            <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44" />
-            <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92" />
-            <path d="M8.56 20.31a9 9 0 0 0 3.44 .69" />
-            <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95" />
-            <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44" />
-            <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92" />
-            <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69" />
-            <path d="M9 12l2 2l4 -4" />
+            <path d="M12 2l3.09 6.26l6.91 1l-5 4.87l1.18 6.87l-6.18 -3.25l-6.18 3.25l1.18 -6.87l-5 -4.87l6.91 -1z" />
           </svg>
         </div>
         
         <p class="text-xl sm:text-2xl font-bold mb-6" style={`color: ${siteConfig.accentColor}`}>
-          {callForSpeakers.message}
+          {"¡Nos encantaría tenerte de ponente!"}
         </p>
       </div>
 
       <!-- Content Section -->
       <div class="p-8 sm:p-10 md:p-12">
         <div class="space-y-6">
-          <!-- What We're Looking For -->
+          <!-- Topics Section -->
           <div class="bg-gray-50 rounded-lg p-6">
             <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-                <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-                <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
-              </svg>
-              What we're looking for
+              Temática
             </h3>
             <ul class="space-y-2 text-gray-700">
               <li class="flex items-start gap-2">
                 <span class="text-[var(--accent-color)] font-bold">✓</span>
-                <span>Research software engineers, developers, and researchers working on software in academia or industry</span>
+                <span>Los temas que tratamos en nuestro seminario giran en torno a la informática, la ciencia y la investigación. 
+                Nos interesan aspectos tanto técnicos, como profesionales o vivenciales. </span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-[var(--accent-color)] font-bold">✓</span>
-                <span>Topics related to research software, scientific computing, best practices, tools, or your RSE journey</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[var(--accent-color)] font-bold">✓</span>
-                <span>Presentations in Spanish (though questions can be in English too!)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[var(--accent-color)] font-bold">✓</span>
-                <span>A welcoming and inclusive approach to sharing your work</span>
+                <span>Algunos ejemplos de charlas anteriores incluyen temáticas en computación científica, humanidades digitales, ciencia de datos, buenas prácticas, 
+                herramientas, comunidades o trayectorias personales como RSEs.</span>
               </li>
             </ul>
           </div>
 
-          <!-- Call to Action Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <a
-              href={callForSpeakers.guidelinesLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
-              style={`background-color: ${siteConfig.accentColor}`}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                <path d="M9 17h6" />
-                <path d="M9 13h6" />
-              </svg>
-              Speaker Guidelines
-            </a>
+          <!-- Format Section -->
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+              Formato
+            </h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--accent-color)] font-bold">📢</span>
+                <span>40-45 minutos de charla en español</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--accent-color)] font-bold">💬</span>
+                <span>15 minutos de preguntas y discusión</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--accent-color)] font-bold">💃</span>
+                <span>Si vienes en persona en Londres: cervecitas (o soft-drinkcitos) para socializar </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Recommendations Section -->
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+              Recomendaciones
+            </h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--accent-color)] font-bold">🌍</span>
+                <span>Nuestra comunidad es diversa, en cuanto a especialidades, background y experiencias, por lo que recomendamos no asumir conocimientos específicos previos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--accent-color)] font-bold">🤗</span>
+                <span>Nos encanta saber más sobre los diferentes caminos que llevan al software de investigación. 
+                Si te apetece, una o más diapositivas de presentación son más que bienvenidas. </span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[var(--accent-color)] font-bold">⚖️</span>
+                <span>¡Queremos saber de todos! Trabajamos para mantener la paridad de género y diversidad geográfica, tratando de alternar entre ponentes de Europa y América.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="mt-6 text-center">
+            <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-4">
+              Nuestros ponentes incluyen ingenieros de software, desarrolladores e investigadores postdoctorales, del ámbito académico y de la industria. 
+              
+            </p>
+            <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-4">
+              ¡Pero nos gusta mucho la variedad!
+            </p>
+            <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-4">
+              Si te interesa presentar no dudes en contactarnos.
+            </p>
             <a
               href={`mailto:${callForSpeakers.email}`}
-              class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 bg-gray-800 text-white rounded-lg font-semibold transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:scale-105"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
+              style={`background-color: ${siteConfig.accentColor}`}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
                 <path d="M3 7l9 6l9 -6" />
               </svg>
-              Contact Us
+              Contáctanos
             </a>
-          </div>
-
-          <!-- Previous Speakers Note -->
-          <div class="text-center pt-4">
-            <p class="text-sm text-gray-600">
-              Check out talks from our 
-              <a href={`#${siteConfig.sections.previousSessions.id}`} class="font-bold hover:text-[var(--accent-color)] transition-colors">
-                previous speakers
-              </a>
-              to get a sense of what we're about! 🎤
-            </p>
           </div>
         </div>
       </div>

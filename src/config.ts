@@ -32,7 +32,7 @@ const SECTIONS = {
   },
   callForSpeakers: {
     id: "speak-with-us",
-    title: "Interested in Presenting?",
+    title: "Interested in presenting?",
     navTitle: "¡Participa!",
   },
   organizers: {
@@ -268,9 +268,7 @@ export const siteConfig = {
   // CALL FOR SPEAKERS
   //////////////////////////////////////////////////////////////
   callForSpeakers: {
-    message: "¡Nos encantaría tenerte de ponente!",
-    description: "Check out our speaker guidelines - feel free to contact us if you have any questions.",
-    // guidelinesLink: LINKS.speakerGuidelines,
+    description: "Check out our speaker guidelines and feel free to contact us if you have any questions.",
     email: LINKS.email,
   },
 
