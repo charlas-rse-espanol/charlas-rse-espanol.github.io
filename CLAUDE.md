@@ -4,61 +4,92 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a modern, minimalist portfolio template built with Astro and Tailwind CSS v4. It's designed to be easily customizable through a single configuration file while maintaining a clean, professional appearance.
+This is the website for **Charlas RSE en español**, a monthly tech talk series showcasing Research Software Engineers across the Spanish-speaking world. The site is built with Astro and Tailwind CSS v4, displaying information about upcoming speakers and archives of previous sessions.
 
 ## Tech Stack
 
 - **Astro**: Static site generator
 - **Tailwind CSS v4**: Utility-first CSS framework using the new @tailwindcss/vite plugin
 - **TypeScript**: For type-safe configuration
-- **Tabler Icons**: Icon library
+- **Tabler Icons**: Icon library for SVG icons
+- **DM Sans**: Google Font used throughout the site
 
 ## Development Commands
 
 ```bash
-npm run dev       # Start development server
+npm run dev       # Start development server at http://localhost:4321
 npm run build     # Build for production
 npm run preview   # Preview production build
 ```
 
 ## Architecture
 
-The project follows a component-based architecture with all customization centralized in `src/config.ts`:
+The project follows a component-based architecture with all content centralized in `src/config.ts`:
 
-- **Components** (`src/components/`): Individual Astro components for each section (Hero, About, Projects, Experience, Education, Header, Footer)
-- **Main Layout** (`src/pages/index.astro`): Single-page layout that imports all components
-- **Configuration** (`src/config.ts`): Single source of truth for all content and customization
+- **Components** (`src/components/`): Individual Astro components for each section
+  - `Hero.astro`: Landing section with logo and title
+  - `About.astro`: Information about the charlas series
+  - `NextSpeaker.astro`: Upcoming speaker details with abstract, bio, and session info
+  - `PreviousSessions.astro`: Grid of recent talks (last 6)
+  - `AllSessions.astro`: Complete archive of all past sessions (separate page)
+  - `CallForSpeakers.astro`: Call for participation
+  - `Organizers.astro`: Organizer profiles
+  - `Header.astro`: Fixed navigation header (hidden on mobile)
+  - `Footer.astro`: Social links and footer
+- **Pages**:
+  - `src/pages/index.astro`: Main landing page with all sections
+  - `src/pages/sessions.astro`: Dedicated page showing all past sessions
+- **Configuration** (`src/config.ts`): Single source of truth for all content
 
 ### Key Architectural Decisions
 
-1. **Single Configuration File**: All content is managed through `src/config.ts` to make customization simple
-2. **Conditional Rendering**: Sections automatically hide if their data is removed from the config
-3. **Component Independence**: Each section is a self-contained component that reads from the config
-4. **Accent Color System**: Single `accentColor` in config propagates throughout the site via CSS custom properties
+1. **Single Configuration File**: All speaker data, session details, and site content lives in `src/config.ts`
+2. **Static Generation**: All content is static HTML generated at build time
+3. **Bilingual Content**: Some UI in English, most content in Spanish
+4. **Component Independence**: Each section is self-contained and reads from the config
+5. **Accent Color System**: Single `accentColor` in config propagates throughout via CSS custom properties
 
 ## Important Implementation Details
 
-- The site uses Tailwind CSS v4 with the Vite plugin configuration
-- No linting or testing framework is currently configured
-- All components are in `.astro` format (not React/Vue/etc)
-- The project uses IBM Plex Mono font loaded from Google Fonts
-- Social links in the config are all optional and will conditionally render
+- **Content Security**: Components use `set:html` directive to render HTML from config.ts. Content in config.ts is TRUSTED - review carefully when editing.
+- **Session Sorting**: Previous sessions are sorted by date (most recent first) automatically
+- **Responsive Design**: Mobile-first approach with tailwind breakpoints
+- **External Links**: Calendar invites, slides, and location links open in new tabs with `rel="noopener noreferrer"`
+- Font: DM Sans loaded from Google Fonts
 
-## Working with Components
+## Working with Speaker Content
 
-When modifying components:
-1. Components read directly from the imported `siteConfig` object
-2. Use Tailwind utility classes for styling
-3. Maintain the existing monospace font aesthetic
-4. Use Tabler Icons for consistency with existing icons
+### Adding a New Speaker
+
+1. Update `src/config.ts`:
+   - Update `nextSpeaker` object with new speaker details
+   - Move previous nextSpeaker to top of `previousSessions` array
+2. Required fields:
+   - `name`, `title`, `institution`, `date`, `time`, `location`, `abstract`, `bio`
+   - `calendarLink`, `locationLink`
+3. Optional fields:
+   - `slidesLink` (add after talk is delivered)
+   - `skills` array for topic tags
+
+### Content Guidelines
+
+- Abstracts and bios can include HTML links created via `createLink()` helper
+- Links automatically open in new tabs with proper security attributes
+- Dates in `previousSessions` should use format: "DD de MMMM YYYY" (Spanish)
+- Next speaker dates use English format: "Day DDth Month YYYY"
 
 ## Configuration Structure
 
-The `src/config.ts` exports a `siteConfig` object with these sections:
-- Basic info: name, title, description, accentColor
-- Social links: email, linkedin, twitter, github (all optional)
-- aboutMe: string
-- skills: string[]
-- projects: array of {name, description, link, skills}
-- experience: array of {company, title, dateRange, bullets}
-- education: array of {school, degree, dateRange, achievements}
+The `src/config.ts` exports a `siteConfig` object with:
+- **Basic info**: name, title, description, accentColor, logo
+- **Social links**: github, email, mailingList
+- **Sections**: IDs and titles for navigation
+- **aboutMe**: HTML string describing the charlas initiative
+- **nextSpeaker**: Object with upcoming speaker details
+- **previousSessions**: Array of past speakers (auto-sorted by date)
+- **callForSpeakers**: Description and contact info
+- **organizers**: Array of organizer profiles with GitHub info
+
+## Deployment
+
+The site is deployed as a GitHub Pages site. 
