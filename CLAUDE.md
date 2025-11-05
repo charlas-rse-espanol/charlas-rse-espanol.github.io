@@ -86,7 +86,7 @@ The `src/config.ts` exports a `siteConfig` object with:
 - **Sections**: IDs and titles for navigation
 - **aboutMe**: HTML string describing the charlas initiative
 - **nextSpeaker**: Object with upcoming speaker details
-- **previousSessions**: Array of past speakers (auto-sorted by date)
+- **previousSessions**: Array of past speakers (auto-sorted by date, with optional `skills` tags per session)
 - **callForSpeakers**: Description and contact info
 - **organizers**: Array of organizer profiles with GitHub info
 
