@@ -102,13 +102,9 @@ export const siteConfig = {
   //////////////////////////////////////////////////////////////
   nextSpeaker: {
     name: "Jaime Ruiz Zapatero",
-    title: "Cosmología con datos a lo bestia",
     institution: "University College London",
     date: "Monday 10th November 2025",
-    time: "4pm UK time",
-    location: 
-      "Online and in-person at " + 
-      createLink(LINKS.nextLocationLink, "Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201"),
+    title: "Cosmología con datos a lo bestia",
     abstract:
       "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. " +
       "En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas" +
@@ -121,6 +117,10 @@ export const siteConfig = {
       "me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
     bio:
       createLink("https://jaimeruizzapatero.net/", "Jaime Ruiz Zapatero") + ", vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
+    time: "4pm UK time",
+    location: 
+      "Online and in-person at " + 
+      createLink(LINKS.nextLocationLink, "Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201"),
     calendarLink: LINKS.nextCalendarLink,
     locationLink: LINKS.nextLocationLink,
   },
