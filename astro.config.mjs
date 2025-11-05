@@ -7,4 +7,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: 'https://charlas-rse-espanol.github.io',
+  base: '/',
 });
