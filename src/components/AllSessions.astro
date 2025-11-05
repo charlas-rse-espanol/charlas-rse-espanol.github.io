@@ -1,0 +1,164 @@
+---
+import { siteConfig } from "../config";
+import SafeHtml from "./SafeHtml.astro";
+
+// Sort sessions by date (most recent first)
+const sessions = [...siteConfig.previousSessions].sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  return dateB.getTime() - dateA.getTime();
+});
+---
+
+<section class="p-8 sm:p-12 md:p-16 lg:p-24">
+  <div class="max-w-5xl mx-auto">
+    <!-- Back Link -->
+    <div class="mb-8">
+      <a
+        href="/#previous-sessions"
+        class="inline-flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-bold hover:opacity-80 transition-opacity group"
+        style={`color: ${siteConfig.accentColor}`}
+      >
+        <svg
+          class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-transform group-hover:-translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        <span>Back to recent sessions</span>
+      </a>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900">
+        All sessions
+      </h2>
+      <div
+        class="w-[75px] h-[5px] mt-2 rounded-full"
+        style={`background-color: ${siteConfig.accentColor}`}
+      />
+      <p class="mt-10 text-base sm:text-lg md:text-xl text-gray-600 max-w-6xl">
+        Complete archive of our tech talks en español
+      </p>
+    </div>
+
+    <div class="space-y-16">
+      {sessions.map((session, index) => (
+        <div id={`session-${index}`} class="scroll-mt-24">
+          <!-- Date Heading -->
+          <h4 class="text-lg sm:text-2xl font-bold mb-4 flex items-center gap-2" style={`color: ${siteConfig.accentColor}`}>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+              <path d="M16 3v4" />
+              <path d="M8 3v4" />
+              <path d="M4 11h16" />
+            </svg>
+            <span>{session.date}</span>
+          </h4>
+          
+          <!-- Session Card -->
+          <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+            <!-- Session Header -->
+            <div class="px-6 pt-6 pb-4 sm:px-8 sm:pt-8 sm:pb-5 md:px-10 md:pt-10 md:pb-6" style={`background: linear-gradient(135deg, ${siteConfig.accentColor}15 0%, ${siteConfig.accentColor}05 100%)`}>
+              <div class="mb-4">
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+                  {session.name}
+                </h3>
+                <p class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-700 italic mt-2">
+                  {session.title}
+                </p>
+              </div>
+              
+              <!-- Bottom row: Institution and Slides Button -->
+              <div class="flex items-center justify-between gap-4">
+                <p class="text-base sm:text-lg text-gray-700 font-medium">
+                  {session.institution}
+                </p>
+                
+                {session.slidesLink && session.slidesLink !== "" && (
+                  <a
+                    href={session.slidesLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 shadow-sm transition-all duration-300 hover:bg-gray-100 hover:border-gray-400 hover:shadow-md flex-shrink-0"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    <span>View slides</span>
+                  </a>
+                )}
+              </div>
+            </div>
+
+            <!-- Abstract section -->
+            <details class="group p-6 sm:p-8 md:p-10 border-b border-gray-200" open>
+              <summary class="cursor-pointer text-base sm:text-lg font-bold text-gray-900 flex items-center justify-between hover:text-[var(--accent-color)] transition-colors">
+                <span>🦉 Abstract</span>
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+                <p><SafeHtml content={session.abstract} /></p>
+              </div>
+            </details>
+
+            <!-- Bio section -->
+            <details class="group p-6 sm:p-8 md:p-10 border-b border-gray-200" open>
+              <summary class="cursor-pointer text-base sm:text-lg font-bold text-gray-900 flex items-center justify-between hover:text-[var(--accent-color)] transition-colors">
+                <span>🦜 Speaker bio</span>
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+                <p><SafeHtml content={session.bio} /></p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  /* Smooth scroll behavior for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+

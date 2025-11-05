@@ -1,187 +1,164 @@
-<img width="1943" height="1093" alt="image" src="https://github.com/user-attachments/assets/cc2ff955-17c2-48c7-81c8-479a0f061850" />
+# Charlas RSE en español
 
-# DevPortfolio Template
+Website for the monthly tech talk series showcasing Research Software Engineers across the Spanish-speaking world.
 
-A modern, minimalist portfolio template built with Astro and Tailwind CSS. Perfect for developers looking to showcase their skills, experience, and projects in a clean, professional way.
+**Live site**: [charlas-rse-espanol.github.io](https://charlas-rse-espanol.github.io)
 
-This was completely rebuilt from the ground up from V1. This template was built to be entirely ready to go with a quick config edit (see below) but also provides the ability to easily extend in whatever way you want.
+## About
 
-This template also comes with `CLAUDE.md` and `.cursor/rules` files for easy integration with your existing AI workflows.
+Charlas RSE en español is a monthly seminar series that:
+- Showcases the RSE role across the Spanish-speaking world
+- Connects with research and tech carried out by Spanish speakers worldwide
+- Provides a space to speak and learn in Spanish
 
-> **📬 Connect & Share!**  
-> For questions and updates, feel free to reach out on [**X (Twitter)**](https://x.com/rfitzio).  
-> If you've built and published your personal site with this template, I'd love to see it! Send me a DM 🚀
+The series was started by Carlos Gavidia-Calderón ([@cptanalatriste](https://github.com/cptanalatriste), Alan Turing Institute) and Sofía Miñano ([@sfmig](https://github.com/sfmig), Sainsbury Wellcome Centre at UCL) following a conversation at the DEI workshop during [RSECon24](https://rsecon24.society-rse.org/).
 
-## Preview
+## Tech stack
 
-To view a live preview of the site, [click here](https://ryanfitzgerald.github.io/devportfolio/).
-
-## Built With
-
-- **[Astro](https://astro.build/)** - Static site generator for modern web apps
+- **[Astro](https://astro.build/)** - Static site generator
 - **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[Tabler Icons](https://tabler.io/icons)** - Free and open source icons
-- **TypeScript** - For type-safe configuration
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe configuration
+- **[DOMPurify](https://github.com/cure53/DOMPurify)** - HTML sanitization library
+- **[Tabler Icons](https://tabler.io/icons)** - Icon library
 
-## Updating the Template
+## Getting started
 
-### Configuration
+### Prerequisites
 
-The template is designed to be easily customizable through the `src/config.ts` file. This single file controls:
+- Node.js (v18 or higher)
+- npm
 
-- **Personal Information**: Name, title, description
-- **Accent Color**: Primary color theme (changing this will change the accent color site wide)
-- **Social Links**: Email, LinkedIn, Twitter, GitHub (all optional)
-- **About Section**: Personal bio/description
-- **Skills**: List of technical skills
-- **Projects**: Project showcase with descriptions and links
-- **Experience**: Work history with bullet points
-- **Education**: Educational background and achievements
+### Installation
 
-If skills, projects, experience, or education are removed from the config, those sections will be hidden entirely.
+```bash
+# Clone the repository
+git clone https://github.com/charlas-rse-espanol/charlas-rse-espanol.github.io.git
+cd charlas-rse-espanol.github.io
 
-### Example structures
-
-Here's what the config data structure looks like for each section:
-
-#### Basic Information
-```typescript
-name: "Your Name",
-title: "Your Job Title",
-description: "Brief site description",
-accentColor: "#1d4ed8", // Hex color for theme
+# Install dependencies
+npm install
 ```
 
-#### Social Links (all optional)
-```typescript
-social: {
-  email: "your-email@example.com",
-  linkedin: "https://linkedin.com/in/yourprofile",
-  twitter: "https://twitter.com/yourprofile", 
-  github: "https://github.com/yourusername",
-}
+### Development
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-#### About Section
+The development server will be available at `http://localhost:4321`
+
+## Updating content
+
+All website content is managed through the single configuration file: `src/config.ts`
+
+### Adding a new speaker
+
+1. Open `src/config.ts`
+2. Move the current `nextSpeaker` object to the top of the `previousSessions` array
+3. Update the `nextSpeaker` object with the new speaker's details:
+
 ```typescript
-aboutMe: "A paragraph describing yourself, your background, interests, and what you're passionate about. This appears in the About section of your portfolio."
+nextSpeaker: {
+  name: "Speaker Name",
+  title: "Talk Title",
+  institution: "Institution",
+  date: "Day DDth Month YYYY",
+  time: "4pm UK time",
+  location: "Online and in-person at " + createLink(...),
+  abstract: "Talk abstract...",
+  bio: "Speaker bio...",
+  calendarLink: "https://drive.google.com/...",
+  locationLink: "https://maps.app.goo.gl/...",
+},
 ```
 
-#### Skills
+4. After the talk, add the slides link to the session in `previousSessions`:
+
 ```typescript
-skills: ["JavaScript", "React", "Node.js", "Python", "AWS", "Docker"]
+slidesLink: "https://...",
 ```
 
-#### Projects
+### Creating HTML links in content
+
+Use the `createLink()` helper function to create links in abstracts, bios, and other content:
+
 ```typescript
-projects: [
-  {
-    name: "Project Name",
-    description: "Brief description of what the project does and its impact",
-    link: "https://github.com/yourusername/project",
-    skills: ["React", "Node.js", "AWS"], // Technologies used
-  }
-]
+bio: createLink("https://example.com", "link text") + " more bio text..."
 ```
 
-#### Experience
-```typescript
-experience: [
-  {
-    company: "Company Name",
-    title: "Your Job Title",
-    dateRange: "Jan 2022 - Present",
-    bullets: [
-      "Led development of microservices architecture serving 1M+ users",
-      "Reduced API response times by 40% through optimization",
-      "Mentored team of 5 junior developers",
-    ],
-  }
-]
-```
+Links will automatically open in new tabs with proper security attributes.
 
-#### Education
-```typescript
-education: [
-  {
-    school: "University Name",
-    degree: "Bachelor of Science in Computer Science",
-    dateRange: "2014 - 2018",
-    achievements: [
-      "Graduated Magna Cum Laude with 3.8 GPA",
-      "Dean's List all semesters",
-      "President of Computer Science Club"
-    ]
-  }
-]
-```
 
-### Icons
+### Updating other content
 
-The template uses [Tabler Icons](https://tabler.io/icons) for all icons. If you wish to add more icons and have it look consistent with what's already there, you can browse through their extensive icon library.
+Edit these sections in `src/config.ts`:
+- `aboutMe` - Description of the series
+- `previousSessions` - Array of past talks (auto-sorted by date)
+- `callForSpeakers` - Call for participation text
+- `organizers` - Organizer profiles
+- `accentColor` - Primary theme color (propagates throughout site)
+
+## Security
+
+All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
+
+The site uses a `<SafeHtml>` component that enforces sanitization at the framework level. Direct use of Astro's `set:html` directive should be avoided throughout the codebase.
+
+**Allowed HTML tags**: `a`, `span`, `div`, `br`, `ul`, `li`, `strong`, `em`, `i`, `p`  
+**Allowed attributes**: `href`, `target`, `rel`, `style`, `class`
 
 ## Project Structure
 
 ```
-devportfolio/
-├── public/
-│   └── favicon.svg          # Site favicon
+charlas-rse-espanol.github.io/
 ├── src/
-│   ├── components/          # Astro components
-│   │   ├── About.astro      # About section
-│   │   ├── Education.astro  # Education section
-│   │   ├── Experience.astro # Work experience section
-│   │   ├── Footer.astro     # Site footer
-│   │   ├── Header.astro     # Navigation header
-│   │   ├── Hero.astro       # Hero/intro section
-│   │   └── Projects.astro   # Projects showcase
-│   ├── pages/
-│   │   └── index.astro      # Main page layout
+│   ├── components/        # Astro components
+│   │   ├── About.astro
+│   │   ├── AllSessions.astro
+│   │   ├── CallForSpeakers.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── NextSpeaker.astro
+│   │   ├── Organizers.astro
+│   │   ├── PreviousSessions.astro
+│   │   └── SafeHtml.astro # Security component (sanitizes HTML)
+│   ├── pages/             # Page routes
+│   │   ├── index.astro    # Homepage
+│   │   └── sessions.astro # All sessions archive
 │   ├── styles/
-│   │   └── global.css       # Global styles
-│   └── config.ts            # Site configuration
-├── astro.config.mjs         # Astro configuration
-├── package.json             # Project dependencies
-├── tailwind.config.js       # Tailwind configuration
-└── tsconfig.json            # TypeScript configuration
-```
-
-## Local Development
-
-If you'd like to run it locally:
-
-```
-git clone https://github.com/RyanFitzgerald/devportfolio.git
-cd devportfolio
-npm install
-```
-
-After that, start up the Astro dev server with:
-
-```
-npm run dev
+│   │   └── global.css     # Global styles
+│   └── config.ts          # Site configuration (MAIN CONTENT FILE)
+├── public/                # Static assets
+│   ├── favicon.png
+│   └── images/
+│       └── charlas-logo.png
+└── astro.config.mjs       # Astro configuration
 ```
 
 ## Deployment
 
-The template can be deployed to any static hosting service easily (and in most cases, completely free). Here are some options:
+The site is automatically deployed to GitHub Pages when changes are pushed to the `gh-pages` branch.
 
-- To deploy with Netlify, [click here](https://docs.astro.build/en/guides/deploy/netlify/).
-- To deploy with Vercel, [click here](https://docs.astro.build/en/guides/deploy/vercel/).
-- To deploy with GitHub Pages, [click here](https://docs.astro.build/en/guides/deploy/github/).
-- To deploy with Cloudflare Pages, [click here](https://docs.astro.build/en/guides/deploy/cloudflare/).
-- To deploy with Render, [click here](https://docs.astro.build/en/guides/deploy/render/).
+### Manual deployment
 
-Want to deploy somewhere else? Find more guides [here](https://docs.astro.build/en/guides/deploy/).
+```bash
+# Build the site
+npm run build
 
-## Changelog
+# The built site will be in the dist/ directory
+```
 
-To view the changelog, see CHANGELOG.md.
 
 ## License
 
-This project is fully and completely MIT. See LICENSE.md.
+BSD 3-Clause License - see [LICENSE.md](LICENSE.md)
 
-## Questions?
-
-Feel free to reach out on [X (Twitter)](https://x.com/rfitzio) if you have any questions or need help.
+This project was originally based on the [DevPortfolio](https://github.com/RyanFitzgerald/devportfolio) template by Ryan Fitzgerald.

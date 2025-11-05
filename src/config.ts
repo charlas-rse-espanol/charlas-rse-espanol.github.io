@@ -1,18 +1,58 @@
+/**
+ * SECURITY NOTE: All HTML content in this configuration file is automatically
+ * sanitized using DOMPurify before being rendered on the website. This prevents
+ * Cross-Site Scripting (XSS) attacks and ensures that only safe HTML tags and
+ * attributes are allowed. We use a <SafeHtml> component to enforce sanitization.
+ * 
+ * Allowed tags: a, span, div, br, ul, li, strong, em, i, p
+ * Allowed attributes: href, target, rel, style, class
+ * 
+ * For more details, see src/components/SafeHtml.astro
+ */
+
 // Colors
-const ACCENT_COLOR = "#bdd96c";
+const ACCENT_COLOR = "#E86C5E";
 
 // Link constants
 const LINKS = {
   github: "https://github.com/charlas-rse-espanol",
   email: "charlas.rse.espanol@gmail.com",
+  rsecon24: "https://rsecon24.society-rse.org/",
   mailingList: "https://groups.google.com/g/rse-en-espaniol/",
-  speakerGuidelines: "https://github.com/charlas-rse-espanol/.github/blob/main/profile/format.md",
-  schedule: "https://github.com/charlas-rse-espanol/.github/blob/main/profile/schedule.md",
-  location: "https://maps.app.goo.gl/p1JfDY9huBCsCx4t8",
-  calendarDownload: "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
+  AlanTuringInstitute: "https://www.turing.ac.uk/",
+  SainsburyWellcomeCentre: "https://www.sainsburywellcome.org/",
 } as const;
 
-// Create links with correct formatting (new tab, no rel)
+// Section titles
+const SECTIONS = {
+  about: {
+    id: "about",
+    title: "About",
+    navTitle: "About",
+  },
+  nextSpeaker: {
+    id: "next-speaker",
+    title: "Next session",
+    navTitle: "Next session",
+  },
+  previousSessions: {
+    id: "previous-sessions",
+    title: "Previous sessions",
+    navTitle: "Previous sessions",
+  },
+  callForSpeakers: {
+    id: "speak-with-us",
+    title: "Interested in presenting?",
+    navTitle: "¡Participa!",
+  },
+  organizers: {
+    id: "organizers",
+    title: "Organisers",
+    navTitle: "Organisers",
+  },
+} as const;
+
+// Create links function
 const createLink = (url: string, text: string, color: string = ACCENT_COLOR) =>
   `<a href='${url}' target='_blank' rel='noopener noreferrer' style='color: ${color}; font-weight: bold;'>${text}</a>`;
 
@@ -25,57 +65,76 @@ export const siteConfig = {
   title: "Tech talks en español",
   description: "Monthly seminar series showcasing Research Software Engineers across the Spanish-speaking world",
   accentColor: ACCENT_COLOR,
+  sections: SECTIONS,
+  logo: "/images/charlas-logo.png",
+  logoAlt: "Charlas RSE en español logo",
+
+  // Hero layout options: "centered" | "inline" | "split"
+  // "centered" = large logo above title (Option A)
+  // "inline" = logo next to title (Option B)  
+  // "split" = logo on left, text on right (Option C)
+  heroLayout: "centered" as "centered" | "inline" | "split",
+
   social: {
     github: LINKS.github,
     email: LINKS.email,
+    mailingList: LINKS.mailingList,
   },
 
   //////////////////////////////////////////////////////////////
   // ABOUT SECTION
   //////////////////////////////////////////////////////////////
   aboutMe:
-    "🤓 Would you like to connect with Spanish-speaking engineers and researchers, in Europe and across the pond? " +
-    "<br/><br/>" +
-    "🦉 Are you curious to see how far your Duolingo skills can take you in a tech talk? " +
-    "<br/><br/>" +
-    "❓ Are you tired of announcements full of questions? " +
-    "<br/><br/>" +
-    "<strong>Then come join us at the monthly <i>'Charlas RSE en español'!</i> 👏</strong>" +
-    "<br/><br/>" +
-    "An initiative started by Carlos (" + createGitHubHandleLink('cptanalatriste') + ", from the Alan Turing Institute), " +
-    "and Sofía (" + createGitHubHandleLink('sfmig') + ", from the Sainsbury Wellcome Centre at UCL), " +
-    "from a conversation at the DEI workshop during " + createLink('https://rsecon24.society-rse.org/', 'RSECon24') + ". " +
-    "Our aims are: " +
-    "<ul style='margin-top: 0.5rem; margin-left: 1.5rem;'>" +
-    "<li>to showcase the RSE role across the Spanish-speaking world,</li>" +
-    "<li>to get in touch with the cool research and tech carried out by hispanophones all over the world, and</li>" +
-    "<li>to selfishly speak our mother tongue before we forget it.</li>" +
-    "</ul>" +
+    "<span style='font-size: 1.25em;'>🤓</span> Keen to connect <i>en español</i> with engineers & researchers in Europe and across the pond? " +
     "<br/>" +
-    "We have an exciting list of speakers lined up for what we plan to be a monthly series. Stay tuned! 📻",
-
-  skills: ["monthly series", "online + in-person", "se habla español", "research software", "open to all"],
+    "<span style='font-size: 1.25em;'>🦉</span> Curious to see how far your Duolingo skills can take you in a tech talk? " +
+    "<br/>" +
+    "<span style='font-size: 1.25em;'>❓</span> Tired of announcements full of questions? " +
+    "<br/><br/>" +
+    "<div style='text-align: center;'><strong>Then come join us at the monthly <i>Charlas RSE en español!</i> 👏</strong></div>" +
+    "<br/>" +
+    "An initiative started by Carlos (" + createGitHubHandleLink('cptanalatriste') + ", from the " +
+    createLink(LINKS.AlanTuringInstitute, "Alan Turing Institute") + ") " +
+    "and Sofía (" + createGitHubHandleLink('sfmig') + ", from the " +
+    createLink(LINKS.SainsburyWellcomeCentre, 'Sainsbury Wellcome Centre') + ") " +
+    "from a conversation at the DEI workshop during " + createLink(LINKS.rsecon24, 'RSECon24') + ". " +
+    "Our aims are: " +
+    "<ul style='margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;'>" +
+    "<li>to showcase the RSE role across the Spanish-speaking world</li>" +
+    "<li>to connect with the cool research and tech carried out by hispanophones all over the world</li>" +
+    "<li>to selfishly speak our mother tongue before we forget it!</li>" +
+    "</ul>",
 
   //////////////////////////////////////////////////////////////
   // NEXT SPEAKER
   //////////////////////////////////////////////////////////////
   nextSpeaker: {
     name: "Jaime Ruiz Zapatero",
-    title: "Cosmología con Datos a lo Bestia (Cosmology with Big Data)",
-    institution: "Vera Rubin and Euclides Telescopes",
+    institution: "University College London",
     date: "Monday 10th November 2025",
-    time: "4pm UK time",
-    location: "Online and in-person at Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201",
+    title: "Cosmología con datos a lo bestia",
     abstract:
-      "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas (cientos de millones) de galaxias. A mitad de los años dos mil la Cosmología empezó a experimentar un rápido proceso de cuantificación. En los últimos años este proceso se ha convertido en exponencial gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
+      "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. " +
+      "En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas" +
+      " (cientos de millones) de galaxias. A mitad de los años dos mil la Cosmología empezó a experimentar " +
+      "un rápido proceso de cuantificación. En los últimos años este proceso se ha convertido en exponencial " +
+      "gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta " +
+      "en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. " +
+      "Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. " +
+      "En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego " +
+      "me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
     bio:
-      "Jaime Ruiz Zapatero, vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
-    calendarLink: LINKS.calendarDownload,
-    locationLink: LINKS.location,
+      createLink("https://jaimeruizzapatero.net/", "Jaime Ruiz Zapatero") + ", vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
+    time: "4pm UK time",
+    location:
+      "Online and in-person at " +
+      createLink("https://maps.app.goo.gl/p1JfDY9huBCsCx4t8", "Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE&export=download",
+    // "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
   },
 
   //////////////////////////////////////////////////////////////
-  // PREVIOUS SESSIONS (from schedule.md)
+  // PREVIOUS SESSIONS 
   //////////////////////////////////////////////////////////////
   previousSessions: [
     {
@@ -87,14 +146,14 @@ export const siteConfig = {
         "En esta charla compartiré cómo mi trabajo con ranas venenosas ha moldeado mi trayectoria, desde el trabajo de campo en la selva, pasando por el laboratorio, hasta llegar a un escritorio con tres pantallas. Contaré en detalle mi experiencia postdoctoral, en la que aprendí neurociencia y descubrí la necesidad de desarrollar y usar herramientas informáticas, de acceso libre para investigar organismos no modelo. A lo largo de la presentación mostraré cómo la ciencia de datos se ha convertido en una herramienta clave en mi carrera científica.",
       bio:
         "Soy biólogo y mi carrera se ha enfocado en la ecología comportamental, las hormonas y la neurociencia en ranas venenosas. Tras finalizar mi postdoctorado en el laboratorio de Lauren O'Connell en agosto de 2024, asumí el rol de analista de datos en el mismo grupo, donde combino la biología con la ciencia de datos para abordar preguntas complejas en organismos no modelo.",
-      slidesLink: "",
+      slidesLink: "https://drive.google.com/file/d/1l4D4F7xyWLkpulSlM-tOnyGTlCJ-um2y/view?usp=sharing",
       skills: ["biología", "neurociencia", "ciencia de datos"],
     },
     {
       name: "Lucía Cipolina-Kun",
       institution: "Meta Research",
       date: "15 de septiembre 2025",
-      title: "Game Reasoning Arena: Una Librería Abierta y un Benchmark para Evaluar las Capacidades de Razonamiento de los Modelos de Lenguaje de Gran Escala a través de Juegos Estratégicos",
+      title: "Game Reasoning Arena: una librería abierta y un benchmark para evaluar las capacidades de razonamiento de los modelos de lenguaje de gran escala a través de juegos estratégicos",
       abstract:
         "Los Modelos de Lenguaje de Gran Escala (LLMs) se utilizan cada vez más en tareas que requieren planificación y toma de decisiones, pero aún no está claro cómo razonan realmente. Los juegos de estrategia ofrecen una vía ideal para explorar esta cuestión: son estructurados, interactivos y exigen tanto previsión como adaptabilidad. En esta charla, presentaré Game Reasoning Arena, un marco que evalúa a los LLMs no solo en función de si ganan, sino también de cómo justifican sus elecciones. Al analizar el razonamiento que los modelos articulan durante el juego, obtenemos nuevas perspectivas sobre sus fortalezas y debilidades estratégicas, así como sobre los patrones de razonamiento que emergen en diferentes escalas de modelo.",
       bio:
@@ -115,7 +174,7 @@ export const siteConfig = {
       skills: ["Python", "open source", "simulación"],
     },
     {
-      name: "Maria Guadalupe Barrios Sazo",
+      name: "María Guadalupe Barrios Sazo",
       institution: "Juelich Supercomputing Centre",
       date: "14 de julio 2025",
       title: "Scavenger Hunt para RSE: Aprendizaje interactivo y flexible",
@@ -136,7 +195,7 @@ export const siteConfig = {
       bio:
         "Riva Quiroga es RSE en Tabular, una pequeña empresa que ofrece servicios de desarrollo de software a proyectos de investigación. Es Fellow del Software Sustainability Institute y editora en Programming Historian. Es, además, una voluntaria serial: participa activamente en distintas iniciativas de las comunidades de R y Python, desde la organización de eventos a la traducción de materiales y documentación.",
       slidesLink: "https://tinyurl.com/RSE-charlas-mayo-2025",
-      skills: ["comunidades", "R", "Python"],
+      skills: ["comunidades", "R", "humanidades digitales"],
     },
     {
       name: "Jenny Vega",
@@ -212,6 +271,15 @@ export const siteConfig = {
     },
   ],
 
+
+  //////////////////////////////////////////////////////////////
+  // CALL FOR SPEAKERS
+  //////////////////////////////////////////////////////////////
+  callForSpeakers: {
+    description: "Check out our speaker guidelines and feel free to contact us if you have any questions.",
+    email: LINKS.email,
+  },
+
   //////////////////////////////////////////////////////////////
   // ORGANIZERS
   //////////////////////////////////////////////////////////////
@@ -231,14 +299,4 @@ export const siteConfig = {
       role: "Co-organizer",
     },
   ],
-
-  //////////////////////////////////////////////////////////////
-  // CALL FOR SPEAKERS
-  //////////////////////////////////////////////////////////////
-  callForSpeakers: {
-    message: "¡Nos encantaría tenerte de ponente!",
-    description: "Check out our speaker guidelines - feel free to contact us if you have any questions.",
-    guidelinesLink: LINKS.speakerGuidelines,
-    email: LINKS.email,
-  },
 };

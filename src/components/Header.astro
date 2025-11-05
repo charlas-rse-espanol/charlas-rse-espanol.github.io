@@ -6,46 +6,46 @@ import { siteConfig } from "../config";
   id="header"
   class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
 >
-  <nav class="max-w-7xl mx-auto px-8 py-4">
-    <ul class="flex items-center gap-8 justify-center flex-wrap">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-8 py-4">
+    <ul class="flex items-center gap-4 sm:gap-6 md:gap-8 justify-center flex-wrap">
       <li>
         <a
-          href="#about"
-          class="text-gray-700 hover:text-black transition-colors font-medium"
+          href={`/#${siteConfig.sections.about.id}`}
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
-          About
+          {siteConfig.sections.about.navTitle}
         </a>
       </li>
       <li>
         <a
-          href="#next-speaker"
-          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+          href={`/#${siteConfig.sections.nextSpeaker.id}`}
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
-          Next Session
+          {siteConfig.sections.nextSpeaker.navTitle}
         </a>
       </li>
-      <li>
+      <li class="hidden sm:block">
         <a
-          href="#previous-sessions"
-          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+          href={`/#${siteConfig.sections.previousSessions.id}`}
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
-          Previous Sessions
+          {siteConfig.sections.previousSessions.navTitle}
         </a>
       </li>
-      <li>
+      <li class="hidden md:block">
         <a
-          href="#speak-with-us"
-          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+          href={`/#${siteConfig.sections.callForSpeakers.id}`}
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
-          Speak with Us
+          {siteConfig.sections.callForSpeakers.navTitle}
         </a>
       </li>
-      <li>
+      <li class="hidden lg:block">
         <a
-          href="#organizers"
-          class="text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
+          href={`/#${siteConfig.sections.organizers.id}`}
+          class="text-base sm:text-lg md:text-xl text-gray-700 hover:text-[var(--accent-color)] transition-colors font-medium"
         >
-          Organisers
+          {siteConfig.sections.organizers.navTitle}
         </a>
       </li>
     </ul>
@@ -69,11 +69,7 @@ import { siteConfig } from "../config";
   }
   
   /* Ensure sections have proper scroll margin to account for fixed header */
-  #about,
-  #next-speaker,
-  #previous-sessions,
-  #speak-with-us,
-  #organizers {
+  section[id] {
     scroll-margin-top: 120px;
   }
 </style>

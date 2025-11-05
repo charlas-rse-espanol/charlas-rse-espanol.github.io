@@ -11,6 +11,11 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.3",
+    "dompurify": "^3.3.0",
+    "isomorphic-dompurify": "^2.31.0",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/dompurify": "^3.0.5"
   }
 }

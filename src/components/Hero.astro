@@ -4,245 +4,101 @@ import { siteConfig } from "../config";
 
 <div
   id="hero"
-  class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
+  class="relative isolate overflow-hidden bg-white py-24 md:min-h-screen"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
-  <!-- Animated Background with Moving Elements -->
+  <!-- Animated Background -->
   <div class="absolute inset-0 -z-10 overflow-hidden">
     <!-- Animated gradient background -->
     <div
       class="absolute inset-0 animate-gradient"
-      style={`background: linear-gradient(45deg, ${siteConfig.accentColor}15, ${siteConfig.accentColor}08, ${siteConfig.accentColor}12, ${siteConfig.accentColor}05)`}
+      style={`background: linear-gradient(45deg, ${siteConfig.accentColor}22, ${siteConfig.accentColor}14, ${siteConfig.accentColor}18, ${siteConfig.accentColor}10)`}
     ></div>
-    
-    <!-- Programming keywords floating -->
-    <div class="absolute top-1/4 right-1/4 animate-float-medium">
-      <span class="text-sm font-mono text-[var(--accent-color)] opacity-30">Python</span>
-    </div>
-    
-    <div class="absolute top-1/6 left-1/8 animate-float-medium">
-      <span class="text-sm font-mono text-[var(--accent-color)] opacity-30">JavaScript</span>
-    </div>
-    
-    <div class="absolute top-1/6 right-1/2 animate-float-slow">
-      <span class="text-sm font-mono text-[var(--accent-color)] opacity-30">R</span>
-    </div>
-
-    <div class="absolute bottom-40 left-1/4 animate-float-fast">
-      <span class="text-lg font-mono text-[var(--accent-color)] opacity-35">&lt;RSE/&gt;</span>
-    </div>
-
-    <!-- Floating code symbols -->
-    <div class="absolute top-60 left-1/4 animate-float-fast">
-      <span class="text-2xl font-mono text-[var(--accent-color)] opacity-40">&lt;/&gt;</span>
-    </div>
-    
-    <div class="absolute top-80 right-1/3 animate-float-slow">
-      <span class="text-xl font-mono text-[var(--accent-color)] opacity-35">{}</span>
-    </div>
   </div>
-
-  <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center justify-center">
+    
+  <div class="h-full mx-auto px-8 py-8 sm:px-12 sm:py-10 md:px-24 md:pt-24 md:pb-8 flex items-center justify-center">
     <div class="relative w-full max-w-5xl text-center">
-      <!-- Text Content -->
-      <div>
-        <h2
-          class="text-pretty text-xl sm:text-2xl md:text-4xl font-bold tracking-tight text-gray-700 animate-fade-in"
+      
+      <!-- Logo -->
+      <div class="mb-8 animate-fade-in">
+        <img 
+          src={siteConfig.logo}
+          alt={siteConfig.logoAlt}
+          class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto border-4 border-gray-200 shadow-lg hover:border-[var(--accent-color)] transition-all duration-300"
+        />
+      </div>
+      
+      <h2
+        class="text-pretty text-xl sm:text-2xl md:text-4xl font-bold tracking-tight text-gray-700 animate-fade-in animation-delay-200"
+      >
+        ¡Bienvenidos! 👋
+      </h2>
+      <h1
+        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-400"
+      >
+        <span style={{ color: siteConfig.accentColor }}
+          >{siteConfig.name}</span
         >
-          ¡Bienvenidos! 👋
-        </h2>
-        <h1
-          class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200"
-        >
-          <span style={{ color: siteConfig.accentColor }}
-            >{siteConfig.name}</span
-          >
-        </h1>
-        <p
-          class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"
-        >
-          A monthly seminar series showcasing Research Software Engineers<br/>across the Spanish-speaking world 🌍
-        </p>
-        
-        <!-- Tags -->
-        <div class="mt-4 sm:mt-6 md:mt-8 flex flex-wrap gap-2 sm:gap-3 justify-center animate-fade-in animation-delay-600">
-          <span class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm sm:text-base font-medium border border-gray-200">
-            monthly series
-          </span>
-          <span class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm sm:text-base font-medium border border-gray-200">
-            online + in-person
-          </span>
-           <span class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm sm:text-base font-medium border border-gray-200">
-            se habla español
-          </span>
-          <span class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm sm:text-base font-medium border border-gray-200">
-            research software
-          </span>
-          <span class="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm sm:text-base font-medium border border-gray-200">
-            open to all
-          </span>
-        </div>
+      </h1>
+      <p
+        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-lg sm:text-xl md:text-2xl leading-relaxed font-medium text-gray-600 animate-fade-in animation-delay-600"
+      >
+        A monthly seminar series showcasing Research Software Engineers<br/>🌎 across the Spanish-speaking world 🌍
+      </p>
+      
+      <!-- Tags -->
+      <div class="mt-4 sm:mt-6 md:mt-8 flex flex-wrap gap-2 sm:gap-3 justify-center animate-fade-in animation-delay-800">
+        <span class="px-3 py-1.5 rounded-full text-base sm:text-lg font-medium border-2" style={`background-color: ${siteConfig.accentColor}15; color: ${siteConfig.accentColor}; border-color: ${siteConfig.accentColor}30;`}>
+          monthly series
+        </span>
+        <span class="px-3 py-1.5 rounded-full text-base sm:text-lg font-medium border-2" style={`background-color: ${siteConfig.accentColor}15; color: ${siteConfig.accentColor}; border-color: ${siteConfig.accentColor}30;`}>
+          online + in-person
+        </span>
+        <span class="px-3 py-1.5 rounded-full text-base sm:text-lg font-medium border-2" style={`background-color: ${siteConfig.accentColor}15; color: ${siteConfig.accentColor}; border-color: ${siteConfig.accentColor}30;`}>
+          se habla español
+        </span>
+        <span class="px-3 py-1.5 rounded-full text-base sm:text-lg font-medium border-2" style={`background-color: ${siteConfig.accentColor}15; color: ${siteConfig.accentColor}; border-color: ${siteConfig.accentColor}30;`}>
+          research software
+        </span>
+        <span class="px-3 py-1.5 rounded-full text-base sm:text-lg font-medium border-2" style={`background-color: ${siteConfig.accentColor}15; color: ${siteConfig.accentColor}; border-color: ${siteConfig.accentColor}30;`}>
+          open to all
+        </span>
+      </div>
+      
 
-        <!-- Social Icons -->
-        <div class="flex justify-center gap-6 mt-8 animate-fade-in animation-delay-800">
-          {
-            siteConfig.social?.email && (
-              <a
-                href={`mailto:${siteConfig.social.email}`}
-                aria-label="Email"
-                class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-                  <path d="M3 7l9 6l9 -6" />
-                </svg>
-              </a>
-            )
-          }
-          {
-            siteConfig.social?.github && (
-              <a
-                href={siteConfig.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-                </svg>
-              </a>
-            )
-          }
-        </div>
+      
+      <!-- RSE clarification accordion -->
+      <div class="mt-12 sm:mt-16 md:mt-20 animate-fade-in animation-delay-1200 max-w-3xl mx-auto">
+        <details class="group rounded-2xl shadow-lg border-2 transition-all duration-300 hover:shadow-xl"
+                 style={`background-color: ${siteConfig.accentColor}25; border-color: ${siteConfig.accentColor}05`}>
+          <summary class="cursor-pointer p-6 sm:p-8 flex items-center justify-between list-none">
+            <span class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+              <i>Disculpa, ¿qué es un RSE?</i> 🤔
+            </span>
+            <svg 
+              class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" 
+              style={`color: ${siteConfig.accentColor}`}
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-6 sm:px-8 pb-6 sm:pb-8 border-t pt-6" 
+               style={`border-color: ${siteConfig.accentColor}20`}>
+            <div class="space-y-4">
+              <p class="text-lg sm:text-xl md:text-2xl font-semibold" style={`color: ${siteConfig.accentColor}`}>
+                Research Software Engineer = Ingeniero de Software de Investigación
+              </p>
+              <p class="text-base sm:text-lg md:text-xl text-gray-700">
+                Si te gusta programar para la ciencia, o si te interesa cómo se hace software en la investigación, ¡sigue leyendo! 🚀
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
       </div>
     </div>
-  </div>
+
 </div>
-
-<style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animation-delay-200 {
-    animation-delay: 0.2s;
-  }
-
-  .animation-delay-400 {
-    animation-delay: 0.4s;
-  }
-
-  .animation-delay-600 {
-    animation-delay: 0.6s;
-  }
-
-  .animation-delay-800 {
-    animation-delay: 0.8s;
-  }
-
-  @keyframes pulseSlow {
-    0%, 100% {
-      opacity: 0.15;
-    }
-    50% {
-      opacity: 0.25;
-    }
-  }
-
-  .animate-pulse-slow {
-    animation: pulseSlow 4s ease-in-out infinite;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .animate-gradient {
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-  }
-
-  @keyframes floatSlow {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(2deg);
-    }
-  }
-
-  @keyframes floatMedium {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-15px) rotate(-1deg);
-    }
-  }
-
-  @keyframes floatFast {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-10px) rotate(1deg);
-    }
-  }
-
-  .animate-float-slow {
-    animation: floatSlow 6s ease-in-out infinite;
-  }
-
-  .animate-float-medium {
-    animation: floatMedium 4s ease-in-out infinite;
-  }
-
-  .animate-float-fast {
-    animation: floatFast 3s ease-in-out infinite;
-  }
-</style>
