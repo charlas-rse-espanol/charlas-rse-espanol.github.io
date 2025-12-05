@@ -109,34 +109,48 @@ export const siteConfig = {
   // NEXT SPEAKER
   //////////////////////////////////////////////////////////////
   nextSpeaker: {
-    name: "Jaime Ruiz Zapatero",
-    institution: "University College London",
-    date: "Monday 10th November 2025",
-    title: "Cosmología con datos a lo bestia",
+    name: "Ivan Ogasawara",
+    institution: "Open Science Labs",
+    date: "Monday 15th December 2025",
+    title: "Equipos de alto rendimiento humano: bienestar, colaboración y resultados",
     abstract:
-      "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. " +
-      "En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas" +
-      " (cientos de millones) de galaxias. A mitad de los años dos mil la Cosmología empezó a experimentar " +
-      "un rápido proceso de cuantificación. En los últimos años este proceso se ha convertido en exponencial " +
-      "gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta " +
-      "en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. " +
-      "Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. " +
-      "En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego " +
-      "me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
+      "En proyectos y equipos de RSE, y en el desarrollo de software en general, suele ponerse el foco casi exclusivamente en las hard skills (conocimientos y habilidades técnicas), dejando en segundo plano las soft skills (habilidades personales, interpersonales y sociales)." +
+      "En muchas organizaciones se recurre a bonificaciones y programas basados en métricas con la intención de “forzar” la productividad o la “motivación”." +
+      "En esta charla compartiré ideas y experiencias para mejorar la cultura de los equipos de trabajo y crear entornos que fomenten la colaboración, el bienestar y un alto rendimiento sostenible.",
     bio:
-      createLink("https://jaimeruizzapatero.net/", "Jaime Ruiz Zapatero") + ", vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
+      "Ivan es RSE senior y líder técnico con más de 22 años de trayectoria en sistemas backend, plataformas de datos, DevOps, ML/RAG y compiladores. Ha trabajado con múltiples lenguajes (como Python, C/C++, JavaScript, Java, R y Rust) y es fundador de " + createLink("https://opensciencelabs.org/", "Open Science Labs") + ". Colaboró como asesor en comunidades como " + createLink("https://www.pyopensci.org/", "pyOpenSci") + " y " + createLink("https://www.cos.io/products/osf", "Open Science Framework") + ", y es investigador independiente afiliado a " + createLink("https://igdore.org/", "IGDORE - Institute for Globally Distributed Open Research and Education") + ".",
     time: "4pm UK time",
     location:
       "Online and in-person at " +
-      createLink("https://maps.app.goo.gl/p1JfDY9huBCsCx4t8", "Chandler House (UCL), 2 Wakefield St, London WC1N 1PF - Room 201"),
-    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE&export=download",
-    // "https://drive.google.com/file/d/1yhGuF959ThAKgIVLVacEw1KjgPZPiYNE/view?usp=share_link",
+      createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1R5M-OVROFW4BcxCQfFW6ZUczt1U-c7lB&export=download",
+    // "https://drive.google.com/file/d/1R5M-OVROFW4BcxCQfFW6ZUczt1U-c7lB/view?usp=sharing",
+
   },
 
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
   //////////////////////////////////////////////////////////////
   previousSessions: [
+    {
+      name: "Jaime Ruiz Zapatero",
+      institution: "University College London",
+      date: "Monday 10th November 2025",
+      title: "Cosmología con datos a lo bestia",
+      abstract:
+        "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. " +
+        "En Cosmología esto se traduce en aprender las propiedades del Universo en su conjunto dadas unas pocas" +
+        " (cientos de millones) de galaxias. A mitad de los años dos mil la Cosmología empezó a experimentar " +
+        "un rápido proceso de cuantificación. En los últimos años este proceso se ha convertido en exponencial " +
+        "gracias a la llegada de los llamados telescopios de cuarta generación. Por tanto, la Cosmología se encuentra envuelta " +
+        "en una carrera armamentística en la que datos más complejos requieren de modelos igualmente complicados. " +
+        "Tal es el punto que nuestras técnicas de inferencia estadística para extraer los valores de estos nuevos modelos no dan abasto. " +
+        "En esta charla expondré brevemente cual es el estado actual de la Cosmología como campo y cuales son sus principales desafíos. Luego " +
+        "me enfocaré en los problemas y soluciones que este nuevo aluvión de datos nos está trayendo. Particularmente me centraré en los últimos desarrollos en los métodos de inferencia estadística que hacen posible su procesamiento.",
+      bio:
+        createLink("https://jaimeruizzapatero.net/", "Jaime Ruiz Zapatero") + ", vallisoletano por cuna y gaditano por sentimiento, es ingeniero de software para los telescopios Vera Rubin y Euclides desde 2023. Anteriormente, completó su doctorado en Astronomía, estudiando la aplicación de métodos auto-diferenciables para agilizar la inferencia estadística de modelos con alta dimensionalidad.",
+      skills: ["astronomía", "cosmología", "inferencia estadística"],
+    },
     {
       name: "Camilo Rodríguez López",
       institution: "Stanford University",
