@@ -135,7 +135,7 @@ export const siteConfig = {
     {
       name: "Jaime Ruiz Zapatero",
       institution: "University College London",
-      date: "Monday 10th November 2025",
+      date: "10 de noviembre 2025",
       title: "Cosmología con datos a lo bestia",
       abstract:
         "La inferencia estadística consiste en estimar las propiedades de un grupo dada una pequeña muestra. " +
@@ -299,7 +299,7 @@ export const siteConfig = {
   //////////////////////////////////////////////////////////////
   organizers: [
     {
-      name: "Sofia Miñano",
+      name: "Sofía Miñano",
       githubHandle: "sfmig",
       githubAvatar: "https://avatars1.githubusercontent.com/u/33267254?v=4?s=100",
       institution: "Sainsbury Wellcome Centre at UCL",

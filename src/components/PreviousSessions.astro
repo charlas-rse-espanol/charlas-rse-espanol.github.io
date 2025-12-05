@@ -32,7 +32,7 @@ const sessions = sortedSessions.slice(0, 6);
             // Find the original index for linking to the full session
             const originalIndex = allSessions.findIndex(s => s.name === session.name && s.date === session.date);
             return (
-              <div class="group relative h-full max-w-lg mx-auto">
+              <div class="group relative h-full w-full">
                 <a
                   href={`/sessions#session-${originalIndex}`}
                   class="block relative bg-white rounded-xl border border-gray-200 transition-all duration-300 overflow-hidden h-full flex flex-col min-h-[350px] hover:bg-gray-50 hover:shadow-xl hover:border-gray-300 hover:-translate-y-1"
