@@ -109,29 +109,41 @@ export const siteConfig = {
   // NEXT SPEAKER
   //////////////////////////////////////////////////////////////
   nextSpeaker: {
-    name: "Ivan Ogasawara",
-    institution: "Open Science Labs",
-    date: "Monday 15th December 2025",
-    title: "Equipos de alto rendimiento humano: bienestar, colaboración y resultados",
-    abstract:
-      "En proyectos y equipos de RSE, y en el desarrollo de software en general, suele ponerse el foco casi exclusivamente en las hard skills (conocimientos y habilidades técnicas), dejando en segundo plano las soft skills (habilidades personales, interpersonales y sociales)." +
-      "En muchas organizaciones se recurre a bonificaciones y programas basados en métricas con la intención de “forzar” la productividad o la “motivación”." +
-      "En esta charla compartiré ideas y experiencias para mejorar la cultura de los equipos de trabajo y crear entornos que fomenten la colaboración, el bienestar y un alto rendimiento sostenible.",
-    bio:
-      "Ivan es RSE senior y líder técnico con más de 22 años de trayectoria en sistemas backend, plataformas de datos, DevOps, ML/RAG y compiladores. Ha trabajado con múltiples lenguajes (como Python, C/C++, JavaScript, Java, R y Rust) y es fundador de " + createLink("https://opensciencelabs.org/", "Open Science Labs") + ". Colaboró como asesor en comunidades como " + createLink("https://www.pyopensci.org/", "pyOpenSci") + " y " + createLink("https://www.cos.io/products/osf", "Open Science Framework") + ", y es investigador independiente afiliado a " + createLink("https://igdore.org/", "IGDORE - Institute for Globally Distributed Open Research and Education") + ".",
-    time: "4pm UK time",
-    location:
-      "Online and in-person at " +
-      createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
-    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1R5M-OVROFW4BcxCQfFW6ZUczt1U-c7lB&export=download",
+    name: "Jesús Urtasun",
+    institution: "Imperial College London",
+    date: "Monday 19th January 2026",
+    // title: "Equipos de alto rendimiento humano: bienestar, colaboración y resultados",
+    // abstract:
+    //   "En proyectos y equipos de RSE, y en el desarrollo de software en general, suele ponerse el foco casi exclusivamente en las hard skills (conocimientos y habilidades técnicas), dejando en segundo plano las soft skills (habilidades personales, interpersonales y sociales)." +
+    //   "En muchas organizaciones se recurre a bonificaciones y programas basados en métricas con la intención de “forzar” la productividad o la “motivación”." +
+    //   "En esta charla compartiré ideas y experiencias para mejorar la cultura de los equipos de trabajo y crear entornos que fomenten la colaboración, el bienestar y un alto rendimiento sostenible.",
+    // bio:
+    //   "Ivan es RSE senior y líder técnico con más de 22 años de trayectoria en sistemas backend, plataformas de datos, DevOps, ML/RAG y compiladores. Ha trabajado con múltiples lenguajes (como Python, C/C++, JavaScript, Java, R y Rust) y es fundador de " + createLink("https://opensciencelabs.org/", "Open Science Labs") + ". Colaboró como asesor en comunidades como " + createLink("https://www.pyopensci.org/", "pyOpenSci") + " y " + createLink("https://www.cos.io/products/osf", "Open Science Framework") + ", y es investigador independiente afiliado a " + createLink("https://igdore.org/", "IGDORE - Institute for Globally Distributed Open Research and Education") + ".",
+    // time: "4pm UK time",
+    // location:
+    //   "Online and in-person at " +
+    //   createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
+    // calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1R5M-OVROFW4BcxCQfFW6ZUczt1U-c7lB&export=download",
     // "https://drive.google.com/file/d/1R5M-OVROFW4BcxCQfFW6ZUczt1U-c7lB/view?usp=sharing",
 
-  },
-
+  }, 
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
   //////////////////////////////////////////////////////////////
   previousSessions: [
+    {
+      name: "Ivan Ogasawara",
+      institution: "Open Science Labs",
+      date: "15 de diciembre 2025",
+      title: "Equipos de alto rendimiento humano: bienestar, colaboración y resultados",
+      abstract:
+        "En proyectos y equipos de RSE, y en el desarrollo de software en general, suele ponerse el foco casi exclusivamente en las hard skills (conocimientos y habilidades técnicas), dejando en segundo plano las soft skills (habilidades personales, interpersonales y sociales). " +
+        "En muchas organizaciones se recurre a bonificaciones y programas basados en métricas con la intención de “forzar” la productividad o la “motivación”. " +
+        "En esta charla compartiré ideas y experiencias para mejorar la cultura de los equipos de trabajo y crear entornos que fomenten la colaboración, el bienestar y un alto rendimiento sostenible. ",
+      bio:
+        "Ivan es RSE senior y líder técnico con más de 22 años de trayectoria en sistemas backend, plataformas de datos, DevOps, ML/RAG y compiladores. Ha trabajado con múltiples lenguajes (como Python, C/C++, JavaScript, Java, R y Rust) y es fundador de " + createLink("https://opensciencelabs.org/", "Open Science Labs") + ". Colaboró como asesor en comunidades como " + createLink("https://www.pyopensci.org/", "pyOpenSci") + " y " + createLink("https://www.cos.io/products/osf", "Open Science Framework") + ", y es investigador independiente afiliado a " + createLink("https://igdore.org/", "IGDORE - Institute for Globally Distributed Open Research and Education") + ".",
+      skills: ["soft skills", "colaboración", "bienestar"],
+    },
     {
       name: "Jaime Ruiz Zapatero",
       institution: "University College London",
