@@ -108,25 +108,40 @@ export const siteConfig = {
   //////////////////////////////////////////////////////////////
   // NEXT SPEAKER
   //////////////////////////////////////////////////////////////
+  // If only name, institution and date are provided a "Save the date" message will be rendered
+  // If also title, abstract, bio, time and location are provided, a full card is shown
   nextSpeaker: {
-    name: "Jesús Urtasun",
+    name: "Jesús Urtasun Elizari",
     institution: "Imperial College London",
     date: "Monday 19th January 2026",
-    // title: "Equipos de alto rendimiento humano: bienestar, colaboración y resultados",
-    // abstract:
-    //   "En proyectos y equipos de RSE, y en el desarrollo de software en general, suele ponerse el foco casi exclusivamente en las hard skills (conocimientos y habilidades técnicas), dejando en segundo plano las soft skills (habilidades personales, interpersonales y sociales)." +
-    //   "En muchas organizaciones se recurre a bonificaciones y programas basados en métricas con la intención de “forzar” la productividad o la “motivación”." +
-    //   "En esta charla compartiré ideas y experiencias para mejorar la cultura de los equipos de trabajo y crear entornos que fomenten la colaboración, el bienestar y un alto rendimiento sostenible.",
-    // bio:
-    //   "Ivan es RSE senior y líder técnico con más de 22 años de trayectoria en sistemas backend, plataformas de datos, DevOps, ML/RAG y compiladores. Ha trabajado con múltiples lenguajes (como Python, C/C++, JavaScript, Java, R y Rust) y es fundador de " + createLink("https://opensciencelabs.org/", "Open Science Labs") + ". Colaboró como asesor en comunidades como " + createLink("https://www.pyopensci.org/", "pyOpenSci") + " y " + createLink("https://www.cos.io/products/osf", "Open Science Framework") + ", y es investigador independiente afiliado a " + createLink("https://igdore.org/", "IGDORE - Institute for Globally Distributed Open Research and Education") + ".",
-    // time: "4pm UK time",
-    // location:
-    //   "Online and in-person at " +
-    //   createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
-    // calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1R5M-OVROFW4BcxCQfFW6ZUczt1U-c7lB&export=download",
-    // "https://drive.google.com/file/d/1R5M-OVROFW4BcxCQfFW6ZUczt1U-c7lB/view?usp=sharing",
+    title: "Complejidad computacional para RSEs",
+    abstract:
+      "Cuando se trabaja con juegos, problemas y algoritmos, una de las primeras cuestiones que surgen es, <i>plain and simple</i>, que algunos son más complicados que otros:" +
+      "<ul style='list-style-type: disc; padding-left: 1.5em; margin: 0.5em 0;'>" +
+      "<li>¿Cómo medimos cuán complicado es un problema?</li>" +
+      "<li>¿Qué son las clases de complejidad y cómo se agrupan los problemas según su dificultad?</li>" +
+      "<li>¿Por qué la factorización o el trazado de caminos son ejemplos de problemas 'difíciles', o problemas 'NP'?</li>" +
+      "<li>¿Cómo se relacionan con la seguridad, la criptografía, el modelado de proteínas, y la alineación y el ensamblaje de genomas?</li>" +
+      "</ul>" +
+      "Este tipo de preguntas se estudian en la <strong>Teoría de la Complejidad</strong>, la rama de la computación y las matemáticas que describe cuán difícil es realmente resolver un problema y cómo escala esa dificultad en distintos escenarios.",
+    bio:
+      "Jesús estudió el grado en Física en la Universidad de Barcelona (2017) y posteriormente el máster en Física de Altas Energías y Cosmología en el IFAE de Barcelona (2018). Completó su doctorado en Física Teórica y Computacional en la Universidad de Milán (2022), trabajando en Higgs boson physics y Quantum Chromodynamics (QCD), desarrollando cálculos teóricos de alta precisión para la high luminosity era del LHC en el CERN. " +
+      "En 2022 se incorporó al MRC Laboratory of Medical Sciences, donde se ha especializado en el desarrollo de algoritmos y pipelines, inferencia estadística y hypothesis testing, análisis de datos y visualización. Dentro del campo de la biología computacional, actualmente trabaja en genómica y NGS, junto con high performance computing (HPC) y cluster computing. " +
+      "Desde 2023 trabaja como part-time lecturer en el Imperial College London, dentro del departamento de "+
+      createLink("https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/","Research Computing and Data Science (RCDS)") +
+      ". Actualmente da clases sobre introducción a la probabilidad, inferencia estadística y hypothesis testing, junto con fundamentos de programación y C++.  " +
+      "Sus intereses abarcan desde la física teórica, la mecánica cuántica, la gravitación y la cosmología, hasta la computación, la teoría de la información y la filosofía de la ciencia. " +
+      "Fun fact, fue a través del ICL que conoció a Diego Alonso-Álvarez ("+
+      createLink("sessions#:~:text=diciembre%20de%202024-,Diego%20Alonso%20%C3%81lvarez,-Ingenieros%20de%20software", "anterior ponente") + 
+      " en las charlas), y escuchó por primera vez el término RSE!",
+    time: "4pm UK time",
+    location:
+      "Online and in-person at " +
+      createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=14FNtITXCrsbVFOdIA1TpE9PdiZe74PZH&export=download",
+    // "https://drive.google.com/file/d/14FNtITXCrsbVFOdIA1TpE9PdiZe74PZH/view?usp=sharing",
+  },
 
-  }, 
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
   //////////////////////////////////////////////////////////////
