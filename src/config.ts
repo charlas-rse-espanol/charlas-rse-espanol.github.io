@@ -170,7 +170,7 @@ export const siteConfig = {
       createLink("sessions#:~:text=diciembre%20de%202024-,Diego%20Alonso%20%C3%81lvarez,-Ingenieros%20de%20software", "anterior ponente") + 
       " en las charlas), y escuchó por primera vez el término RSE!",
     skills: ["algoritmos", "complejidad computacional", "bioinformática"],
-    // slidesLink: "",
+    slidesLink: "https://drive.google.com/file/d/1JIMQto3ZSBzs3ODb1iL9ViIFIIjpusGj/view?usp=sharing",
   },
     {
       name: "Ivan Ogasawara",
