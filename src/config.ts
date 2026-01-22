@@ -110,11 +110,12 @@ export const siteConfig = {
   //////////////////////////////////////////////////////////////
   // If only name, institution and date are provided a "Save the date" message will be rendered
   // If also title, abstract, bio, time and location are provided, a full card is shown
+  // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
-    message: "Our next charla with Paula Ramos, scheduled for the 9th February is unfortunately postponed. Keep on eye on this site for updates."
-    // name: "Paula Ramos",
-    // institution: "NVIDIA",
-    // date: "Monday 9th February 2026",
+    // message: "Our next charla with Paula Ramos, scheduled for the 9th February is unfortunately postponed. Keep on eye on this site for updates."
+    name: "David Salvador Jasin",
+    institution: "The Alan Turing Institute",
+    date: "Monday 16th February 2026",
     // title: "Complejidad computacional para RSEs",
     // abstract:
     //   "Cuando se trabaja con juegos, problemas y algoritmos, una de las primeras cuestiones que surgen es, <i>plain and simple</i>, que algunos son más complicados que otros:" +
