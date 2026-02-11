@@ -112,36 +112,38 @@ export const siteConfig = {
   // If also title, abstract, bio, time and location are provided, a full card is shown
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
-    // message: "Our next charla with Paula Ramos, scheduled for the 9th February is unfortunately postponed. Keep on eye on this site for updates."
-    name: "David Salvador Jasin",
+    name: "David Salvador-Jasin",
     institution: "The Alan Turing Institute",
     date: "Monday 16th February 2026",
-    // title: "Complejidad computacional para RSEs",
-    // abstract:
-    //   "Cuando se trabaja con juegos, problemas y algoritmos, una de las primeras cuestiones que surgen es, <i>plain and simple</i>, que algunos son más complicados que otros:" +
-    //   "<ul style='list-style-type: disc; padding-left: 1.5em; margin: 0.5em 0;'>" +
-    //   "<li>¿Cómo medimos cuán complicado es un problema?</li>" +
-    //   "<li>¿Qué son las clases de complejidad y cómo se agrupan los problemas según su dificultad?</li>" +
-    //   "<li>¿Por qué la factorización o el trazado de caminos son ejemplos de problemas 'difíciles', o problemas 'NP'?</li>" +
-    //   "<li>¿Cómo se relacionan con la seguridad, la criptografía, el modelado de proteínas, y la alineación y el ensamblaje de genomas?</li>" +
-    //   "</ul>" +
-    //   "Este tipo de preguntas se estudian en la <strong>Teoría de la Complejidad</strong>, la rama de la computación y las matemáticas que describe cuán difícil es realmente resolver un problema y cómo escala esa dificultad en distintos escenarios.",
-    // bio:
-    //   "Jesús estudió el grado en Física en la Universidad de Barcelona (2017) y posteriormente el máster en Física de Altas Energías y Cosmología en el IFAE de Barcelona (2018). Completó su doctorado en Física Teórica y Computacional en la Universidad de Milán (2022), trabajando en Higgs boson physics y Quantum Chromodynamics (QCD), desarrollando cálculos teóricos de alta precisión para la high luminosity era del LHC en el CERN. " +
-    //   "En 2022 se incorporó al MRC Laboratory of Medical Sciences, donde se ha especializado en el desarrollo de algoritmos y pipelines, inferencia estadística y hypothesis testing, análisis de datos y visualización. Dentro del campo de la biología computacional, actualmente trabaja en genómica y NGS, junto con high performance computing (HPC) y cluster computing. " +
-    //   "Desde 2023 trabaja como part-time lecturer en el Imperial College London, dentro del departamento de "+
-    //   createLink("https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/","Research Computing and Data Science (RCDS)") +
-    //   ". Actualmente da clases sobre introducción a la probabilidad, inferencia estadística y hypothesis testing, junto con fundamentos de programación y C++.  " +
-    //   "Sus intereses abarcan desde la física teórica, la mecánica cuántica, la gravitación y la cosmología, hasta la computación, la teoría de la información y la filosofía de la ciencia. " +
-    //   "Fun fact, fue a través del ICL que conoció a Diego Alonso-Álvarez ("+
-    //   createLink("sessions#:~:text=diciembre%20de%202024-,Diego%20Alonso%20%C3%81lvarez,-Ingenieros%20de%20software", "anterior ponente") + 
-    //   " en las charlas), y escuchó por primera vez el término RSE!",
-    // time: "4pm UK time",
-    // location:
-    //   "Online and in-person at " +
-    //   createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
-    // calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=14FNtITXCrsbVFOdIA1TpE9PdiZe74PZH&export=download",
-    // // "https://drive.google.com/file/d/14FNtITXCrsbVFOdIA1TpE9PdiZe74PZH/view?usp=sharing",
+    title: "SVD-ROM: Modelado de Orden Reducido de matrices enormes mediante la Descomposición en Valores Singulares",
+    abstract:
+      "Presentamos SVD-ROM, un paquete Python de código abierto para realizar Modelado de Orden Reducido (ROM) de matrices " +
+      "muy grandes mediante la Descomposición en Valores Singulares (SVD). A pesar de la alta dimensionalidad de los " +
+      "conjuntos de datos que se suelen encontrar en escenarios reales como la dinámica de fluidos o el clima y la " +
+      "meteorología, estos suelen ser de bajo rango: existen algunos patrones dominantes que explican esta alta " +
+      "dimensionalidad. La SVD es una técnica de reducción de dimensionalidad útil para estos sistemas y ofrece las ventajas " +
+      "de ser explicable y computacionalmente eficiente. SVD-ROM permite la aplicación de métodos de aprendizaje automático " +
+      "basados ​​en SVD, como la Descomposición Ortogonal Propia (POD) o la Descomposición en Modos Dinámicos (DMD). " +
+      "Utilizamos Dask para computación paralela y fuera del núcleo, Xarray para matrices N-dimensionales etiquetadas, y " +
+      "formatos de datos como Zarr y NetCDF para el almacenamiento fragmentado de matrices grandes. Desarrollamos SVD-ROM " +
+      "pensando en la facilidad de uso, exponiendo una API de Python que permite la aplicación directa de métodos como " +
+      "preprocesamiento, ajuste de modelos, reconstrucción y pronóstico. Además, Dask facilita la portabilidad del código " +
+      "entre computadoras portátiles, clústeres de HPC o la nube, permitiendo al usuario ejecutar SVD-ROM en diferentes " +
+      "entornos computacionales con cambios mínimos. El desarrollo de SVD-ROM también ha dado lugar a múltiples " +
+      "contribuciones a PyDMD, el paquete de Python de código abierto más popular para la aplicación de DMD. En esta charla, " +
+      "mostramos cómo podemos ajustar un modelo DMD a un conjunto de datos meteorológicos globales de decenas de GB y generar " +
+      "un pronóstico subestacional preciso (con un horizonte de seis semanas) en una computadora portátil en tan solo unos " +
+      "minutos. ",
+    bio:
+      "David es un RSE en el Instituto Alan Turing de Londres. Estudió ingeniería mecánica y posteriormente realizó una " +
+      "maestría y un doctorado en ingeniería aeronáutica, especializándose en aerodinámica de turbinas de gas. Como RSE, ha " +
+      "dedicado los últimos dos años a la modelización meteorológica basada en datos. ",
+    time: "4pm UK time",
+    location:
+      "Online and in-person at " +
+      createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=189wAU502fEh1tjOpU29GVRVWlKi4yuxz&export=download",
+    // "https://drive.google.com/file/d/189wAU502fEh1tjOpU29GVRVWlKi4yuxz/view?usp=sharing",
   },
 
   //////////////////////////////////////////////////////////////
