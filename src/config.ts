@@ -112,6 +112,45 @@ export const siteConfig = {
   // If also title, abstract, bio, time and location are provided, a full card is shown
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
+    name: "Juliana Gómez Consuegra",
+    institution: "CDP and Ribbit AI",
+    date: "Monday 9th March 2026"
+    // title: "SVD-ROM: Modelado de Orden Reducido de matrices enormes mediante la Descomposición en Valores Singulares",
+    // abstract:
+    //   "Presentamos SVD-ROM, un paquete Python de código abierto para realizar Modelado de Orden Reducido (ROM) de matrices " +
+    //   "muy grandes mediante la Descomposición en Valores Singulares (SVD). A pesar de la alta dimensionalidad de los " +
+    //   "conjuntos de datos que se suelen encontrar en escenarios reales como la dinámica de fluidos o el clima y la " +
+    //   "meteorología, estos suelen ser de bajo rango: existen algunos patrones dominantes que explican esta alta " +
+    //   "dimensionalidad. La SVD es una técnica de reducción de dimensionalidad útil para estos sistemas y ofrece las ventajas " +
+    //   "de ser explicable y computacionalmente eficiente. SVD-ROM permite la aplicación de métodos de aprendizaje automático " +
+    //   "basados ​​en SVD, como la Descomposición Ortogonal Propia (POD) o la Descomposición en Modos Dinámicos (DMD). " +
+    //   "Utilizamos Dask para computación paralela y fuera del núcleo, Xarray para matrices N-dimensionales etiquetadas, y " +
+    //   "formatos de datos como Zarr y NetCDF para el almacenamiento fragmentado de matrices grandes. Desarrollamos SVD-ROM " +
+    //   "pensando en la facilidad de uso, exponiendo una API de Python que permite la aplicación directa de métodos como " +
+    //   "preprocesamiento, ajuste de modelos, reconstrucción y pronóstico. Además, Dask facilita la portabilidad del código " +
+    //   "entre computadoras portátiles, clústeres de HPC o la nube, permitiendo al usuario ejecutar SVD-ROM en diferentes " +
+    //   "entornos computacionales con cambios mínimos. El desarrollo de SVD-ROM también ha dado lugar a múltiples " +
+    //   "contribuciones a PyDMD, el paquete de Python de código abierto más popular para la aplicación de DMD. En esta charla, " +
+    //   "mostramos cómo podemos ajustar un modelo DMD a un conjunto de datos meteorológicos globales de decenas de GB y generar " +
+    //   "un pronóstico subestacional preciso (con un horizonte de seis semanas) en una computadora portátil en tan solo unos " +
+    //   "minutos. ",
+    // bio:
+    //   "David es un RSE en el Instituto Alan Turing de Londres. Estudió ingeniería mecánica y posteriormente realizó una " +
+    //   "maestría y un doctorado en ingeniería aeronáutica, especializándose en aerodinámica de turbinas de gas. Como RSE, ha " +
+    //   "dedicado los últimos dos años a la modelización meteorológica basada en datos. ",
+    // time: "4pm UK time",
+    // location:
+    //   "Online and in-person at " +
+    //   createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
+    // calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=189wAU502fEh1tjOpU29GVRVWlKi4yuxz&export=download",
+    // // "https://drive.google.com/file/d/189wAU502fEh1tjOpU29GVRVWlKi4yuxz/view?usp=sharing",
+  },
+
+  //////////////////////////////////////////////////////////////
+  // PREVIOUS SESSIONS 
+  //////////////////////////////////////////////////////////////
+  previousSessions: [
+    {
     name: "David Salvador-Jasin",
     institution: "The Alan Turing Institute",
     date: "Monday 16th February 2026",
@@ -138,18 +177,9 @@ export const siteConfig = {
       "David es un RSE en el Instituto Alan Turing de Londres. Estudió ingeniería mecánica y posteriormente realizó una " +
       "maestría y un doctorado en ingeniería aeronáutica, especializándose en aerodinámica de turbinas de gas. Como RSE, ha " +
       "dedicado los últimos dos años a la modelización meteorológica basada en datos. ",
-    time: "4pm UK time",
-    location:
-      "Online and in-person at " +
-      createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
-    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=189wAU502fEh1tjOpU29GVRVWlKi4yuxz&export=download",
-    // "https://drive.google.com/file/d/189wAU502fEh1tjOpU29GVRVWlKi4yuxz/view?usp=sharing",
+    skills: ["clima", "álgebra lineal", "dask", "xarray", "zarr"],
+    slidesLink: "https://doi.org/10.5281/zenodo.18468075",
   },
-
-  //////////////////////////////////////////////////////////////
-  // PREVIOUS SESSIONS 
-  //////////////////////////////////////////////////////////////
-  previousSessions: [
     {name: "Jesús Urtasun Elizari",
     institution: "Imperial College London",
     date: "19 de enero 2026",
