@@ -145,7 +145,7 @@ export const siteConfig = {
     {
     name: "David Salvador-Jasin",
     institution: "The Alan Turing Institute",
-    date: "Monday 16th February 2026",
+    date: "16 de febrero 2026",
     title: "SVD-ROM: Modelado de Orden Reducido de matrices enormes mediante la Descomposición en Valores Singulares",
     abstract:
       "Presentamos SVD-ROM, un paquete Python de código abierto para realizar Modelado de Orden Reducido (ROM) de matrices " +
