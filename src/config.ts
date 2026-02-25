@@ -113,37 +113,29 @@ export const siteConfig = {
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
     name: "Juliana Gómez Consuegra",
-    institution: "CDP and Ribbit AI",
-    date: "Monday 9th March 2026"
-    // title: "SVD-ROM: Modelado de Orden Reducido de matrices enormes mediante la Descomposición en Valores Singulares",
-    // abstract:
-    //   "Presentamos SVD-ROM, un paquete Python de código abierto para realizar Modelado de Orden Reducido (ROM) de matrices " +
-    //   "muy grandes mediante la Descomposición en Valores Singulares (SVD). A pesar de la alta dimensionalidad de los " +
-    //   "conjuntos de datos que se suelen encontrar en escenarios reales como la dinámica de fluidos o el clima y la " +
-    //   "meteorología, estos suelen ser de bajo rango: existen algunos patrones dominantes que explican esta alta " +
-    //   "dimensionalidad. La SVD es una técnica de reducción de dimensionalidad útil para estos sistemas y ofrece las ventajas " +
-    //   "de ser explicable y computacionalmente eficiente. SVD-ROM permite la aplicación de métodos de aprendizaje automático " +
-    //   "basados ​​en SVD, como la Descomposición Ortogonal Propia (POD) o la Descomposición en Modos Dinámicos (DMD). " +
-    //   "Utilizamos Dask para computación paralela y fuera del núcleo, Xarray para matrices N-dimensionales etiquetadas, y " +
-    //   "formatos de datos como Zarr y NetCDF para el almacenamiento fragmentado de matrices grandes. Desarrollamos SVD-ROM " +
-    //   "pensando en la facilidad de uso, exponiendo una API de Python que permite la aplicación directa de métodos como " +
-    //   "preprocesamiento, ajuste de modelos, reconstrucción y pronóstico. Además, Dask facilita la portabilidad del código " +
-    //   "entre computadoras portátiles, clústeres de HPC o la nube, permitiendo al usuario ejecutar SVD-ROM en diferentes " +
-    //   "entornos computacionales con cambios mínimos. El desarrollo de SVD-ROM también ha dado lugar a múltiples " +
-    //   "contribuciones a PyDMD, el paquete de Python de código abierto más popular para la aplicación de DMD. En esta charla, " +
-    //   "mostramos cómo podemos ajustar un modelo DMD a un conjunto de datos meteorológicos globales de decenas de GB y generar " +
-    //   "un pronóstico subestacional preciso (con un horizonte de seis semanas) en una computadora portátil en tan solo unos " +
-    //   "minutos. ",
-    // bio:
-    //   "David es un RSE en el Instituto Alan Turing de Londres. Estudió ingeniería mecánica y posteriormente realizó una " +
-    //   "maestría y un doctorado en ingeniería aeronáutica, especializándose en aerodinámica de turbinas de gas. Como RSE, ha " +
-    //   "dedicado los últimos dos años a la modelización meteorológica basada en datos. ",
-    // time: "4pm UK time",
-    // location:
-    //   "Online and in-person at " +
-    //   createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
-    // calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=189wAU502fEh1tjOpU29GVRVWlKi4yuxz&export=download",
-    // // "https://drive.google.com/file/d/189wAU502fEh1tjOpU29GVRVWlKi4yuxz/view?usp=sharing",
+    institution: "Ribbit AI & CDP",
+    date: "Monday 9th March 2026",
+    title: "Ribbit AI - Un “Shazam” Para Ranas",
+    abstract:
+      "Ribbit AI es una aplicación web que utiliza el aprendizaje automático para la identificación de anuros (ranas y sapos) " +
+      "a través de vocalizaciones. Busca contribuir datos a repositorios de biodiversidad, con el fin de reducir la brecha de " +
+      "datos que existe en zonas altamente ricas en especies. Así mismo, tiene como objetivo empoderar a los científicos " +
+      "ciudadanos, y ayudar a los investigadores en el monitoreo ecológico. ",
+    bio:
+      createLink("https://julianagomezconsuegra-edi.netlify.app/", "Juliana Gómez Consuegra") +
+      " se desempeña como especialista en calidad de datos en " +
+      createLink("https://www.cdp.net/en", "CDP") +
+      ", una ONG pionera en la divulgación de datos de impacto ambiental. Tiene una maestría en ciencia de datos de la " +
+      "Universidad de California en Berkeley, y una maestría y pregrado en biología de la Universidad de los Andes de Bogotá. " +
+      "Ribbit AI es la combinación de estas dos pasiones - los datos y las ranas; su especie de estudio. Adicionalmente, ha " +
+      "sido investigadora, docente y empresaria. El año pasado, pasó del desarrollo de software para el análisis de datos " +
+      "educativos, a la ciencia de datos como herramienta de mitigación del cambio climático. ",
+    time: "4pm UK time",
+    location:
+      "Online and in-person at " +
+      createLink("https://maps.app.goo.gl/mPhtJThfkRHjj1os6", "Chandler House (Room 201), 2 Wakefield St, London WC1N 1PF"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1axIbEh93QF1njUKKzhz2BATZvv3-si4N&export=download",
+    // "https://drive.google.com/file/d/1axIbEh93QF1njUKKzhz2BATZvv3-si4N/view?usp=sharing",
   },
 
   //////////////////////////////////////////////////////////////
@@ -153,7 +145,7 @@ export const siteConfig = {
     {
     name: "David Salvador-Jasin",
     institution: "The Alan Turing Institute",
-    date: "Monday 16th February 2026",
+    date: "16 de febrero 2026",
     title: "SVD-ROM: Modelado de Orden Reducido de matrices enormes mediante la Descomposición en Valores Singulares",
     abstract:
       "Presentamos SVD-ROM, un paquete Python de código abierto para realizar Modelado de Orden Reducido (ROM) de matrices " +
