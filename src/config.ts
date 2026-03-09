@@ -112,37 +112,62 @@ export const siteConfig = {
   // If also title, abstract, bio, time and location are provided, a full card is shown
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
-    name: "Juliana Gómez Consuegra",
-    institution: "Ribbit AI & CDP",
-    date: "Monday 9th March 2026",
-    title: "Ribbit AI - Un “Shazam” Para Ranas",
-    abstract:
-      "Ribbit AI es una aplicación web que utiliza el aprendizaje automático para la identificación de anuros (ranas y sapos) " +
-      "a través de vocalizaciones. Busca contribuir datos a repositorios de biodiversidad, con el fin de reducir la brecha de " +
-      "datos que existe en zonas altamente ricas en especies. Así mismo, tiene como objetivo empoderar a los científicos " +
-      "ciudadanos, y ayudar a los investigadores en el monitoreo ecológico. ",
-    bio:
-      createLink("https://julianagomezconsuegra-edi.netlify.app/", "Juliana Gómez Consuegra") +
-      " se desempeña como especialista en calidad de datos en " +
-      createLink("https://www.cdp.net/en", "CDP") +
-      ", una ONG pionera en la divulgación de datos de impacto ambiental. Tiene una maestría en ciencia de datos de la " +
-      "Universidad de California en Berkeley, y una maestría y pregrado en biología de la Universidad de los Andes de Bogotá. " +
-      "Ribbit AI es la combinación de estas dos pasiones - los datos y las ranas; su especie de estudio. Adicionalmente, ha " +
-      "sido investigadora, docente y empresaria. El año pasado, pasó del desarrollo de software para el análisis de datos " +
-      "educativos, a la ciencia de datos como herramienta de mitigación del cambio climático. ",
-    time: "4pm UK time",
-    location:
-      "Online and in-person at " +
-      createLink("https://maps.app.goo.gl/mPhtJThfkRHjj1os6", "Chandler House (Room 201), 2 Wakefield St, London WC1N 1PF"),
-    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1axIbEh93QF1njUKKzhz2BATZvv3-si4N&export=download",
-    // "https://drive.google.com/file/d/1axIbEh93QF1njUKKzhz2BATZvv3-si4N/view?usp=sharing",
+    name: "Patricia Loto",
+    institution: "RSE Argentina",
+    date: "Monday 20th April 2026",
+    // title: "Ribbit AI - Un “Shazam” Para Ranas",
+    // abstract:
+    //   "Ribbit AI es una aplicación web que utiliza el aprendizaje automático para la identificación de anuros (ranas y sapos) " +
+    //   "a través de vocalizaciones. Busca contribuir datos a repositorios de biodiversidad, con el fin de reducir la brecha de " +
+    //   "datos que existe en zonas altamente ricas en especies. Así mismo, tiene como objetivo empoderar a los científicos " +
+    //   "ciudadanos, y ayudar a los investigadores en el monitoreo ecológico. ",
+    // bio:
+    //   createLink("https://julianagomezconsuegra-edi.netlify.app/", "Juliana Gómez Consuegra") +
+    //   " se desempeña como especialista en calidad de datos en " +
+    //   createLink("https://www.cdp.net/en", "CDP") +
+    //   ", una ONG pionera en la divulgación de datos de impacto ambiental. Tiene una maestría en ciencia de datos de la " +
+    //   "Universidad de California en Berkeley, y una maestría y pregrado en biología de la Universidad de los Andes de Bogotá. " +
+    //   "Ribbit AI es la combinación de estas dos pasiones - los datos y las ranas; su especie de estudio. Adicionalmente, ha " +
+    //   "sido investigadora, docente y empresaria. El año pasado, pasó del desarrollo de software para el análisis de datos " +
+    //   "educativos, a la ciencia de datos como herramienta de mitigación del cambio climático. ",
+    // time: "4pm UK time",
+    // location:
+    //   "Online and in-person at " +
+    //   createLink("https://maps.app.goo.gl/mPhtJThfkRHjj1os6", "Chandler House (Room 201), 2 Wakefield St, London WC1N 1PF"),
+    // calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1axIbEh93QF1njUKKzhz2BATZvv3-si4N&export=download",
+    // // "https://drive.google.com/file/d/1axIbEh93QF1njUKKzhz2BATZvv3-si4N/view?usp=sharing",
   },
 
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
   //////////////////////////////////////////////////////////////
   previousSessions: [
-    {
+  {
+      name: "Juliana Gómez Consuegra",
+      institution: "Ribbit AI & CDP",
+      date: "9 de marzo de 2026",
+      title: "Ribbit AI - Un “Shazam” Para Ranas",
+      abstract:
+        "Ribbit AI es una aplicación web que utiliza el aprendizaje automático para la identificación de anuros (ranas y sapos) " +
+        "a través de vocalizaciones. Busca contribuir datos a repositorios de biodiversidad, con el fin de reducir la brecha de " +
+        "datos que existe en zonas altamente ricas en especies. Así mismo, tiene como objetivo empoderar a los científicos " +
+        "ciudadanos, y ayudar a los investigadores en el monitoreo ecológico. ",
+      bio:
+        createLink("https://julianagomezconsuegra-edi.netlify.app/", "Juliana Gómez Consuegra") +
+        " se desempeña como especialista en calidad de datos en " +
+        createLink("https://www.cdp.net/en", "CDP") +
+        ", una ONG pionera en la divulgación de datos de impacto ambiental. Tiene una maestría en ciencia de datos de la " +
+        "Universidad de California en Berkeley, y una maestría y pregrado en biología de la Universidad de los Andes de Bogotá. " +
+        "Ribbit AI es la combinación de estas dos pasiones - los datos y las ranas; su especie de estudio. Adicionalmente, ha " +
+        "sido investigadora, docente y empresaria. El año pasado, pasó del desarrollo de software para el análisis de datos " +
+        "educativos, a la ciencia de datos como herramienta de mitigación del cambio climático. ",
+      skills: ["machine learning", "biodiversity", "bioacoustics"],
+      // linkButtons: [
+      //   { href: "https://youtu.be/8SBdCbtlcLw", label: "View demo 🎥" },
+      //   { href: "https://drive.google.com/file/d/1P7hCDrdway_C9VsSR0h9M8h3y4aUS335/view?usp=sharing", label: "View slides" }
+      // ],
+  },
+  {
     name: "David Salvador-Jasin",
     institution: "The Alan Turing Institute",
     date: "16 de febrero 2026",
