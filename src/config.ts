@@ -162,10 +162,10 @@ export const siteConfig = {
         "sido investigadora, docente y empresaria. El año pasado, pasó del desarrollo de software para el análisis de datos " +
         "educativos, a la ciencia de datos como herramienta de mitigación del cambio climático. ",
       skills: ["machine learning", "biodiversity", "bioacoustics"],
-      // linkButtons: [
-      //   { href: "https://youtu.be/8SBdCbtlcLw", label: "View demo 🎥" },
-      //   { href: "https://drive.google.com/file/d/1P7hCDrdway_C9VsSR0h9M8h3y4aUS335/view?usp=sharing", label: "View slides" }
-      // ],
+      linkButtons: [
+        { href: "https://youtu.be/8SBdCbtlcLw", label: "View demo 🎥" },
+        { href: "https://drive.google.com/file/d/1P7hCDrdway_C9VsSR0h9M8h3y4aUS335/view?usp=sharing", label: "View slides" }
+      ],
   },
   {
     name: "David Salvador-Jasin",
