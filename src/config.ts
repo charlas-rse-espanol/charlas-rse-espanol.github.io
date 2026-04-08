@@ -112,32 +112,36 @@ export const siteConfig = {
   // If also title, abstract, bio, time and location are provided, a full card is shown
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
-    name: "Patricia Loto",
-    institution: "RSE Argentina",
+    name: "Patricia A. Loto",
+    institution: "FACENA, Universidad Nacional del Nordeste (UNNE)",
     date: "Monday 20th April 2026",
-    // title: "Ribbit AI - Un “Shazam” Para Ranas",
-    // abstract:
-    //   "Ribbit AI es una aplicación web que utiliza el aprendizaje automático para la identificación de anuros (ranas y sapos) " +
-    //   "a través de vocalizaciones. Busca contribuir datos a repositorios de biodiversidad, con el fin de reducir la brecha de " +
-    //   "datos que existe en zonas altamente ricas en especies. Así mismo, tiene como objetivo empoderar a los científicos " +
-    //   "ciudadanos, y ayudar a los investigadores en el monitoreo ecológico. ",
-    // bio:
-    //   createLink("https://julianagomezconsuegra-edi.netlify.app/", "Juliana Gómez Consuegra") +
-    //   " se desempeña como especialista en calidad de datos en " +
-    //   createLink("https://www.cdp.net/en", "CDP") +
-    //   ", una ONG pionera en la divulgación de datos de impacto ambiental. Tiene una maestría en ciencia de datos de la " +
-    //   "Universidad de California en Berkeley, y una maestría y pregrado en biología de la Universidad de los Andes de Bogotá. " +
-    //   "Ribbit AI es la combinación de estas dos pasiones - los datos y las ranas; su especie de estudio. Adicionalmente, ha " +
-    //   "sido investigadora, docente y empresaria. El año pasado, pasó del desarrollo de software para el análisis de datos " +
-    //   "educativos, a la ciencia de datos como herramienta de mitigación del cambio climático. ",
-    // time: "4pm UK time",
-    // location:
-    //   "Online and in-person at " +
-    //   createLink("https://maps.app.goo.gl/mPhtJThfkRHjj1os6", "Chandler House (Room 201), 2 Wakefield St, London WC1N 1PF"),
-    // calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1axIbEh93QF1njUKKzhz2BATZvv3-si4N&export=download",
-    // // "https://drive.google.com/file/d/1axIbEh93QF1njUKKzhz2BATZvv3-si4N/view?usp=sharing",
+    title: "Herramientas para la Ciencia Abierta desde el Sur: un asistente con IA y un paquete para planificar software de investigación",
+    abstract:
+      "Hacer Ciencia Abierta no debería requerir saber exactamente qué preguntar ni conocer de antemano los documentos " +
+      "correctos. Tampoco debería requerir reinventar la rueda cada vez que un equipo de investigación necesita documentar su " +
+      "software. En esta charla voy a compartir el trabajo que estoy desarrollando actualmente para intentar responder a esos " +
+      "problemas concretos — dos herramientas complementarias construidas con la convicción de que la Ciencia Abierta puede y " +
+      "debe ser más accesible en nuestro idioma y para nuestra región. La primera es un asistente virtual conversacional " +
+      "basado en LLMs y arquitectura RAG que permite consultar en lenguaje natural un corpus curado de documentos clave sobre " +
+      "Ciencia Abierta en español — desde recomendaciones de la UNESCO hasta políticas latinoamericanas. La segunda es " +
+      "PGSoftware, un paquete de R con plantillas Quarto para generar Planes de Gestión de Software — en el que también estoy " +
+      "trabajando activamente — para que RSEs e investigadores puedan documentar y planificar su software de forma " +
+      "estandarizada y reproducible, sin necesidad de empezar desde cero cada vez. ",
+    bio:
+      "Patricia A. Loto es licenciada en Sistemas de Información y Diplomada en Ciencia de Datos, Aprendizaje Automático y " +
+      "sus Aplicaciones (FAMAF – Universidad Nacional de Córdoba). Actualmente cursa la Maestría en Tecnologías de la " +
+      "Información en la Universidad Nacional del Nordeste (UNNE), donde desarrolla su tesis sobre un asistente virtual " +
+      "basado en inteligencia artificial para la difusión de prácticas de Ciencia Abierta en América Latina. Se desempeña " +
+      "como desarrolladora de software y analista de datos en el sector público, y como docente universitaria en el área de " +
+      "sistemas y programación. Además, es una activa promotora de la ciencia abierta y el software de investigación en la " +
+      "región: co-fundadora de RSE Argentina y miembro del comité organizador de LatinR. ",
+    time: "4pm UK time",
+    location:
+      "Online and in-person at " +
+      createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1Bmycwml-uHwCaiBOXeWu_eW_aQtZhHU2&export=download",
+    // "https://drive.google.com/file/d/1Bmycwml-uHwCaiBOXeWu_eW_aQtZhHU2/view?usp=sharing",
   },
-
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
   //////////////////////////////////////////////////////////////
