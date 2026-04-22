@@ -19,53 +19,42 @@ You are helping the user update `src/config.ts` after a Charlas RSE en español 
 
 Use the `AskUserQuestion` tool for user-facing choices. Use `Edit` for surgical edits to `src/config.ts`. Use `Bash` for git/gh and for the dev server.
 
-**AskUserQuestion style rule:** Always pass **no `options`** so the tool renders a clean text input. Never pass predefined options.
 
 ---
 
-## Step 1 — Read config and ask Question 1 (archive inputs)
+## Step 1 — Read only what's needed, then ask Q1 (archive + slides/demo + skills)
 
-1. Read `src/config.ts` and locate the `nextSpeaker` block.
-2. Derive 2–4 skill tag suggestions from the talk's title and abstract. Match the style of existing `previousSessions` entries: short, lowercase Spanish phrases (e.g. `"machine learning"`, `"ciencia abierta"`, `"LLMs"`, `"bioinformática"`).
-3. Ask a **single** `AskUserQuestion` (no options) that shows the talk summary and collects everything needed to build the archived entry:
+1. Run `grep -n "nextSpeaker:" src/config.ts` to find the line number of the `nextSpeaker` block. Then read only that block (roughly 30–40 lines from that line). Do **not** read the whole file.
+2. Derive 2–4 skill tag suggestions from the talk's title and abstract — short, lowercase Spanish phrases matching the style of existing `previousSessions` entries (e.g. `"machine learning"`, `"ciencia abierta"`, `"LLMs"`, `"bioinformática"`).
+3. Ask `AskUserQuestion` (options: `["Cancel"]`) with this question, substituting values in [brackets]:
 
-   > About to archive: **[name]** ([institution]) — "[title]" — [date]
-   >
-   > Proceed? (yes / no):
-   > Slides URL (blank to skip):
-   > Demo URL (blank to skip):
-   > Skills (comma-separated — blank to accept: "[suggested1], [suggested2], [suggested3]"):
+   ```
+   About to archive: [name] ([institution]) — "[title]" — [date]
 
-4. Parse the four labelled lines:
-   - If "Proceed?" is "no" → stop and explain you've made no changes.
-   - Blank URL line → skip that field.
-   - Blank skills line → use the suggestions as-is.
+   Select Cancel to abort, or fill in the fields below and submit to proceed:
 
-## Step 2 — Ask Question 2 (next speaker setup)
+   Slides URL (blank to skip):
+   Demo URL (blank to skip):
+   Skills (blank to accept suggestions: [suggested1], [suggested2], …):
+   ```
 
-Ask a **single** `AskUserQuestion` (no options):
+   - "Cancel" selected → stop, explain no changes were made.
+   - Otherwise: parse the three fields; blank URL = skip; blank Skills = use suggestions.
 
-> Next speaker — fill in what you know (leave ALL fields blank for "no session scheduled"):
->
-> Name:
-> Institution:
-> Date (Day DDth Month YYYY):
-> Title:
-> Abstract:
-> Bio:
-> Time:
-> Location:
-> Calendar link:
-> Custom message (used only if Name/Institution/Date are all blank):
+## Step 2 — Write the next speaker placeholder
 
-Parse the response and apply these rules:
+Replace the existing `nextSpeaker: { ... }` block with this placeholder exactly as written:
 
-- All blank → write `nextSpeaker: {}` (renders "No session currently scheduled").
-- Only "Custom message" filled, rest blank → write `nextSpeaker: { message: "<text>" }`.
-- Name + Institution + Date present, all six optionals blank → **save-the-date** shape: `{ name, institution, date }`.
-- Name + Institution + Date + all six optionals present → **full card** shape. For `abstract`, `bio`, and `location`, any embedded links should use the `createLink()` helper already defined in the file.
-- Name / Institution / Date missing but other fields present → **stop and error**: list which required fields are missing.
-- Name + Institution + Date present but **some-but-not-all** optionals filled → **stop and error**: list the missing optional fields and offer either (a) provide them now, or (b) downgrade to save-the-date.
+```ts
+  nextSpeaker: {
+    name: "",
+    institution: "",
+    date: "", // "Monday 20th April 2026"
+    // message: "Custom message",
+  },
+```
+
+The user will fill it in manually after reviewing the PR.
 
 ## Step 3 — Build the archived entry
 
@@ -88,16 +77,16 @@ Construct a new object to prepend to `previousSessions`:
 4. Apply two edits to `src/config.ts` with the `Edit` tool:
    - Replace the existing `nextSpeaker: { ... }` block with the chosen new shape.
    - Prepend the archived entry as the first element inside the `previousSessions: [ ... ]` array.
-5. Re-read the file and sanity-check that **all pre-existing comments are still present** (section banners, the `// If only name, institution and date are provided...` guidance comment, the commented `calendarLink` line if it was there, etc.).
-6. Commit with a message like `Archive <name> (YYYY-MM-DD) and update next speaker section` — include `Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>`.
+5. Commit with a message like `Claude workflow: archive <name> (YYYY-MM-DD) and update next speaker section`
 7. Push with `git push -u origin post-talk-update-YYYYMMDD`.
 8. Open a PR against `main` using `gh pr create` with a short summary of the two changes.
 9. Capture and share the PR URL with the user.
 
 ## Step 5 — Visual verification
 
-1. Start the dev server in the background: `npm run dev` (run_in_background: true).
-2. Share `http://localhost:4321` with the user and ask them to confirm visually:
+1. Open `src/config.ts` in the editor so the user can fill in the next speaker placeholder: `code src/config.ts`.
+2. Start the dev server in the background: `npm run dev` (run_in_background: true).
+3. Share `http://localhost:4321` with the user and ask them to confirm visually:
    - The archived speaker appears at the top of **Previous sessions** with the correct Spanish date, any slides/demo buttons, and the skill tags.
    - The **Next session** section renders the expected shape.
 
