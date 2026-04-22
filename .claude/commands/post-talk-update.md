@@ -67,4 +67,10 @@ Print a short summary:
 - The skill tags added (remind the user they can edit them in `src/config.ts`).
 - The branch name.
 - The local preview URL.
-- **Next steps for the user**: review the archived speaker entry and fill in the `nextSpeaker` placeholder in `src/config.ts`, then commit, push the branch, and open a PR against `main`.
+- **Next steps for the user**:
+  - [ ] Review the archived speaker entry at the top of `previousSessions` in `src/config.ts`:
+    - Date format matches surrounding entries (e.g. `"20 de abril de 2026"`)
+    - Skill tags — edit if needed
+    - Slides button present if slides were provided
+  - [ ] Fill in the `nextSpeaker` placeholder in `src/config.ts`
+  - [ ] Commit, push the branch, and open a PR against `main`
