@@ -115,6 +115,8 @@ If you use [Claude Code](https://claude.ai/code), you can run the `/post-talk-up
 
 It will: archive the current `nextSpeaker` into `previousSessions` (asking for slides/demo URLs and skill tags), set up the new `nextSpeaker` block, commit the changes on a new branch, open a PR, and start the dev server for visual verification.
 
+Recommended to run with `/effort medium`.
+
 ## Security
 
 All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
