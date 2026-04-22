@@ -22,7 +22,7 @@ Use `Edit` for surgical edits to `src/config.ts`. Use `Bash` for git and the dev
 
 ## Step 1 — Read the current nextSpeaker block
 
-Run `grep -n "nextSpeaker:" src/config.ts` to find the line number of the `nextSpeaker` block. Then read only that block (roughly 30–40 lines from that line). Do **not** read the whole file.
+Run `grep -n "nextSpeaker:" src/config.ts` to find the line number of the `nextSpeaker` block. Then read only that block (roughly 30–40 lines from that line). Do **not** read the whole file. Make a note of the date of the talk in `YYYYMMDD` format.
 
 ## Step 2 — Build the archived entry
 
@@ -37,7 +37,7 @@ Construct a new object to prepend to `previousSessions`:
 ## Step 3 — Branch and edit
 
 1. Run `git status` and confirm the working tree is clean. If not, warn the user and stop.
-2. Derive `YYYYMMDD` from the archived talk's date (the original English `nextSpeaker.date`).
+2. Use the `YYYYMMDD` date from the archived talk (the original English `nextSpeaker.date`).
 3. Create and switch to a new branch: `git checkout -b post-talk-update-YYYYMMDD` (from `main`).
 4. Apply two edits to `src/config.ts` with the `Edit` tool:
    - Prepend the archived entry as the first element inside the `previousSessions: [ ... ]` array.
@@ -55,22 +55,23 @@ Construct a new object to prepend to `previousSessions`:
 
 1. Open `src/config.ts` in the editor so the user can fill in the next speaker placeholder: `code src/config.ts`.
 2. Start the dev server in the background: `npm run dev` (run_in_background: true).
-3. Share `http://localhost:4321` with the user and ask them to confirm visually:
-   - The archived speaker appears at the top of **Previous sessions** with the correct Spanish date, any slides button, and the skill tags.
-   - The **Next session** section renders the placeholder state.
+3. Share `http://localhost:4321` with the user
 
 ## Final report
 
 Print a short summary:
 
-- What was archived (name + Spanish date).
-- The skill tags added (remind the user they can edit them in `src/config.ts`).
-- The branch name.
+- Completed talk was moved to "Previous Sessions". 
+  - Slides added if supplied
+  - Suggested skill tags added
+  - Date in Spanish format
+- Placeholder added to "Next Speaker"
+- Checked-out branch name.
 - The local preview URL.
 - **Next steps for the user**:
-  - [ ] Review the archived speaker entry at the top of `previousSessions` in `src/config.ts`:
+  - [ ] Review the `previousSessions` section in `src/config.ts`:
     - Date format matches surrounding entries (e.g. `"20 de abril de 2026"`)
     - Skill tags — edit if needed
     - Slides button present if slides were provided
   - [ ] Fill in the `nextSpeaker` placeholder in `src/config.ts`
-  - [ ] Commit, push the branch, and open a PR against `main`
+  - [ ] Commit any edits, push the branch, and open a PR against `main`
