@@ -105,6 +105,16 @@ Edit these sections in `src/config.ts`:
 - `organizers` - Organizer profiles
 - `accentColor` - Primary theme color (propagates throughout site)
 
+### Claude command: `/post-talk-update` 
+
+If you use [Claude Code](https://claude.ai/code), you can run the `/post-talk-update` command to handle the full post-talk workflow interactively:
+
+```
+/post-talk-update
+```
+
+It will: archive the current `nextSpeaker` into `previousSessions` (asking for slides/demo URLs and skill tags), set up the new `nextSpeaker` block, commit the changes on a new branch, open a PR, and start the dev server for visual verification.
+
 ## Security
 
 All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
