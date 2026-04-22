@@ -129,7 +129,7 @@ When running the `/post-talk-update` command, Claude needs permission to run `gi
 {
   "permissions": {
     "allow": [
-      "Bash(git checkout*)",
+      "Bash(git *)",
       "Edit(src/config.ts)",
       "Bash(code src/config.ts)",
       "Bash(npm run dev)",
