@@ -115,14 +115,15 @@ If you use [Claude Code](https://claude.ai/code), you can run the `/post-talk-up
 
 Optionally pass the slides URL as an argument. The command will:
 
-1. Archive the current `nextSpeaker` into `previousSessions` (with slides button if a URL was passed, and auto-suggested skill tags).
-2. Replace `nextSpeaker` with an editable placeholder.
-3. Create a new branch and open `src/config.ts` for editing.
-4. Start the dev server at `http://localhost:4321` for visual verification.
+1. Create a new branch from `main` 
+2. Archive the current `nextSpeaker` into `previousSessions` (with slides button if a URL was passed, and auto-suggested skill tags).
+3. Replace `nextSpeaker` with an editable placeholder.
+4. Open `src/config.ts` for the user to review and edit.
+5. Start the dev server at `http://localhost:4321` for visual verification.
 
-After reviewing, edit the archived entry if necessary and fill in the `nextSpeaker` placeholder in `src/config.ts`, then commit, push the branch, and open a PR against `main`.
+After reviewing and editing if necessary, commit, push the branch, and open a PR against `main`.
 
-When running the `/post-talk-update` command, Claude needs permission to run `git checkout`, edit `src/config.ts`, open it in the editor, and start the dev server. To avoid permission prompts during the workflow, you can create a local settings file (gitignored, personal only):
+When running the `/post-talk-update` command, Claude needs permission to run `git` commands, edit `src/config.ts`, open it in the editor, and start the dev server. To avoid permission prompts during the workflow, you can create a local settings file (gitignored, personal only):
 
 ```bash
 # .claude/settings.local.json
