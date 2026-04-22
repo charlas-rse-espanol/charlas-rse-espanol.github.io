@@ -105,17 +105,22 @@ Edit these sections in `src/config.ts`:
 - `organizers` - Organizer profiles
 - `accentColor` - Primary theme color (propagates throughout site)
 
-### Claude command: `/post-talk-update` 
+### Claude command: `/post-talk-update`
 
-If you use [Claude Code](https://claude.ai/code), you can run the `/post-talk-update` command to handle the full post-talk workflow interactively:
+If you use [Claude Code](https://claude.ai/code), you can run the `/post-talk-update` command to handle the post-talk workflow with minimal interaction:
 
 ```
-/post-talk-update
+/post-talk-update [slides-url]
 ```
 
-It will: archive the current `nextSpeaker` into `previousSessions` (asking for slides/demo URLs and skill tags), set up the new `nextSpeaker` block, commit the changes on a new branch, open a PR, and start the dev server for visual verification.
+Optionally pass the slides URL as an argument. The command will:
 
-Recommended to run with `/effort medium`.
+1. Archive the current `nextSpeaker` into `previousSessions` (with slides button if a URL was passed, and auto-suggested skill tags).
+2. Replace `nextSpeaker` with an editable placeholder.
+3. Create a new branch and open `src/config.ts` for editing.
+4. Start the dev server at `http://localhost:4321` for visual verification.
+
+After reviewing, edit the archived entry and fill in the `nextSpeaker` placeholder in `src/config.ts`, then commit, push the branch, and open a PR against `main`.
 
 ## Security
 
