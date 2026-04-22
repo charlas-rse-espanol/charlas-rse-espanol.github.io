@@ -105,6 +105,40 @@ Edit these sections in `src/config.ts`:
 - `organizers` - Organizer profiles
 - `accentColor` - Primary theme color (propagates throughout site)
 
+### Claude command: `/post-talk-update`
+
+If you use [Claude Code](https://claude.ai/code), you can run the `/post-talk-update` command to handle the post-talk workflow with minimal interaction:
+
+```
+/post-talk-update [slides-url]
+```
+
+Optionally pass the slides URL as an argument. The command will:
+
+1. Create a new branch from `main` 
+2. Archive the current `nextSpeaker` into `previousSessions` (with slides button if a URL was passed, and auto-suggested skill tags).
+3. Replace `nextSpeaker` with an editable placeholder.
+4. Open `src/config.ts` for the user to review and edit.
+5. Start the dev server at `http://localhost:4321` for visual verification.
+
+After reviewing and editing if necessary, commit, push the branch, and open a PR against `main`.
+
+When running the `/post-talk-update` command, Claude needs permission to run `git` commands, edit `src/config.ts`, open it in the editor, and start the dev server. To avoid permission prompts during the workflow, you can create a local settings file (gitignored, personal only):
+
+```bash
+# .claude/settings.local.json
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Edit(src/config.ts)",
+      "Bash(code src/config.ts)",
+      "Bash(npm run dev)",
+    ]
+  }
+}
+```
+
 ## Security
 
 All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
