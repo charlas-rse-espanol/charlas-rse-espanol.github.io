@@ -115,8 +115,8 @@ export const siteConfig = {
     // name: "",
     // institution: "",
     // date: "", // "Monday 20th April 2026"
-    message: "<strong>Friday 15th May 2026 @ 4pm UK time</strong> - Save the date!<br/>" +
-      "We are preparing a special session in collaboration with " + createLink("https://rs-latam.org/", 'RSLA26') + ".",
+    message: " We are hosting a special session in collaboration with the <br/> "  + createLink("https://rs-latam.org/", 'Research Software Latinoamérica conference - RSLA26') + " <br/> on <strong>Friday 15th May 2026 @ 4pm UK time</strong> <br/>" +
+       "Sign up "  + createLink("https://forms.gle/52Z7Sp5HM2MgLBo26", 'here') + " to participate!",
   },
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
