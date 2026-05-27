@@ -112,11 +112,11 @@ export const siteConfig = {
   // If also title, abstract, bio, time and location are provided, a full card is shown
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
-    // name: "",
-    // institution: "",
-    // date: "", // "Monday 20th April 2026"
-    message: " We are hosting a special session in collaboration with the <br/> "  + createLink("https://rs-latam.org/", 'Research Software Latinoamérica conference - RSLA26') + " <br/> on <strong>Friday 15th May 2026 @ 4pm UK time</strong> <br/>" +
-       "Sign up "  + createLink("https://forms.gle/52Z7Sp5HM2MgLBo26", 'here') + " to participate!",
+    name: "Teresa Gomez-Diaz",
+    institution: "CNRS/Universidad Gustave Eiffel",
+    date: "Monday 15th June 2026", // "Monday 20th April 2026"
+    // message: " We are hosting a special session in collaboration with the <br/> "  + createLink("https://rs-latam.org/", 'Research Software Latinoamérica conference - RSLA26') + " <br/> on <strong>Friday 15th May 2026 @ 4pm UK time</strong> <br/>" +
+    //    "Sign up "  + createLink("https://forms.gle/52Z7Sp5HM2MgLBo26", 'here') + " to participate!",
   },
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
