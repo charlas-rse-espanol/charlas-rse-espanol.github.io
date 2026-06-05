@@ -153,8 +153,8 @@ en la Universidad Gustave Eiffel (Este de París) desde 2002. Tiene un doctorado
     location:
       "Online and in-person at " +
       createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
-    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1o9JWJP7iAlWcNCVvUFLKWYfKBWgnyiCm&export=download",
-    // "https://drive.google.com/file/d/1o9JWJP7iAlWcNCVvUFLKWYfKBWgnyiCm/view?usp=sharing",
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=19nYvIiRHBbINbLxO4XydSASSgG9QGo5Y&export=download",
+    // "https://drive.google.com/file/d/19nYvIiRHBbINbLxO4XydSASSgG9QGo5Y/view?usp=sharing",
   },
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
