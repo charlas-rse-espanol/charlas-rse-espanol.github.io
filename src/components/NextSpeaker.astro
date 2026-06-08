@@ -36,7 +36,7 @@ const showSimpleMessage = hasMinimalInfo && !hasAnyAdditionalDetails;
             <span style="font-size: 1.5em;">📅</span>
             <br/><br/>
             {speaker.message ? (
-              speaker.message
+              <SafeHtml content={speaker.message} />
             ) : (
               <strong class="text-gray-900">No session currently scheduled</strong>
             )}
