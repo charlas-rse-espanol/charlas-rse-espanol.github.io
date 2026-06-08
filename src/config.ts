@@ -156,7 +156,7 @@ export const siteConfig = {
       "Online and in-person at " +
       createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
     calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=19nYvIiRHBbINbLxO4XydSASSgG9QGo5Y&export=download",
-    // "https://drive.google.com/file/d/19nYvIiRHBbINbLxO4XydSASSgG9QGo5Y/view?usp=sharing",
+    // "https://drive.google.com/file/d/1EnPkBnBKnWOS4rnJ_oeLqHMWIJU663Fn/view?usp=sharing",
   },
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
