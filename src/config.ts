@@ -127,20 +127,22 @@ export const siteConfig = {
       "producción científica. " +
       "Presentaremos varios trabajos realizados en colaboración con Tomas Recio, Profesor Magistral de la Universidad Antonio " +
       "de Nebrija (Madrid). " +
-      "Bibliografía
-[2019] On the evaluation of research software: the CDUR procedure, [version 2; peer review: 2 approved]. " +
-      "F1000Research 2019, 8:1353, doi.org/10.12688/f1000research.19994.2.
-[2023] How to achieve FAIRER research data by " +
-      "studying evaluation assessment protocols, Open Science FAIR, Madrid 2023, doi.org/10.5281/zenodo.8398431.
-[2024] The " +
-      "conundrum challenges for Research Software in Open Science, Computers 2024, 13(11), 302; " +
-      "doi.org/10.3390/computers13110302.
-[2026] Research software : qui es-tu ? Une conversation scientifique et juridique " +
-      "sur les logiciels de la recherche, 1024 : Bulletin de la Société Informatique de France, juin 2026. ",
+      "<div style='font-size: 0.875rem; margin-top: 1rem;'>" +
+      "<strong>Bibliografía:</strong>" +
+      "<ul style='margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;'>" +
+      "<li>[2019] On the evaluation of research software: the CDUR procedure, [version 2; peer review: 2 approved]. " +
+      "F1000Research 2019, 8:1353, doi.org/10.12688/f1000research.19994.2.</li>" +
+      "<li>[2023] How to achieve FAIRER research data by studying evaluation assessment protocols, " +
+      "Open Science FAIR, Madrid 2023, doi.org/10.5281/zenodo.8398431.</li>" +
+      "<li>[2024] The conundrum challenges for Research Software in Open Science, " +
+      "Computers 2024, 13(11), 302; doi.org/10.3390/computers13110302.</li>" +
+      "<li>[2026] Research software: qui es-tu? Une conversation scientifique et juridique sur les logiciels de la recherche, " +
+      "1024 : Bulletin de la Société Informatique de France, juin 2026.</li>" +
+      "</ul>" +
+      "</div>",
     bio:
       "La Dra. Teresa Gomez-Diaz es Ingeniera de Investigación del CNRS en el Laboratorio de informática Gaspard-Monge " +
-      "(LIGM)
-en la Universidad Gustave Eiffel (Este de París) desde 2002. Tiene un doctorado en Álgebra Computacional de la " +
+      "(LIGM) en la Universidad Gustave Eiffel (Este de París) desde 2002. Tiene un doctorado en Álgebra Computacional de la " +
       "Universidad de Limoges, Francia (1994). La misión de T. Gomez-Diaz en el LIGM consiste a mejorar las condiciones de " +
       "difusión del software y de los datos de investigación del laboratorio de forma que sean más visibles y accesibles, en " +
       "el contexto de la Ciencia Abierta, desde 2006. En colaboración con el Prof. T. Recio desde 2018, T. Gomez-Diaz ha " +
