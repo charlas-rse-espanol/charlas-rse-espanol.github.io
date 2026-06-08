@@ -112,36 +112,83 @@ export const siteConfig = {
   // If also title, abstract, bio, time and location are provided, a full card is shown
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
-    name: "Patricia Loto",
-    institution: "RSE Argentina",
-    date: "Monday 20th April 2026",
-    // title: "Ribbit AI - Un “Shazam” Para Ranas",
-    // abstract:
-    //   "Ribbit AI es una aplicación web que utiliza el aprendizaje automático para la identificación de anuros (ranas y sapos) " +
-    //   "a través de vocalizaciones. Busca contribuir datos a repositorios de biodiversidad, con el fin de reducir la brecha de " +
-    //   "datos que existe en zonas altamente ricas en especies. Así mismo, tiene como objetivo empoderar a los científicos " +
-    //   "ciudadanos, y ayudar a los investigadores en el monitoreo ecológico. ",
-    // bio:
-    //   createLink("https://julianagomezconsuegra-edi.netlify.app/", "Juliana Gómez Consuegra") +
-    //   " se desempeña como especialista en calidad de datos en " +
-    //   createLink("https://www.cdp.net/en", "CDP") +
-    //   ", una ONG pionera en la divulgación de datos de impacto ambiental. Tiene una maestría en ciencia de datos de la " +
-    //   "Universidad de California en Berkeley, y una maestría y pregrado en biología de la Universidad de los Andes de Bogotá. " +
-    //   "Ribbit AI es la combinación de estas dos pasiones - los datos y las ranas; su especie de estudio. Adicionalmente, ha " +
-    //   "sido investigadora, docente y empresaria. El año pasado, pasó del desarrollo de software para el análisis de datos " +
-    //   "educativos, a la ciencia de datos como herramienta de mitigación del cambio climático. ",
-    // time: "4pm UK time",
-    // location:
-    //   "Online and in-person at " +
-    //   createLink("https://maps.app.goo.gl/mPhtJThfkRHjj1os6", "Chandler House (Room 201), 2 Wakefield St, London WC1N 1PF"),
-    // calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1axIbEh93QF1njUKKzhz2BATZvv3-si4N&export=download",
-    // // "https://drive.google.com/file/d/1axIbEh93QF1njUKKzhz2BATZvv3-si4N/view?usp=sharing",
+    name: "Teresa Gomez-Diaz",
+    institution: "CNRS/Universidad Gustave Eiffel",
+    date: "Monday 15th June 2026",
+    title: "Software de investigación: desafíos actuales y propuestas de solución",
+    abstract:
+      "Nuestro objetivo es estudiar cuáles son los desafíos que aún persisten en la producción, la difusión y la evaluación " +
+      "del software producido en la investigación y las propuestas de solución que hemos aportado. " +
+      "El primer desafío corresponde a la definición: ¿Qué quiere decir exactamente software de investigación? Varias " +
+      "definiciones de este concepto han sido propuestas recientemente, pero ¿cuáles son las características importantes de " +
+      "este objeto que muestran que este concepto se entiende correctamente, y de forma uniforme, en la comunidad científica? " +
+      "En nuestro trabajo de 2019 hemos propuesto una definición que constituye la base de las soluciones para tratar otros " +
+      "desafíos, como por ejemplo su difusión como un programa libre (o de código abierto), o su evaluación en tanto que una " +
+      "producción científica. " +
+      "Presentaremos varios trabajos realizados en colaboración con Tomas Recio, Profesor Magistral de la Universidad Antonio " +
+      "de Nebrija (Madrid). " +
+      "<div style='font-size: 0.875rem; margin-top: 1rem;'>" +
+      "<strong>Bibliografía:</strong>" +
+      "<ul style='margin-top: 0.5rem; margin-left: 1.5rem; list-style-type: disc;'>" +
+      "<li>[2019] On the evaluation of research software: the CDUR procedure, [version 2; peer review: 2 approved]. " +
+      "F1000Research 2019, 8:1353, doi.org/10.12688/f1000research.19994.2.</li>" +
+      "<li>[2023] How to achieve FAIRER research data by studying evaluation assessment protocols, " +
+      "Open Science FAIR, Madrid 2023, doi.org/10.5281/zenodo.8398431.</li>" +
+      "<li>[2024] The conundrum challenges for Research Software in Open Science, " +
+      "Computers 2024, 13(11), 302; doi.org/10.3390/computers13110302.</li>" +
+      "<li>[2026] Research software: qui es-tu? Une conversation scientifique et juridique sur les logiciels de la recherche, " +
+      "1024 : Bulletin de la Société Informatique de France, juin 2026.</li>" +
+      "</ul>" +
+      "</div>",
+    bio:
+      "La Dra. Teresa Gomez-Diaz es Ingeniera de Investigación del CNRS en el Laboratorio de informática Gaspard-Monge " +
+      "(LIGM) en la Universidad Gustave Eiffel (Este de París) desde 2002. Tiene un doctorado en Álgebra Computacional de la " +
+      "Universidad de Limoges, Francia (1994). La misión de T. Gomez-Diaz en el LIGM consiste a mejorar las condiciones de " +
+      "difusión del software y de los datos de investigación del laboratorio de forma que sean más visibles y accesibles, en " +
+      "el contexto de la Ciencia Abierta, desde 2006. En colaboración con el Prof. T. Recio desde 2018, T. Gomez-Diaz ha " +
+      "propuesto los protocolos de evaluación CDUR para el software y de los datos de investigación de investigación y la " +
+      "definición de la Ciencia Abierta como el marco político y legal en el que los resultados de la investigación se " +
+      "comparten y difunden para que sean visibles, accesibles y reutilizables. Actualmente sigue trabajando en temas " +
+      "relacionados con la ciencia abierta y la investigación sobre la investigación (Research on Research). Ver " +
+      "ligm.univ-eiffel.fr/~teresa ",
+    time: "4pm UK time",
+    location:
+      "Online and in-person at " +
+      createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=19nYvIiRHBbINbLxO4XydSASSgG9QGo5Y&export=download",
+    // "https://drive.google.com/file/d/1EnPkBnBKnWOS4rnJ_oeLqHMWIJU663Fn/view?usp=sharing",
   },
-
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
   //////////////////////////////////////////////////////////////
   previousSessions: [
+  {
+      name: "Patricia A. Loto",
+      institution: "FACENA, Universidad Nacional del Nordeste (UNNE)",
+      date: "20 de abril de 2026",
+      title: "Herramientas para la Ciencia Abierta desde el Sur: un asistente con IA y un paquete para planificar software de investigación",
+      abstract:
+        "Hacer Ciencia Abierta no debería requerir saber exactamente qué preguntar ni conocer de antemano los documentos " +
+        "correctos. Tampoco debería requerir reinventar la rueda cada vez que un equipo de investigación necesita documentar su " +
+        "software. En esta charla voy a compartir el trabajo que estoy desarrollando actualmente para intentar responder a esos " +
+        "problemas concretos — dos herramientas complementarias construidas con la convicción de que la Ciencia Abierta puede y " +
+        "debe ser más accesible en nuestro idioma y para nuestra región. La primera es un asistente virtual conversacional " +
+        "basado en LLMs y arquitectura RAG que permite consultar en lenguaje natural un corpus curado de documentos clave sobre " +
+        "Ciencia Abierta en español — desde recomendaciones de la UNESCO hasta políticas latinoamericanas. La segunda es " +
+        "PGSoftware, un paquete de R con plantillas Quarto para generar Planes de Gestión de Software — en el que también estoy " +
+        "trabajando activamente — para que RSEs e investigadores puedan documentar y planificar su software de forma " +
+        "estandarizada y reproducible, sin necesidad de empezar desde cero cada vez. ",
+      bio:
+        "Patricia A. Loto es licenciada en Sistemas de Información y Diplomada en Ciencia de Datos, Aprendizaje Automático y " +
+        "sus Aplicaciones (FAMAF - Universidad Nacional de Córdoba). Actualmente cursa la Maestría en Tecnologías de la " +
+        "Información en la Universidad Nacional del Nordeste (UNNE), donde desarrolla su tesis sobre un asistente virtual " +
+        "basado en inteligencia artificial para la difusión de prácticas de Ciencia Abierta en América Latina. Se desempeña " +
+        "como desarrolladora de software y analista de datos en el sector público, y como docente universitaria en el área de " +
+        "sistemas y programación. Además, es una activa promotora de la ciencia abierta y el software de investigación en la " +
+        "región: co-fundadora de RSE Argentina y miembro del comité organizador de LatinR. ",
+      skills: ["ciencia abierta", "LLMs", "RAG", "gestión de software"],
+      linkButtons: [{ href: "https://drive.google.com/file/d/1Na3S2kPOhbU-dkItV1TKUzzW3b_rUrtH/view?usp=sharing", label: "View slides" }],
+  },
   {
       name: "Juliana Gómez Consuegra",
       institution: "Ribbit AI & CDP",
@@ -161,7 +208,7 @@ export const siteConfig = {
         "Ribbit AI es la combinación de estas dos pasiones - los datos y las ranas; su especie de estudio. Adicionalmente, ha " +
         "sido investigadora, docente y empresaria. El año pasado, pasó del desarrollo de software para el análisis de datos " +
         "educativos, a la ciencia de datos como herramienta de mitigación del cambio climático. ",
-      skills: ["machine learning", "biodiversity", "bioacoustics"],
+      skills: ["machine learning", "biodiversidad", "bioacústica"],
       linkButtons: [
         { href: "https://youtu.be/8SBdCbtlcLw", label: "View demo 🎥" },
         { href: "https://drive.google.com/file/d/1P7hCDrdway_C9VsSR0h9M8h3y4aUS335/view?usp=sharing", label: "View slides" }
