@@ -113,7 +113,7 @@ export const siteConfig = {
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
     name: "Teresa Gomez-Diaz",
-    institution: "CNRS/Universidad Gustave Eiffel",
+    institution: "Universidad Gustave Eiffel-LIGM-CNRS (este de París)",
     date: "Monday 15th June 2026",
     title: "Software de investigación: desafíos actuales y propuestas de solución",
     abstract:
