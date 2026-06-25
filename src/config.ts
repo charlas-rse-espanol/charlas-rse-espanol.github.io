@@ -113,9 +113,30 @@ export const siteConfig = {
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
     name: "Yanina Bellini Saibene",
-    institution: "rOpenSci, R-Ladies and Universidad Austral",
-    date: "Monday 6th July 2026"
-    // message: "Custom message",
+    institution: "rOpenSci, Sovereign Tech Fellow",
+    date: "Monday 6th July 2026",
+    title: "Software sostenible, comunidades sostenibles: aprendizajes desde rOpenSci",
+    abstract:
+      "Mantener software de investigación es un desafío que trasciende los aspectos técnicos. La documentación, la " +
+      "incorporación de nuevas personas colaboradoras, la gobernanza, la mentoría y la construcción de comunidades son " +
+      "aspectos clave para que los proyectos puedan perdurar en el tiempo. En esta charla compartiré cómo rOpenSci aborda " +
+      "estos desafíos a través de programas e iniciativas que apoyan tanto a quienes desarrollan software como a las " +
+      "comunidades que lo sostienen. A partir de ejemplos concretos, exploraremos estrategias para fortalecer la " +
+      "sostenibilidad del software de investigación desde una perspectiva centrada en las personas. ",
+    bio:
+      "Yanina Bellini Saibene es Community Manager de rOpenSci y Program Manager del programa Champions y del Proyecto " +
+      "Multilingüe de rOpenSci. Fue seleccionada como Sovereign Tech Fellow 2026-2027. También es Project Lead de RLadies+, " +
+      "parte del directorio de The Carpentries y cofundadora y copresidenta de LatinR. Trabaja en el fortalecimiento de " +
+      "comunidades, la formación de personas desarrolladoras de software y la promoción de prácticas abiertas para la " +
+      "creación de software de investigación sostenible. Sus áreas de interés incluyen la ciencia abierta, la colaboración en " +
+      "proyectos de software libre, la localización de recursos educativos y el desarrollo de capacidades en comunidades " +
+      "científicas y tecnológicas con foco en el Sur Global. ",
+    time: "4pm UK time",
+    location:
+      "Online and in-person at " +
+      createLink("https://maps.app.goo.gl/6cUMZvEKh7FyFtrP8", "Bentham House UCL - Tutorial Room 302, Endsleigh Gardens, London WC1H 0EG,"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1CnJor-6Wv1vKRjECGLm9IUC26GRCt42M&export=download",
+    // "https://drive.google.com/file/d/1CnJor-6Wv1vKRjECGLm9IUC26GRCt42M/view?usp=sharing",
   },
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
