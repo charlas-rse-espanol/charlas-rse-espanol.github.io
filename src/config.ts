@@ -142,7 +142,10 @@ export const siteConfig = {
         "proyectos de software libre, la localización de recursos educativos y el desarrollo de capacidades en comunidades " +
         "científicas y tecnológicas con foco en el Sur Global. ",
       skills: ["software sostenible", "comunidades", "ciencia abierta", "rOpenSci"],
-      linkButtons: [{ href: "https://yabellini.github.io/rse_ropensci_2026/#/title-slide", label: "View slides" }],
+      linkButtons: [
+        { href: "https://yabellini.github.io/rse_ropensci_2026/#/title-slide", label: "View slides" },
+        { href: "https://codeforthought.buzzsprout.com/1326658/episodes/14660478-en-crossing-the-language-barrier-yanina-saibene", label: "Yanina in Code for Thought 📻" },
+      ],
   },
   {
       name: "Teresa Gomez-Diaz",
@@ -185,7 +188,11 @@ export const siteConfig = {
         "relacionados con la Ciencia Abierta y la investigación sobre la investigación (Research on Research). Para ver más: " +
         createLink("ligm.univ-eiffel.fr/~teresa", "ligm.univ-eiffel.fr/~teresa"),
       skills: ["difusión", "ciencia abierta", "protocolos de evaluación de software", "FAIR"],
-      linkButtons: [{ href: "https://drive.google.com/file/d/1QRDzcyiCPBsNDjsaIVVTNeYAtcm7FTr5/view?usp=sharing", label: "View slides" }],
+      linkButtons: [
+        { href: "https://drive.google.com/file/d/1QRDzcyiCPBsNDjsaIVVTNeYAtcm7FTr5/view?usp=sharing", label: "View slides" },
+        { href: "https://codeforthought.buzzsprout.com/1326658/episodes/13216530-en-open-data-open-software-with-teresa-gomez-diaz", label: "Teresa in Code for Thought 📻" }
+     
+      ],
   },
   {
       name: "Patricia A. Loto",
