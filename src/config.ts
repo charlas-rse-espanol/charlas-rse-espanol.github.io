@@ -112,10 +112,30 @@ export const siteConfig = {
   // If also title, abstract, bio, time and location are provided, a full card is shown
   // If you just want to display a custom message, write it under the `message` key
   nextSpeaker: {
-    name: "",
-    institution: "",
-    date: "", // "Monday 20th April 2026"
-    // message: "Custom message",
+    name: "Emilio García Ríos",
+    institution: "Universidad Técnica de Múnich (TUM)",
+    date: "Saturday 10th October 2026",
+    title: "Ingeniería de software y bioinformática: ¿aún hay diferencias? (Un viaje personal por la ingeniería de software de investigación.)",
+    abstract:
+      "Encontrar virus en la microbiota humana no es, en el fondo, un reto de microbiología, sino de computación. Convivimos " +
+      "con miles de millones de virus que casi nunca logramos aislar en un laboratorio. Por eso, ya no los cultivamos: los " +
+      "leemos. A medida que la biología genera cantidades inmensas de datos y los genomas dejan de ser algo físico para " +
+      "volverse información, la línea que separa la bioinformática de la ingeniería de software se hace más delgada. En este " +
+      "viaje personal quiero mostrar, con ejemplos concretos, lo que la bioinformática aún puede aprender de la ingeniería de " +
+      "software: cómo lograr resultados verdaderamente reproducibles, adoptar metodologías más dinámicas y construir una " +
+      "mejor cultura de equipo. Para ilustrarlo, exploraremos el universo de virus que habitan en nuestro cuerpo, un mundo " +
+      "invisible que hoy solo podemos descubrir a través del código. ",
+    bio:
+      "Emilio García Ríos es un ingeniero de software que encontró su vocación en la biología. Tras más de una década en la " +
+      "industria, dio el salto a los datos biológicos en el EMBL-EBI. En la actualidad forma parte del laboratorio de Melanie " +
+      "Schirmer en la Universidad Técnica de Múnich (TUM), donde estudia el viroma humano y desarrolla software reproducible " +
+      "para la metagenómica. Nació en Tarapoto, en la Amazonía peruana. ",
+    time: "4pm UK time",
+    location:
+      "Online and in-person at " +
+      createLink("https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5", "Margaret Hamilton Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB"),
+    calendarLink: "https://drive.usercontent.google.com/u/0/uc?id=1dKVgjRqIj_vlNyPo1he1Q7AcZi8YveDU&export=download",
+    // "https://drive.google.com/file/d/1dKVgjRqIj_vlNyPo1he1Q7AcZi8YveDU/view?usp=sharing",
   },
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS 
