@@ -114,7 +114,7 @@ export const siteConfig = {
   nextSpeaker: {
     name: "Emilio García Ríos",
     institution: "Universidad Técnica de Múnich (TUM)",
-    date: "Saturday 10th October 2026",
+    date: "Monday 10th August 2026",
     title: "Ingeniería de software y bioinformática: ¿aún hay diferencias? (Un viaje personal por la ingeniería de software de investigación.)",
     abstract:
       "Encontrar virus en la microbiota humana no es, en el fondo, un reto de microbiología, sino de computación. Convivimos " +
