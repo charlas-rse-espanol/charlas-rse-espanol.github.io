@@ -15,6 +15,7 @@
  */
 import data from "./data/next-speaker.json";
 import { formatEnglishDate } from "./lib/dates";
+import { expandLinksIn } from "./lib/links";
 
 export type NextSpeaker = {
   /** Editor-only pointer to the schema; not rendered. */
@@ -35,6 +36,6 @@ export type NextSpeaker = {
 const { $schema, ...speaker }: NextSpeaker = data;
 
 export const nextSpeaker = {
-  ...speaker,
+  ...expandLinksIn(speaker, ["abstract", "bio", "location", "message"]),
   dateLabel: speaker.date ? formatEnglishDate(speaker.date) : "",
 };

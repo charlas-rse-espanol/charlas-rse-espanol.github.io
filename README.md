@@ -119,17 +119,24 @@ the next speaker, then commit, push and open a PR against `main`.
 Drop a new `src/data/sessions/YYYYMMDD.json` in. Nothing else to edit — the files are
 collected and sorted automatically by `src/sessions.ts`.
 
-### Creating HTML links in content
+### Links in content
 
-`abstract`, `bio`, `location` and `message` may contain HTML. Because they live in JSON,
-links are written out in full:
+In the JSON content (`abstract`, `bio`, `location`, `message`), write links in markdown
+style:
 
-```html
-<a href='https://example.com' target='_blank' rel='noopener noreferrer' style='color: #E86C5E; font-weight: bold;'>link text</a>
+```json
+"bio": "Mantiene [rOpenSci](https://ropensci.org) y escribe en [su blog](https://example.org)."
 ```
 
-Content in `src/config.ts` is TypeScript, so it uses the `createLink()` helper instead,
-which produces exactly that markup:
+They are expanded into styled links that open in a new tab. Relative links
+(`[sesión anterior](sessions#foo)`) and `mailto:` work too. Square brackets that aren't
+followed by a parenthesised URL — `[2019]`, `[version 2]` — are left alone.
+
+Raw HTML still works where you need more than a link: `a`, `span`, `div`, `br`, `ul`, `li`,
+`strong`, `em`, `i`, `p`.
+
+Content in `src/config.ts` is TypeScript, so it calls the `createLink()` helper instead.
+Both routes produce identical markup — see `src/lib/links.ts`.
 
 ```typescript
 createLink("https://example.com", "link text") + " more text..."
@@ -204,7 +211,8 @@ charlas-rse-espanol.github.io/
 │   │   ├── next-speaker.schema.json
 │   │   └── sessions/             # One JSON file per past session
 │   ├── lib/
-│   │   └── dates.ts              # ISO date -> Spanish / English display strings
+│   │   ├── dates.ts              # ISO date -> Spanish / English display strings
+│   │   └── links.ts              # createLink() and [text](url) expansion
 │   ├── pages/                    # Page routes
 │   │   ├── index.astro           # Homepage
 │   │   └── sessions.astro        # All sessions archive

@@ -29,11 +29,11 @@
     },
     "abstract": {
       "type": "string",
-      "description": "Talk abstract. May contain HTML, sanitized by <SafeHtml>. Links are written in full: <a href='URL' target='_blank' rel='noopener noreferrer' style='color: #E86C5E; font-weight: bold;'>text</a>"
+      "description": "Talk abstract. Write links as [link text](https://example.com) — they are expanded into styled links that open in a new tab. Raw HTML is also allowed (a, span, div, br, ul, li, strong, em, i, p) and is sanitized by <SafeHtml>."
     },
     "bio": {
       "type": "string",
-      "description": "Speaker bio. May contain HTML, same rules as abstract."
+      "description": "Speaker bio. Same rules as abstract: [link text](https://example.com) for links, HTML allowed."
     },
     "time": {
       "type": "string",
@@ -42,7 +42,7 @@
     },
     "location": {
       "type": "string",
-      "description": "Where the talk happens. May contain HTML — typically \"Online and in-person at \" plus a link to the venue on Google Maps. Dropped when the talk is archived."
+      "description": "Where the talk happens, e.g. \"Online and in-person at [the Turing Institute](https://maps.app.goo.gl/...)\". Dropped when the talk is archived."
     },
     "calendarLink": {
       "type": "string",
@@ -50,7 +50,7 @@
     },
     "message": {
       "type": "string",
-      "description": "A custom message to show instead of any speaker details. May contain HTML."
+      "description": "A custom message to show instead of any speaker details. Supports [link text](https://example.com) and HTML."
     },
     "skills": {
       "type": "array",

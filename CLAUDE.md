@@ -93,9 +93,9 @@ the session's `skills` tags by hand and add the next speaker.
 
 ### Content Guidelines
 
-- `abstract` and `bio` may contain HTML. Since they live in JSON, links are written out in
-  full rather than via `createLink()` — match its output so styling stays consistent:
-  `<a href='URL' target='_blank' rel='noopener noreferrer' style='color: #E86C5E; font-weight: bold;'>text</a>`
+- In JSON content, write links in markdown style: `[link text](https://example.com)`.
+  `src/lib/links.ts` expands them into the same markup `createLink()` produces in
+  `src/config.ts`. Raw HTML is still allowed for anything more than a link.
 - `skills` is 2-4 short lowercase Spanish topic tags
 - Never hand-write a display date — store ISO and let `src/lib/dates.ts` format it
 

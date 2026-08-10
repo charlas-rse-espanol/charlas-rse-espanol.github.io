@@ -9,6 +9,7 @@
  * the <SafeHtml> component before rendering. See src/components/SafeHtml.astro
  */
 import { formatSpanishDate } from "./lib/dates";
+import { expandLinksIn } from "./lib/links";
 
 export type LinkButton = {
   href: string;
@@ -35,6 +36,6 @@ const sessionFiles = import.meta.glob<Session>("./data/sessions/*.json", {
 export const previousSessions = Object.values(sessionFiles)
   .sort((a, b) => b.date.localeCompare(a.date))
   .map((session) => ({
-    ...session,
+    ...expandLinksIn(session, ["abstract", "bio"]),
     dateLabel: formatSpanishDate(session.date),
   }));
