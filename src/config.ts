@@ -10,8 +10,7 @@
  * For more details, see src/components/SafeHtml.astro
  */
 
-// Colors
-const ACCENT_COLOR = "#E86C5E";
+import { ACCENT_COLOR, createGitHubHandleLink, createLink } from "./lib/links";
 
 // Link constants
 const LINKS = {
@@ -51,14 +50,6 @@ const SECTIONS = {
     navTitle: "Organisers",
   },
 } as const;
-
-// Create links function
-const createLink = (url: string, text: string, color: string = ACCENT_COLOR) =>
-  `<a href='${url}' target='_blank' rel='noopener noreferrer' style='color: ${color}; font-weight: bold;'>${text}</a>`;
-
-// Create GitHub handle links with @ prefix
-const createGitHubHandleLink = (handle: string, color: string = ACCENT_COLOR) =>
-  createLink(`https://github.com/${handle}`, `@${handle}`, color);
 
 export const siteConfig = {
   name: "Charlas RSE en español",
