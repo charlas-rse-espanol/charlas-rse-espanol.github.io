@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Next speaker",
+  "description": "The upcoming session. Three shapes are rendered by <NextSpeaker>:\n\n1. name + institution + date -> a \"Save the date\" message\n2. ...plus title, abstract, bio, time, location, calendarLink -> the full session card\n3. message on its own -> that custom message\n\nLeave the file as {} when nothing is scheduled.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this schema. Keep it — it is what makes these descriptions show up in the editor."
+    },
+    "name": {
+      "type": "string",
+      "description": "Speaker name, e.g. \"Claudette López\"."
+    },
+    "institution": {
+      "type": "string",
+      "description": "Speaker institution, e.g. \"British Antarctic Survey\"."
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "ISO date, YYYY-MM-DD. Displayed as e.g. \"Monday 21st September 2026\" — never write the display form by hand.",
+      "examples": ["2026-09-21"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Talk title. Adding this (with abstract, bio, time, location and calendarLink) switches the save-the-date message to the full session card."
+    },
+    "abstract": {
+      "type": "string",
+      "description": "Talk abstract. May contain HTML, sanitized by <SafeHtml>. Links are written in full: <a href='URL' target='_blank' rel='noopener noreferrer' style='color: #E86C5E; font-weight: bold;'>text</a>"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Speaker bio. May contain HTML, same rules as abstract."
+    },
+    "time": {
+      "type": "string",
+      "description": "Start time as shown next to the date, e.g. \"4pm UK time\". Dropped when the talk is archived.",
+      "examples": ["4pm UK time"]
+    },
+    "location": {
+      "type": "string",
+      "description": "Where the talk happens. May contain HTML — typically \"Online and in-person at \" plus a link to the venue on Google Maps. Dropped when the talk is archived."
+    },
+    "calendarLink": {
+      "type": "string",
+      "description": "URL of the calendar invite (with the Zoom details). Dropped when the talk is archived."
+    },
+    "message": {
+      "type": "string",
+      "description": "A custom message to show instead of any speaker details. May contain HTML."
+    },
+    "skills": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "2-4 short lowercase Spanish topic tags. Usually left until after the talk, on the archived session."
+    },
+    "linkButtons": {
+      "type": "array",
+      "description": "Extra buttons on the session card. `npm run post-talk` appends the \"View slides\" one for you.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["href", "label"],
+        "properties": {
+          "href": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 {
+  "$schema": "./next-speaker.schema.json",
   "name": "Claudette López",
   "institution": "British Antarctic Survey",
   "date": "2026-09-21"

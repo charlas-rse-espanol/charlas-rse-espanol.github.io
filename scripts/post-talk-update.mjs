@@ -92,7 +92,11 @@ const missing = ["name", "institution", "title", "abstract", "bio"].filter(
 );
 
 writeFileSync(sessionFile, JSON.stringify(session, null, 2) + "\n");
-writeFileSync(NEXT_SPEAKER_FILE, "{}\n");
+// Keep the $schema pointer so the editor still documents the empty file.
+writeFileSync(
+  NEXT_SPEAKER_FILE,
+  JSON.stringify(speaker.$schema ? { $schema: speaker.$schema } : {}, null, 2) + "\n",
+);
 
 // --- Report -----------------------------------------------------------------
 

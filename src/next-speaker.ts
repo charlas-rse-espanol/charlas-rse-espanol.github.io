@@ -1,7 +1,9 @@
 /**
  * The upcoming session, from src/data/next-speaker.json.
  *
- * Three shapes are supported, matching what <NextSpeaker> renders:
+ * Every field is documented in src/data/next-speaker.schema.json, which the
+ * editor surfaces as hover text and autocomplete while editing the JSON.
+ * In short, three shapes are supported, matching what <NextSpeaker> renders:
  *   1. `name` + `institution` + `date`            -> "Save the date" message
  *   2. ...plus `title`, `abstract`, `bio`,
  *      `time`, `location`, `calendarLink`         -> full session card
@@ -15,6 +17,8 @@ import data from "./data/next-speaker.json";
 import { formatEnglishDate } from "./lib/dates";
 
 export type NextSpeaker = {
+  /** Editor-only pointer to the schema; not rendered. */
+  $schema?: string;
   name?: string;
   institution?: string;
   /** ISO `YYYY-MM-DD`. Formatted for display as e.g. "Monday 21st September 2026". */
@@ -28,7 +32,7 @@ export type NextSpeaker = {
   message?: string;
 };
 
-const speaker: NextSpeaker = data;
+const { $schema, ...speaker }: NextSpeaker = data;
 
 export const nextSpeaker = {
   ...speaker,
