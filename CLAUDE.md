@@ -21,6 +21,7 @@ This is the website for **Charlas RSE en español**, a monthly tech talk series 
 npm run dev       # Start development server at http://localhost:4321
 npm run build     # Build for production
 npm run preview   # Preview production build
+npm run post-talk # Archive the delivered talk (see "Working with Speaker Content")
 ```
 
 ## Architecture
@@ -40,19 +41,27 @@ The project follows a component-based architecture with all content centralized 
 - **Pages**:
   - `src/pages/index.astro`: Main landing page with all sections
   - `src/pages/sessions.astro`: Dedicated page showing all past sessions
-- **Configuration** (`src/config.ts`): Single source of truth for all content
+- **Content data** (`src/data/`): Speaker content, as JSON
+  - `src/data/next-speaker.json`: the upcoming session
+  - `src/data/sessions/YYYYMMDD.json`: one file per past session
+- **Data loaders**:
+  - `src/next-speaker.ts`: reads `next-speaker.json`, adds the English `dateLabel`
+  - `src/sessions.ts`: globs `src/data/sessions/*.json`, sorts most-recent-first, adds the Spanish `dateLabel`
+  - `src/lib/dates.ts`: ISO date -> Spanish / English display strings
+- **Configuration** (`src/config.ts`): Site chrome — name, sections, about text, organizers
 
 ### Key Architectural Decisions
 
-1. **Single Configuration File**: All speaker data, session details, and site content lives in `src/config.ts`
-2. **Static Generation**: All content is static HTML generated at build time
-3. **Bilingual Content**: Some UI in English, most content in Spanish
-4. **Component Independence**: Each section is self-contained and reads from the config
-5. **Accent Color System**: Single `accentColor` in config propagates throughout via CSS custom properties
+1. **Content as data, chrome as config**: Speaker content is JSON under `src/data/`; `src/config.ts` holds only site-level settings. Adding a session means adding one file.
+2. **Dates stored once, as ISO**: `YYYY-MM-DD` everywhere; Spanish and English display strings are derived in `src/lib/dates.ts`. Never hand-write a display date.
+3. **Static Generation**: All content is static HTML generated at build time
+4. **Bilingual Content**: Some UI in English, most content in Spanish
+5. **Component Independence**: Each section is self-contained and reads from the config
+6. **Accent Color System**: Single `accentColor` in config propagates throughout via CSS custom properties
 
 ## Important Implementation Details
 
-- **Content Security**: All HTML content from config.ts is rendered using the `<SafeHtml>` component, which enforces DOMPurify sanitization. The whitelist approach allows only safe tags (a, span, div, br, ul, li, strong, em, i, p) and attributes (href, target, rel, style, class). All sanitization logic is contained within `src/components/SafeHtml.astro`.
+- **Content Security**: All HTML content from `src/config.ts` and `src/data/` is rendered using the `<SafeHtml>` component, which enforces DOMPurify sanitization. The whitelist approach allows only safe tags (a, span, div, br, ul, li, strong, em, i, p) and attributes (href, target, rel, style, class). All sanitization logic is contained within `src/components/SafeHtml.astro`.
 - **Session Sorting**: Previous sessions are sorted by date (most recent first) automatically
 - **Responsive Design**: Mobile-first approach with tailwind breakpoints
 - **External Links**: Calendar invites, slides, and location links open in new tabs with `rel="noopener noreferrer"`
@@ -60,36 +69,47 @@ The project follows a component-based architecture with all content centralized 
 
 ## Working with Speaker Content
 
-### Adding a New Speaker
+### Announcing the next speaker
 
-1. Update `src/config.ts`:
-   - Update `nextSpeaker` object with new speaker details
-   - Move previous nextSpeaker to top of `previousSessions` array
-2. Required fields:
-   - `name`, `title`, `institution`, `date`, `time`, `location`, `abstract`, `bio`
-   - `calendarLink`, `locationLink`
-3. Optional fields:
-   - `slidesLink` (add after talk is delivered)
-   - `skills` array for topic tags
+Edit `src/data/next-speaker.json`. Three shapes are supported (see `src/next-speaker.ts`):
+
+- `name` + `institution` + `date` -> "Save the date" message
+- ...plus `title`, `abstract`, `bio`, `time`, `location`, `calendarLink` -> full session card
+- `message` alone -> that custom message
+- `{}` -> "No session currently scheduled"
+
+`date` is ISO `YYYY-MM-DD`; it is rendered as "Monday 21st September 2026".
+
+### After a talk has been delivered
+
+```bash
+npm run post-talk -- [slides-url]     # add --no-branch to stay on the current branch
+```
+
+This archives `next-speaker.json` into `src/data/sessions/YYYYMMDD.json` (dropping `time`,
+`location` and `calendarLink`), appends a "View slides" button if a URL was given, resets
+`next-speaker.json`, and creates a `post-talk-update-YYYYMMDD` branch. Afterwards, fill in
+the session's `skills` tags by hand and add the next speaker.
 
 ### Content Guidelines
 
-- Abstracts and bios can include HTML links created via `createLink()` helper
-- Links automatically open in new tabs with proper security attributes
-- Dates in `previousSessions` should use format: "DD de MMMM YYYY" (Spanish)
-- Next speaker dates use English format: "Day DDth Month YYYY"
+- `abstract` and `bio` may contain HTML. Since they live in JSON, links are written out in
+  full rather than via `createLink()` — match its output so styling stays consistent:
+  `<a href='URL' target='_blank' rel='noopener noreferrer' style='color: #E86C5E; font-weight: bold;'>text</a>`
+- `skills` is 2-4 short lowercase Spanish topic tags
+- Never hand-write a display date — store ISO and let `src/lib/dates.ts` format it
 
 ## Configuration Structure
 
-The `src/config.ts` exports a `siteConfig` object with:
+`src/config.ts` exports a `siteConfig` object with:
 - **Basic info**: name, title, description, accentColor, logo
 - **Social links**: github, email, mailingList
 - **Sections**: IDs and titles for navigation
 - **aboutMe**: HTML string describing the charlas initiative
-- **nextSpeaker**: Object with upcoming speaker details
-- **previousSessions**: Array of past speakers (auto-sorted by date, with optional `skills` tags per session)
 - **callForSpeakers**: Description and contact info
 - **organizers**: Array of organizer profiles with GitHub info
+
+Speaker content is *not* here — it lives in `src/data/` (see above).
 
 ## Deployment
 
