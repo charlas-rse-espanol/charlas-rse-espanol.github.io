@@ -1,0 +1,20 @@
+{
+  "name": "Patricia A. Loto",
+  "institution": "FACENA, Universidad Nacional del Nordeste (UNNE)",
+  "date": "2026-04-20",
+  "title": "Herramientas para la Ciencia Abierta desde el Sur: un asistente con IA y un paquete para planificar software de investigación",
+  "abstract": "Hacer Ciencia Abierta no debería requerir saber exactamente qué preguntar ni conocer de antemano los documentos correctos. Tampoco debería requerir reinventar la rueda cada vez que un equipo de investigación necesita documentar su software. En esta charla voy a compartir el trabajo que estoy desarrollando actualmente para intentar responder a esos problemas concretos — dos herramientas complementarias construidas con la convicción de que la Ciencia Abierta puede y debe ser más accesible en nuestro idioma y para nuestra región. La primera es un asistente virtual conversacional basado en LLMs y arquitectura RAG que permite consultar en lenguaje natural un corpus curado de documentos clave sobre Ciencia Abierta en español — desde recomendaciones de la UNESCO hasta políticas latinoamericanas. La segunda es PGSoftware, un paquete de R con plantillas Quarto para generar Planes de Gestión de Software — en el que también estoy trabajando activamente — para que RSEs e investigadores puedan documentar y planificar su software de forma estandarizada y reproducible, sin necesidad de empezar desde cero cada vez. ",
+  "bio": "Patricia A. Loto es licenciada en Sistemas de Información y Diplomada en Ciencia de Datos, Aprendizaje Automático y sus Aplicaciones (FAMAF - Universidad Nacional de Córdoba). Actualmente cursa la Maestría en Tecnologías de la Información en la Universidad Nacional del Nordeste (UNNE), donde desarrolla su tesis sobre un asistente virtual basado en inteligencia artificial para la difusión de prácticas de Ciencia Abierta en América Latina. Se desempeña como desarrolladora de software y analista de datos en el sector público, y como docente universitaria en el área de sistemas y programación. Además, es una activa promotora de la ciencia abierta y el software de investigación en la región: co-fundadora de RSE Argentina y miembro del comité organizador de LatinR. ",
+  "skills": [
+    "ciencia abierta",
+    "LLMs",
+    "RAG",
+    "gestión de software"
+  ],
+  "linkButtons": [
+    {
+      "href": "https://drive.google.com/file/d/1Na3S2kPOhbU-dkItV1TKUzzW3b_rUrtH/view?usp=sharing",
+      "label": "View slides"
+    }
+  ]
+}

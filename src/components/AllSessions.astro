@@ -1,14 +1,8 @@
 ---
 import { siteConfig } from "../config";
+import { previousSessions as sessions } from "../sessions";
 import SafeHtml from "./SafeHtml.astro";
 import SessionLinkButton from "./SessionLinkButton.astro";
-
-// Sort sessions by date (most recent first)
-const sessions = [...siteConfig.previousSessions].sort((a, b) => {
-  const dateA = new Date(a.date);
-  const dateB = new Date(b.date);
-  return dateB.getTime() - dateA.getTime();
-});
 ---
 
 <section class="p-8 sm:p-12 md:p-16 lg:p-24">
@@ -71,7 +65,7 @@ const sessions = [...siteConfig.previousSessions].sort((a, b) => {
               <path d="M8 3v4" />
               <path d="M4 11h16" />
             </svg>
-            <span>{session.date}</span>
+            <span>{session.dateLabel}</span>
           </h4>
           
           <!-- Session Card -->

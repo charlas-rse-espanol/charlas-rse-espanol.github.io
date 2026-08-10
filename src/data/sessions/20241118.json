@@ -1,0 +1,13 @@
+{
+  "name": "Juan Rodríguez Herrera",
+  "institution": "EPCC",
+  "date": "2024-11-18",
+  "title": "Aventuras y desventuras de ARCHER2, el servicio de supercomputación del Reino Unido",
+  "abstract": "ARCHER2, el servicio de supercomputación del Reino Unido, inició sus operaciones en mayo de 2020. Este servicio se basa en el supercomputador ARCHER2, un HPE Cray EX que cuenta con casi 6,000 nodos de cómputo, proporcionando una capacidad de procesamiento excepcional. En esta charla, exploraremos en detalle los diversos componentes que conforman este servicio. Discutiremos las características avanzadas del hardware, incluyendo su arquitectura y rendimiento. Además, abordaremos el software disponible para sus usuarios. También destacaremos los programas de formación diseñados para capacitar a los usuarios en el uso eficiente de este recurso, así como el soporte técnico continuo que se ofrece para resolver cualquier problema y maximizar el aprovechamiento del sistema. Esta presentación ofrecerá una visión completa de cómo ARCHER2 está impulsando la investigación y la innovación en el Reino Unido.",
+  "bio": "Juan Rodríguez Herrera se incorporó a EPCC en 2015 tras obtener el Doctorado en Informática en la Universidad de Almería. Es el responsable de formación de ARCHER2. También participa en otras actividades del servicio ARCHER2, tales como el soporte a los usuarios y la divulgación.",
+  "skills": [
+    "HPC",
+    "supercomputación",
+    "formación"
+  ]
+}

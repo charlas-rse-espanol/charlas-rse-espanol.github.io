@@ -1,0 +1,19 @@
+{
+  "name": "Mauro Lepore",
+  "institution": "ixpantia",
+  "date": "2025-02-17",
+  "title": "Expandiendo colaboraciones en Ingeniería de Software de Investigación",
+  "abstract": "En esta presentación comparto mis experiencias al hacer la transición como Research Software Engineer (RSE) desde la academia hacia la industria. En la última década, desarrollé código para investigación en una universidad en Australia, un centro de investigación en Panamá, un museo en EE.UU., una ONG en Alemania y ahora una consultora enfocada en ciencia, ingeniería y estrategia de datos. Voy a compartir las necesidades que noté, y voy a explicar por qué creo que las personas que trabajamos en RSE podemos aportar mucho valor combinando experiencia en investigación e industria. Sin embargo, quisiera que mi experiencia sea solo un punto de partida y promover una discusión en la que podamos explorar más profundamente el valor que podemos aportar, especialmente en la comunidad hispanohablante: ¿Quiénes nos necesitan? ¿Dónde están? ¿Qué necesitan? ¿Cómo podemos ayudarlos?",
+  "bio": "Trabajo en ixpantia donde lidero la práctica de RSE. Soy un educador y desarrollador de software especializado en el ecosistema de R. Mantengo varios paquetes de R de código abierto y soy editor asociado en rOpenSci.",
+  "skills": [
+    "R",
+    "academia-industria",
+    "consultoría"
+  ],
+  "linkButtons": [
+    {
+      "href": "https://docs.google.com/presentation/d/e/2PACX-1vTDQf8BMwdcC7Nj0rqt6LCS0yuGjGoVrpafBU5r9iHVvn91JWEvDIx2XQC12WgdzdjYuDnn3EHx5Qgd/pub?start=false&loop=false&delayms=3000",
+      "label": "View slides"
+    }
+  ]
+}
