@@ -108,15 +108,9 @@ export const siteConfig = {
   //////////////////////////////////////////////////////////////
   // NEXT SPEAKER
   //////////////////////////////////////////////////////////////
-  // If only name, institution and date are provided a "Save the date" message will be rendered
-  // If also title, abstract, bio, time and location are provided, a full card is shown
-  // If you just want to display a custom message, write it under the `message` key
-  nextSpeaker: {
-    name: "Claudette López",
-    institution: "British Antarctic Survey",
-    date: "Monday 21st September 2026", // "Monday 20th April 2026"
-    // message: "Custom message",
-  },
+  // The upcoming session lives in src/data/next-speaker.json.
+  // See src/next-speaker.ts for the three shapes it can take.
+
   //////////////////////////////////////////////////////////////
   // PREVIOUS SESSIONS
   //////////////////////////////////////////////////////////////
