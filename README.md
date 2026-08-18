@@ -50,90 +50,128 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Archive the talk that just happened (see "Updating content")
+npm run post-talk
 ```
 
 The development server will be available at `http://localhost:4321`
 
 ## Updating content
 
-All website content is managed through the single configuration file: `src/config.ts`
+Speaker content lives as JSON under `src/data/`; `src/config.ts` holds the site-level
+settings (title, about text, organizers, accent colour).
 
-### Adding a new speaker
-
-1. Open `src/config.ts`
-2. Move the current `nextSpeaker` object to the top of the `previousSessions` array
-3. Update the `nextSpeaker` object with the new speaker's details:
-
-```typescript
-nextSpeaker: {
-  name: "Speaker Name",
-  title: "Talk Title",
-  institution: "Institution",
-  date: "Day DDth Month YYYY",
-  time: "4pm UK time",
-  location: "Online and in-person at " + createLink(...),
-  abstract: "Talk abstract...",
-  bio: "Speaker bio...",
-  calendarLink: "https://drive.google.com/...",
-  locationLink: "https://maps.app.goo.gl/...",
-},
+```
+src/data/
+├── next-speaker.json          # the upcoming session
+├── next-speaker.schema.json   # documents every field of the above
+└── sessions/
+    ├── 20260810.json          # one file per past session, named YYYYMMDD
+    └── ...
 ```
 
-4. After the talk, add the slides link to the session in `previousSessions`:
+Dates are always stored as ISO `YYYY-MM-DD` and formatted for display automatically —
+`"10 de agosto de 2026"` in the archive, `"Monday 10th August 2026"` for the next session.
+Never write a display date by hand.
 
-```typescript
-slidesLink: "https://...",
+### Announcing the next speaker
+
+Edit `src/data/next-speaker.json`. Three shapes are supported:
+
+| Fields present | What is rendered |
+| --- | --- |
+| `name`, `affiliation`, `date` | a "Save the date" message |
+| ...plus `title`, `abstract`, `bio`, `time`, `location`, `calendarLink` | the full session card |
+| `message` on its own | that custom message |
+| `{}` | "No session currently scheduled" |
+
+```json
+{
+  "$schema": "./next-speaker.schema.json",
+  "name": "Speaker Name",
+  "affiliation": "Affiliation",
+  "date": "2026-09-21"
+}
 ```
 
-### Creating HTML links in content
+Keep the `$schema` line: it is what makes your editor document the file as you edit it.
+Hover over the opening `{` and you get the three shapes above; hover over any field name
+and you get what it does, what it looks like, and whether it survives archiving. It also
+autocompletes field names and flags misspelt ones.
 
-Use the `createLink()` helper function to create links in abstracts, bios, and other content:
+### After the talk
 
-```typescript
-bio: createLink("https://example.com", "link text") + " more bio text..."
+```bash
+npm run post-talk -- [slides-url]      # add --no-branch to stay on the current branch
 ```
 
-Links will automatically open in new tabs with proper security attributes.
+This creates a `post-talk-update-YYYYMMDD` branch, moves `next-speaker.json` into
+`src/data/sessions/YYYYMMDD.json` (dropping `time`, `location` and `calendarLink`), adds a
+"View slides" button if you passed a URL, and resets `next-speaker.json`. It refuses to run
+on a dirty working tree.
 
+Afterwards, fill in the session's `skills` tags (2-4 short lowercase Spanish topics), add
+the next speaker, then commit, push and open a PR against `main`.
+
+### Adding an older session
+
+Drop a new `src/data/sessions/YYYYMMDD.json` in. Nothing else to edit — the files are
+collected and sorted automatically by `src/sessions.ts`.
+
+### Links in content
+
+In the JSON content (`abstract`, `bio`, `location`, `message`), write links in markdown
+style:
+
+```json
+"bio": "Mantiene [rOpenSci](https://ropensci.org) y escribe en [su blog](https://example.org)."
+```
+
+They are expanded into styled links that open in a new tab. Relative links
+(`[sesión anterior](sessions#foo)`) and `mailto:` work too. Square brackets that aren't
+followed by a parenthesised URL — `[2019]`, `[version 2]` — are left alone.
+
+Raw HTML still works where you need more than a link: `a`, `span`, `div`, `br`, `ul`, `li`,
+`strong`, `em`, `i`, `p`.
+
+Content in `src/config.ts` is TypeScript, so it calls the `createLink()` helper instead.
+Both routes produce identical markup — see `src/lib/links.ts`.
+
+```typescript
+createLink("https://example.com", "link text") + " more text..."
+```
 
 ### Updating other content
 
-Edit these sections in `src/config.ts`:
+Edit these in `src/config.ts`:
 - `aboutMe` - Description of the series
-- `previousSessions` - Array of past talks (auto-sorted by date)
 - `callForSpeakers` - Call for participation text
 - `organizers` - Organizer profiles
 - `accentColor` - Primary theme color (propagates throughout site)
 
 ### Claude command: `/post-talk-update`
 
-If you use [Claude Code](https://claude.ai/code), you can run the `/post-talk-update` command to handle the post-talk workflow with minimal interaction:
+If you use [Claude Code](https://claude.ai/code), the `/post-talk-update` command wraps the script above and suggests a few items for the `skills` tags.
 
 ```
 /post-talk-update [slides-url]
 ```
 
-Optionally pass the slides URL as an argument. The command will:
+The command runs `npm run post-talk`, fills in the `skills` tags on the archived session, opens the files you need to review, and starts the dev server at `http://localhost:4321`. Then the user reviews the suggested skill tags, adds the details for the next speaker, then commits and pushes the branch to open a PR against `main`.
 
-1. Create a new branch from `main` 
-2. Archive the current `nextSpeaker` into `previousSessions` (with slides button if a URL was passed, and auto-suggested skill tags).
-3. Replace `nextSpeaker` with an editable placeholder.
-4. Open `src/config.ts` for the user to review and edit.
-5. Start the dev server at `http://localhost:4321` for visual verification.
+To avoid permission prompts during the workflow, you can create a local settings file
+(gitignored, personal only):
 
-After reviewing and editing if necessary, commit, push the branch, and open a PR against `main`.
-
-When running the `/post-talk-update` command, Claude needs permission to run `git` commands, edit `src/config.ts`, open it in the editor, and start the dev server. To avoid permission prompts during the workflow, you can create a local settings file (gitignored, personal only):
-
-```bash
-# .claude/settings.local.json
+```json
+// .claude/settings.local.json
 {
   "permissions": {
     "allow": [
       "Bash(git *)",
-      "Edit(src/config.ts)",
-      "Bash(code src/config.ts)",
-      "Bash(npm run dev)",
+      "Bash(npm run *)",
+      "Bash(code *)",
+      "Edit(src/data/**)"
     ]
   }
 }
@@ -141,7 +179,7 @@ When running the `/post-talk-update` command, Claude needs permission to run `gi
 
 ## Security
 
-All HTML content in `config.ts` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
+All HTML content in `src/config.ts` and `src/data/` is automatically sanitized using DOMPurify before being rendered on the website. This prevents Cross-Site Scripting (XSS) attacks and ensures website security.
 
 The site uses a `<SafeHtml>` component that enforces sanitization at the framework level. Direct use of Astro's `set:html` directive should be avoided throughout the codebase.
 
@@ -164,17 +202,28 @@ charlas-rse-espanol.github.io/
 │   │   ├── Organizers.astro
 │   │   ├── PreviousSessions.astro
 │   │   └── SafeHtml.astro # Security component (sanitizes HTML)
-│   ├── pages/             # Page routes
-│   │   ├── index.astro    # Homepage
-│   │   └── sessions.astro # All sessions archive
+│   ├── data/                     # SPEAKER CONTENT
+│   │   ├── next-speaker.json     # Upcoming session
+│   │   ├── next-speaker.schema.json
+│   │   └── sessions/             # One JSON file per past session
+│   ├── lib/
+│   │   ├── dates.ts              # ISO date -> Spanish / English display strings
+│   │   └── links.ts              # createLink() and [text](url) expansion
+│   ├── pages/                    # Page routes
+│   │   ├── index.astro           # Homepage
+│   │   └── sessions.astro        # All sessions archive
 │   ├── styles/
-│   │   └── global.css     # Global styles
-│   └── config.ts          # Site configuration (MAIN CONTENT FILE)
-├── public/                # Static assets
+│   │   └── global.css            # Global styles
+│   ├── config.ts                 # Site settings (title, about, organizers, colour)
+│   ├── next-speaker.ts           # Loads next-speaker.json
+│   └── sessions.ts               # Loads and sorts src/data/sessions/
+├── scripts/
+│   └── post-talk-update.mjs      # npm run post-talk
+├── public/                       # Static assets
 │   ├── favicon.png
 │   └── images/
 │       └── charlas-logo.png
-└── astro.config.mjs       # Astro configuration
+└── astro.config.mjs              # Astro configuration
 ```
 
 ## Deployment

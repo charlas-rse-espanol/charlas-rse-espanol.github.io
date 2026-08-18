@@ -1,0 +1,24 @@
+{
+  "name": "Yanina Bellini Saibene",
+  "affiliation": "rOpenSci, Sovereign Tech Fellow",
+  "date": "2026-07-06",
+  "title": "Software sostenible, comunidades sostenibles: aprendizajes desde rOpenSci",
+  "abstract": "Mantener software de investigación es un desafío que trasciende los aspectos técnicos. La documentación, la incorporación de nuevas personas colaboradoras, la gobernanza, la mentoría y la construcción de comunidades son aspectos clave para que los proyectos puedan perdurar en el tiempo. En esta charla compartiré cómo rOpenSci aborda estos desafíos a través de programas e iniciativas que apoyan tanto a quienes desarrollan software como a las comunidades que lo sostienen. A partir de ejemplos concretos, exploraremos estrategias para fortalecer la sostenibilidad del software de investigación desde una perspectiva centrada en las personas. ",
+  "bio": "Yanina Bellini Saibene es Community Manager de rOpenSci y Program Manager del programa Champions y del Proyecto Multilingüe de rOpenSci. Fue seleccionada como Sovereign Tech Fellow 2026-2027. También es Project Lead de RLadies+, parte del directorio de The Carpentries y cofundadora y copresidenta de LatinR. Trabaja en el fortalecimiento de comunidades, la formación de personas desarrolladoras de software y la promoción de prácticas abiertas para la creación de software de investigación sostenible. Sus áreas de interés incluyen la ciencia abierta, la colaboración en proyectos de software libre, la localización de recursos educativos y el desarrollo de capacidades en comunidades científicas y tecnológicas con foco en el Sur Global. ",
+  "skills": [
+    "software sostenible",
+    "comunidades",
+    "ciencia abierta",
+    "rOpenSci"
+  ],
+  "linkButtons": [
+    {
+      "href": "https://yabellini.github.io/rse_ropensci_2026/#/title-slide",
+      "label": "View slides"
+    },
+    {
+      "href": "https://codeforthought.buzzsprout.com/1326658/episodes/14660478-en-crossing-the-language-barrier-yanina-saibene",
+      "label": "Yanina in Code for Thought 📻"
+    }
+  ]
+}
