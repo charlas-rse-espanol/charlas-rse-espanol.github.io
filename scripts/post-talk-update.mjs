@@ -71,7 +71,7 @@ if (!noBranch) {
 // and `calendarLink` are deliberately dropped.
 const session = {
   name: speaker.name,
-  institution: speaker.institution,
+  affiliation: speaker.affiliation,
   date: speaker.date,
   title: speaker.title,
   abstract: speaker.abstract,
@@ -87,7 +87,7 @@ if (slidesUrl) {
   ];
 }
 
-const missing = ["name", "institution", "title", "abstract", "bio"].filter(
+const missing = ["name", "affiliation", "title", "abstract", "bio"].filter(
   (key) => !session[key],
 );
 

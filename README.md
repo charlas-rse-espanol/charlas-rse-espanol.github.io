@@ -81,7 +81,7 @@ Edit `src/data/next-speaker.json`. Three shapes are supported:
 
 | Fields present | What is rendered |
 | --- | --- |
-| `name`, `institution`, `date` | a "Save the date" message |
+| `name`, `affiliation`, `date` | a "Save the date" message |
 | ...plus `title`, `abstract`, `bio`, `time`, `location`, `calendarLink` | the full session card |
 | `message` on its own | that custom message |
 | `{}` | "No session currently scheduled" |
@@ -90,7 +90,7 @@ Edit `src/data/next-speaker.json`. Three shapes are supported:
 {
   "$schema": "./next-speaker.schema.json",
   "name": "Speaker Name",
-  "institution": "Institution",
+  "affiliation": "Affiliation",
   "date": "2026-09-21"
 }
 ```

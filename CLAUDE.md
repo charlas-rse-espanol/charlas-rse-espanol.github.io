@@ -73,7 +73,7 @@ The project follows a component-based architecture with all content centralized 
 
 Edit `src/data/next-speaker.json`. Three shapes are supported (see `src/next-speaker.ts`):
 
-- `name` + `institution` + `date` -> "Save the date" message
+- `name` + `affiliation` + `date` -> "Save the date" message
 - ...plus `title`, `abstract`, `bio`, `time`, `location`, `calendarLink` -> full session card
 - `message` alone -> that custom message
 - `{}` -> "No session currently scheduled"

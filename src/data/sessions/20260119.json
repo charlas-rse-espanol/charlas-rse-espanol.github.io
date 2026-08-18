@@ -1,6 +1,6 @@
 {
   "name": "Jesús Urtasun Elizari",
-  "institution": "Imperial College London",
+  "affiliation": "Imperial College London",
   "date": "2026-01-19",
   "title": "Complejidad computacional para RSEs",
   "abstract": "Cuando se trabaja con juegos, problemas y algoritmos, una de las primeras cuestiones que surgen es, <i>plain and simple</i>, que algunos son más complicados que otros:<ul style='list-style-type: disc; padding-left: 1.5em; margin: 0.5em 0;'><li>¿Cómo medimos cuán complicado es un problema?</li><li>¿Qué son las clases de complejidad y cómo se agrupan los problemas según su dificultad?</li><li>¿Por qué la factorización o el trazado de caminos son ejemplos de problemas 'difíciles', o problemas 'NP'?</li><li>¿Cómo se relacionan con la seguridad, la criptografía, el modelado de proteínas, y la alineación y el ensamblaje de genomas?</li></ul>Este tipo de preguntas se estudian en la <strong>Teoría de la Complejidad</strong>, la rama de la computación y las matemáticas que describe cuán difícil es realmente resolver un problema y cómo escala esa dificultad en distintos escenarios.",

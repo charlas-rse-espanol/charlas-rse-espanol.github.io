@@ -1,6 +1,6 @@
 {
   "name": "Cecilia Herbert",
-  "institution": "OpenEphys",
+  "affiliation": "OpenEphys",
   "date": "2025-03-17",
   "title": "¿Qué soluciones de software requieren los usuarios y desarrolladores de hardware abierto para investigación?",
   "abstract": "Les quería compartir mi transición de la neurociencia experimental al mundo de la tecnología open source y compartirles un panorama de una empresa pequeña dedicada al hardware de adquisición de registros neuro-comportamentales. Desde mi perspectiva no RSE, qué necesidades veo a nivel usuario, desarrollador e intraempresa. Me gustaría discutir con ustedes qué opciones de formación existen para quienes vienen de la academia y ese elusivo límite entre aprender a hacer algo por cuenta propia y llamar a alguien que sabe (y retribuir su tiempo y expertise).",

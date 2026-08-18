@@ -4,10 +4,10 @@ import { nextSpeaker as speaker } from "../next-speaker";
 import SafeHtml from "./SafeHtml.astro";
 
 // Check if nextSpeaker is completely empty (no speaker scheduled)
-const hasSpeaker = speaker && (speaker.name || speaker.institution || speaker.date);
+const hasSpeaker = speaker && (speaker.name || speaker.affiliation || speaker.date);
 
-// Check if we have minimal info (name, institution, date) but not full details
-const hasMinimalInfo = speaker.name && speaker.institution && speaker.date;
+// Check if we have minimal info (name, affiliation, date) but not full details
+const hasMinimalInfo = speaker.name && speaker.affiliation && speaker.date;
 const hasAnyAdditionalDetails = speaker.title || speaker.abstract || speaker.bio;
 const showSimpleMessage = hasMinimalInfo && !hasAnyAdditionalDetails;
 ---
@@ -50,7 +50,7 @@ const showSimpleMessage = hasMinimalInfo && !hasAnyAdditionalDetails;
             Our next talk is scheduled for <strong class="text-gray-900">{speaker.dateLabel}</strong> (4pm UK time).
              <br/><br/>
             <strong class="text-gray-900">{speaker.name}</strong>, 
-            from <strong class="text-gray-900">{speaker.institution}</strong> will join us 🤗
+            from <strong class="text-gray-900">{speaker.affiliation}</strong> will join us 🤗
             <br/><br/>
             <span class="text-[var(--accent-color)] font-semibold">More details soon!</span>
           </p>
@@ -70,7 +70,7 @@ const showSimpleMessage = hasMinimalInfo && !hasAnyAdditionalDetails;
             </div>
             
             <p class="text-base sm:text-lg text-gray-700 font-medium">
-              {speaker.institution}
+              {speaker.affiliation}
             </p>
           </div>
 

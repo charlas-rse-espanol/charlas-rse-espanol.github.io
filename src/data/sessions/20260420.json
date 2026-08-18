@@ -1,6 +1,6 @@
 {
   "name": "Patricia A. Loto",
-  "institution": "FACENA, Universidad Nacional del Nordeste (UNNE)",
+  "affiliation": "FACENA, Universidad Nacional del Nordeste (UNNE)",
   "date": "2026-04-20",
   "title": "Herramientas para la Ciencia Abierta desde el Sur: un asistente con IA y un paquete para planificar software de investigación",
   "abstract": "Hacer Ciencia Abierta no debería requerir saber exactamente qué preguntar ni conocer de antemano los documentos correctos. Tampoco debería requerir reinventar la rueda cada vez que un equipo de investigación necesita documentar su software. En esta charla voy a compartir el trabajo que estoy desarrollando actualmente para intentar responder a esos problemas concretos — dos herramientas complementarias construidas con la convicción de que la Ciencia Abierta puede y debe ser más accesible en nuestro idioma y para nuestra región. La primera es un asistente virtual conversacional basado en LLMs y arquitectura RAG que permite consultar en lenguaje natural un corpus curado de documentos clave sobre Ciencia Abierta en español — desde recomendaciones de la UNESCO hasta políticas latinoamericanas. La segunda es PGSoftware, un paquete de R con plantillas Quarto para generar Planes de Gestión de Software — en el que también estoy trabajando activamente — para que RSEs e investigadores puedan documentar y planificar su software de forma estandarizada y reproducible, sin necesidad de empezar desde cero cada vez. ",

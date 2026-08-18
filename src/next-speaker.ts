@@ -4,7 +4,7 @@
  * Every field is documented in src/data/next-speaker.schema.json, which the
  * editor surfaces as hover text and autocomplete while editing the JSON.
  * In short, three shapes are supported, matching what <NextSpeaker> renders:
- *   1. `name` + `institution` + `date`            -> "Save the date" message
+ *   1. `name` + `affiliation` + `date`            -> "Save the date" message
  *   2. ...plus `title`, `abstract`, `bio`,
  *      `time`, `location`, `calendarLink`         -> full session card
  *   3. `message` only                             -> that custom message
@@ -21,7 +21,7 @@ export type NextSpeaker = {
   /** Editor-only pointer to the schema; not rendered. */
   $schema?: string;
   name?: string;
-  institution?: string;
+  affiliation?: string;
   /** ISO `YYYY-MM-DD`. Formatted for display as e.g. "Monday 21st September 2026". */
   date?: string;
   title?: string;

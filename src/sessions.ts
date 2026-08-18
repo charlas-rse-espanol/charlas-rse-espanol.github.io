@@ -18,7 +18,7 @@ export type LinkButton = {
 
 export type Session = {
   name: string;
-  institution: string;
+  affiliation: string;
   /** ISO `YYYY-MM-DD`. Sorts as a plain string; formatted for display. */
   date: string;
   title: string;
