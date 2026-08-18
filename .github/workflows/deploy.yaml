@@ -6,14 +6,17 @@ on:
   # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [ main ]
+  # Also build (but do not deploy) every pull request targeting `main`, so
+  # breakages are caught before they reach the deployed site
+  pull_request:
+    branches: [ main ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
+# Allow jobs to clone the repo. The permissions needed to create a page
+# deployment are granted to the `deploy` job alone.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 jobs:
   build:
@@ -33,7 +36,12 @@ jobs:
 
   deploy:
     needs: build
+    # Pull requests are built for validation only, never deployed
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
