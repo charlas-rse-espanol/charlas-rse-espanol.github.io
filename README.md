@@ -152,17 +152,13 @@ Edit these in `src/config.ts`:
 
 ### Claude command: `/post-talk-update`
 
-If you use [Claude Code](https://claude.ai/code), the `/post-talk-update` command wraps the
-script above and adds the one thing it cannot do — reading the abstract and suggesting the
-`skills` tags:
+If you use [Claude Code](https://claude.ai/code), the `/post-talk-update` command wraps the script above and suggests a few items for the `skills` tags.
 
 ```
 /post-talk-update [slides-url]
 ```
 
-It runs `npm run post-talk`, fills in the `skills` tags on the archived session, opens the
-files you need to review, and starts the dev server at `http://localhost:4321`. Review the
-tags, add the next speaker, then commit, push the branch and open a PR against `main`.
+The command runs `npm run post-talk`, fills in the `skills` tags on the archived session, opens the files you need to review, and starts the dev server at `http://localhost:4321`. Then the user reviews the suggested skill tags, adds the details for the next speaker, then commits and pushes the branch to open a PR against `main`.
 
 To avoid permission prompts during the workflow, you can create a local settings file
 (gitignored, personal only):
