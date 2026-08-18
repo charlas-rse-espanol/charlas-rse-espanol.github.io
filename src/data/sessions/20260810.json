@@ -9,5 +9,11 @@
     "bioinformática",
     "reproducibilidad",
     "SciOps"
+  ],
+  "linkButtons": [
+    {
+      "href": "https://drive.google.com/file/d/1ycsNKJvXui7VheyUunETamPE1MmO974d/view",
+      "label": "View slides"
+    }
   ]
 }
