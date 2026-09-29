@@ -10,7 +10,7 @@
  *   3. `message` only                             -> that custom message
  * Leave the file as `{}` when nothing is scheduled.
  *
- * SECURITY NOTE: `abstract`, `bio`, `location` and `message` may contain HTML,
+ * SECURITY NOTE: `affiliation`, `abstract`, `bio`, `location` and `message` may contain HTML,
  * which is sanitized by <SafeHtml> before rendering. See src/components/SafeHtml.astro
  */
 import data from "./data/next-speaker.json";
@@ -36,6 +36,6 @@ export type NextSpeaker = {
 const { $schema, ...speaker }: NextSpeaker = data;
 
 export const nextSpeaker = {
-  ...expandLinksIn(speaker, ["abstract", "bio", "location", "message"]),
+  ...expandLinksIn(speaker, ["affiliation", "abstract", "bio", "location", "message"]),
   dateLabel: speaker.date ? formatEnglishDate(speaker.date) : "",
 };

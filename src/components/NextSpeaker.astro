@@ -50,7 +50,7 @@ const showSimpleMessage = hasMinimalInfo && !hasAnyAdditionalDetails;
             Our next talk is scheduled for <strong class="text-gray-900">{speaker.dateLabel}</strong> (4pm UK time).
              <br/><br/>
             <strong class="text-gray-900">{speaker.name}</strong>, 
-            from <strong class="text-gray-900">{speaker.affiliation}</strong> will join us 🤗
+            from <strong class="text-gray-900"><SafeHtml content={speaker.affiliation ?? ""} /></strong> will join us 🤗
             <br/><br/>
             <span class="text-[var(--accent-color)] font-semibold">More details soon!</span>
           </p>
@@ -70,7 +70,7 @@ const showSimpleMessage = hasMinimalInfo && !hasAnyAdditionalDetails;
             </div>
             
             <p class="text-base sm:text-lg text-gray-700 font-medium">
-              {speaker.affiliation}
+              <SafeHtml content={speaker.affiliation ?? ""} />
             </p>
           </div>
 
