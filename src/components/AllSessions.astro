@@ -84,7 +84,7 @@ import SessionLinkButton from "./SessionLinkButton.astro";
               <!-- Bottom row: Affiliation and Slides Button -->
               <div class="flex items-center justify-between gap-4">
                 <p class="text-base sm:text-lg text-gray-700 font-medium">
-                  {session.affiliation}
+                  <SafeHtml content={session.affiliation} />
                 </p>
                 
                 {session.linkButtons && session.linkButtons.length > 0 && (

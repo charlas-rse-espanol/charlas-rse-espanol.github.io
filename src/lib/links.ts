@@ -29,6 +29,13 @@ const MARKDOWN_LINK = /\[([^\]\n]+)\]\(([^\s)]+)\)/g;
 export const expandLinks = (content: string): string =>
   content.replace(MARKDOWN_LINK, (_match, text, url) => createLink(url, text));
 
+/**
+ * Replace markdown-style links with just their text, for places that are
+ * already inside a link (e.g. a whole card that links elsewhere).
+ */
+export const stripLinks = (content: string): string =>
+  content.replace(MARKDOWN_LINK, (_match, text) => text);
+
 /** Apply `expandLinks` to the given keys of a content object. */
 export const expandLinksIn = <T extends object>(item: T, keys: (keyof T)[]): T => {
   const expanded = { ...item };
