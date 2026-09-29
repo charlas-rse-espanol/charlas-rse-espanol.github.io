@@ -15,7 +15,7 @@
     },
     "affiliation": {
       "type": "string",
-      "description": "Speaker affiliation, e.g. \"British Antarctic Survey\"."
+      "description": "Speaker affiliation, e.g. \"British Antarctic Survey\". Markdown links are allowed: [text](https://example.com)."
     },
     "date": {
       "type": "string",
