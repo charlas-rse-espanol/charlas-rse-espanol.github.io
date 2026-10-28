@@ -12,7 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^7.2.8",
-    "dompurify": "^3.4.13",
+    "dompurify": "^3.4.17",
     "isomorphic-dompurify": "^2.31.0",
     "tailwindcss": "^4.2.1"
   },
