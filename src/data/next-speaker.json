@@ -1,8 +1,12 @@
 {
   "$schema": "./next-speaker.schema.json",
   "name": "Mario Bermonti",
-  "affiliation": "Ponce Health Sciences University, Puerto Rico",
+  "affiliation": "Ponce Health Sciences University",
   "date": "2026-11-30",
+  "title": "De apps a componentes reutilizables: desarrollando software abierto para estudiar la cognición en la vida cotidiana",
+  "abstract": "¿Te ha pasado que algunos días te cuesta concentrarte o que, a ciertas horas, sientes que no piensas con claridad? Estas experiencias reflejan algo que nos interesa estudiar: la cognición, que comprende procesos como la atención, la memoria y la resolución de problemas, cambia a lo largo del día y según el contexto. En el Cognition, Health, and Technology Lab (CHTLab), nos interesa comprender estas fluctuaciones y cómo se relacionan con lo que hacemos en la vida cotidiana, así que desarrollamos software de investigación para estudiarlas en ese contexto. Comenzamos desarrollando aplicaciones móviles para estudios específicos, pero las necesidades cambiantes de nuestros proyectos nos llevaron a buscar una solución más flexible. Así surgió la idea de crear un ecosistema de componentes reutilizables para desarrollar aplicaciones de investigación con mayor agilidad. En esta charla compartiré nuestra experiencia desarrollando este ecosistema de software abierto, los retos científicos y técnicos que hemos enfrentado y nuestra visión para hacerlo accesible a la comunidad científica. ",
+  "bio": "Mario Bermonti Pérez, Ponce Health Sciences University - Mario Bermonti Pérez es investigador en Ponce Health Sciences University (Puerto Rico), donde colidera el Cognition, Health, and Technology Lab (CHTLab). Su investigación se enfoca en cómo la cognición fluctúa en la vida cotidiana y cómo estas fluctuaciones influyen en la conducta orientada a metas, particularmente en las conductas relacionadas con la salud (por ejemplo, actividad física). Mario combina su peritaje en ciencia cognitiva, investigación cuantitativa y desarrollo de software para crear software de código abierto que permita a la comunidad científica estudiar estos procesos mediante dispositivos móviles. ",
   "time": "4pm UK time",
-  "location": "Online and in-person at [Mae Jemison Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB](https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5)"
+  "location": "Online and in-person at [Mae Jemison Meeting Room, The Alan Turing Institute, British Library, 96 Euston Rd., London NW1 2DB](https://maps.app.goo.gl/qTqLBEaAYkA36Xqx5)",
+  "calendarLink": "https://drive.usercontent.google.com/u/0/uc?id=1hRLpIj9EjCds1dsL7hZ4xEdT7fF2NB7H&export=download"
 }
